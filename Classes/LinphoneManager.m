@@ -89,6 +89,7 @@ extern void libmswebrtc_init(MSFactory *factory);
 
 NSString *const kLinphoneOldChatDBFilename = @"chat_database.sqlite";
 NSString *const kLinphoneInternalChatDBFilename = @"linphone_chats.db";
+NSString *const kLinphoneInternalFiendsDBFilename = @"linphone_friends.db";
 
 @implementation LinphoneCallAppData
 - (id)init {
@@ -1779,7 +1780,7 @@ static LinphoneCoreVTable linphonec_vtable = {
 	// get default config from bundle
 	NSString *zrtpSecretsFileName = [LinphoneManager documentFile:@"zrtp_secrets"];
 	NSString *chatDBFileName = [LinphoneManager documentFile:kLinphoneInternalChatDBFilename];
-
+	NSString *friendsDBFilename = [LinphoneManager documentFile:kLinphoneInternalFiendsDBFilename];
 	NSString *device = [[NSMutableString alloc]
 		initWithString:[NSString
 						   stringWithFormat:@"%@_%@_iOS%@",
@@ -1799,7 +1800,7 @@ static LinphoneCoreVTable linphonec_vtable = {
 	linphone_core_set_zrtp_secrets_file(theLinphoneCore, [zrtpSecretsFileName UTF8String]);
 	linphone_core_set_chat_database_path(theLinphoneCore, [chatDBFileName UTF8String]);
 	linphone_core_set_call_logs_database_path(theLinphoneCore, [chatDBFileName UTF8String]);
-
+	linphone_core_set_friends_database_path(theLinphoneCore, [friendsDBFilename UTF8String]);
 	[self setupNetworkReachabilityCallback];
 
 	NSString *path = [LinphoneManager bundleFile:@"nowebcamCIF.jpg"];
