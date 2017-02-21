@@ -17,18 +17,162 @@
                         <viewControllerLayoutGuide type="top" id="a3D-xE-I2b"/>
                         <viewControllerLayoutGuide type="bottom" id="Prr-T9-CTd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Feh-m4-24d">
+                    <view key="view" contentMode="scaleToFill" id="8H1-ZQ-e7Z">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SHe-6b-xCs" userLabel="topBar">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="66"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_F.png" translatesAutoresizingMaskIntoConstraints="NO" id="0zK-kr-luc" userLabel="backgroundColor">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dbN-dI-EWX" userLabel="switchView">
+                                        <rect key="frame" x="0.0" y="0.0" width="307" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPh-aj-KrW" userLabel="allButton" customClass="UIIconButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="153.5" height="66"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="All contacts filter"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                <inset key="titleEdgeInsets" minX="-38" minY="15" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" image="contacts_all_default.png">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="disabled" image="contacts_all_disabled.png"/>
+                                                <state key="selected" image="contacts_all_selected.png">
+                                                    <color key="titleColor" red="0.98766469960000003" green="0.27512490750000002" blue="0.029739789660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="highlighted" backgroundImage="color_E.png"/>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_A.png" translatesAutoresizingMaskIntoConstraints="NO" id="8mP-fB-REC" userLabel="selectedButtonImage">
+                                                <rect key="frame" x="0.0" y="63" width="153.5" height="3"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTb-Ka-TVI" userLabel="sipButton" customClass="UIIconButton">
+                                                <rect key="frame" x="153.5" y="0.0" width="153.5" height="66"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="Linphone contacts filter"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                <state key="normal" image="contacts_sip_default.png">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="disabled" image="contacts_sip_disabled.png"/>
+                                                <state key="selected" image="contacts_sip_selected.png">
+                                                    <color key="titleColor" red="0.98766469960000003" green="0.27512490750000002" blue="0.029739789660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="highlighted" backgroundImage="color_E.png"/>
+                                            </button>
+                                        </subviews>
+                                    </view>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2A-rn-IT2" userLabel="cancelButton" customClass="UIIconButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="153.5" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="Delete all"/>
+                                        <state key="normal" image="cancel_edit_default.png">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="disabled" image="cancel_edit_disabled.png"/>
+                                        <state key="highlighted" backgroundImage="color_E.png"/>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ek-7D-K2v" userLabel="deleteButton" customClass="UIIconButton">
+                                        <rect key="frame" x="614" y="0.0" width="154" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="Delete all"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="delete_default.png">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="disabled" image="delete_disabled.png"/>
+                                        <state key="highlighted" backgroundImage="color_E.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeF-yT-eUz" userLabel="editButton" customClass="UIIconButton">
+                                        <rect key="frame" x="614" y="0.0" width="154" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="Edit"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="edit_list_default.png">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="disabled" image="edit_list_disabled.png"/>
+                                        <state key="highlighted" backgroundImage="color_E.png"/>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoc-CS-NOl" userLabel="toggleSelectionButton" customClass="UIIconButton">
+                                        <rect key="frame" x="460.5" y="0.0" width="153.5" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="Select all"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="deselect_all.png">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="disabled" image="select_all_disabled.png"/>
+                                        <state key="selected" image="select_all_default.png"/>
+                                        <state key="highlighted" backgroundImage="color_E.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LrB-WH-jTH" userLabel="addButton" customClass="UIIconButton">
+                                        <rect key="frame" x="460.5" y="0.0" width="153.5" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="Add contact"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="contact_add_default.png">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="disabled" image="contact_add_disabled.png"/>
+                                        <state key="highlighted" backgroundImage="color_E.png"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="abJ-Wn-lmJ"/>
+                                </constraints>
+                            </view>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="foA-GD-yZA" userLabel="searchBar">
+                                <rect key="frame" x="0.0" y="66" width="768" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ZDx-b5-5SG"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="D9J-qj-Yjv" userLabel="tableView">
+                                <rect key="frame" x="0.0" y="110" width="768" height="914"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                                <color key="separatorColor" red="0.67030966280000004" green="0.71867996450000005" blue="0.75078284740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No contact found in your address book" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlh-Z3-7ta" userLabel="emptyTableLabel">
+                                <rect key="frame" x="0.0" y="110" width="768" height="914"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="SHe-6b-xCs" firstAttribute="leading" secondItem="8H1-ZQ-e7Z" secondAttribute="leading" id="8aG-bd-9BM"/>
+                            <constraint firstAttribute="trailing" secondItem="SHe-6b-xCs" secondAttribute="trailing" id="CR2-hY-dEC"/>
+                            <constraint firstAttribute="bottom" secondItem="D9J-qj-Yjv" secondAttribute="bottom" id="HNd-B5-2Vm"/>
+                            <constraint firstAttribute="trailing" secondItem="D9J-qj-Yjv" secondAttribute="trailing" id="Loh-vh-dJq"/>
+                            <constraint firstItem="foA-GD-yZA" firstAttribute="leading" secondItem="8H1-ZQ-e7Z" secondAttribute="leading" id="PfO-0d-Sw1"/>
+                            <constraint firstItem="SHe-6b-xCs" firstAttribute="top" secondItem="8H1-ZQ-e7Z" secondAttribute="top" id="Tkp-SD-tJE"/>
+                            <constraint firstItem="D9J-qj-Yjv" firstAttribute="top" secondItem="foA-GD-yZA" secondAttribute="bottom" id="fbz-F9-xRj"/>
+                            <constraint firstItem="foA-GD-yZA" firstAttribute="top" secondItem="SHe-6b-xCs" secondAttribute="bottom" id="gaq-oQ-Fex"/>
+                            <constraint firstItem="D9J-qj-Yjv" firstAttribute="leading" secondItem="8H1-ZQ-e7Z" secondAttribute="leading" id="nGU-qm-CLu"/>
+                            <constraint firstAttribute="trailing" secondItem="foA-GD-yZA" secondAttribute="trailing" id="oiN-Vb-AXj"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="Nbe-91-8Ey"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIg-80-sQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919" y="-3104"/>
+            <point key="canvasLocation" x="2309" y="-3758"/>
         </scene>
-        <!--Item-->
+        <!--Dial-->
         <scene sceneID="jEn-45-4xH">
             <objects>
                 <viewController id="aD0-OD-vNJ" sceneMemberID="viewController">
@@ -39,13 +183,304 @@
                     <view key="view" contentMode="scaleToFill" id="ObT-AL-hIh">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tef-9I-xLO" userLabel="Container">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHU-MT-5U6" userLabel="dialer">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="66"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_F.png" translatesAutoresizingMaskIntoConstraints="NO" id="1OL-Fe-3eY" userLabel="backgroundColor">
+                                                <rect key="frame" x="0.0" y="0.0" width="768" height="66"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a number or an address" adjustsFontSizeToFit="NO" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="6CQ-vb-RHy" userLabel="addressField" customClass="UIAddressTextField">
+                                                <rect key="frame" x="31" y="0.0" width="654" height="66"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration" label="Enter an address"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" returnKeyType="join"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k90-EC-k1g" userLabel="backspaceButton" customClass="UIIconButton">
+                                                <rect key="frame" x="703" y="0.0" width="60" height="66"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="backspace_default.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="disabled" image="backspace_disabled.png"/>
+                                                <state key="highlighted" image="backspace_over.png"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="66" id="JN7-dM-JSJ"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dialer_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="lgK-Ow-0yr" userLabel="logoImage">
+                                        <rect key="frame" x="214" y="340.5" width="340" height="294"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="340" id="S0G-2E-WPJ"/>
+                                            <constraint firstAttribute="height" constant="294" id="la4-Qk-vns"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZv-WZ-gEp" userLabel="pad">
+                                        <rect key="frame" x="0.0" y="66" width="768" height="843"/>
+                                        <subviews>
+                                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBd-bt-Y7p" userLabel="1" customClass="UIDigitButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="246" height="199"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.40000001000000002" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration" label="1"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <state key="normal" image="numpad_1_default.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="highlighted" image="numpad_1_over.png" backgroundImage="numpad_over_background.png"/>
+                                                <connections>
+                                                    <outlet property="addressField" destination="6CQ-vb-RHy" id="mal-IF-dDM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAc-lH-iFS" userLabel="2" customClass="UIDigitButton">
+                                                <rect key="frame" x="261.5" y="0.0" width="246" height="199"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="2"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <state key="normal" image="numpad_2_default.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="highlighted" image="numpad_2_over.png" backgroundImage="numpad_over_background.png"/>
+                                                <connections>
+                                                    <outlet property="addressField" destination="6CQ-vb-RHy" id="eZL-Z7-efz"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKY-pa-5fz" userLabel="3" customClass="UIDigitButton">
+                                                <rect key="frame" x="522" y="0.0" width="246" height="199"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <state key="normal" image="numpad_3_default.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="highlighted" image="numpad_3_over.png" backgroundImage="numpad_over_background.png"/>
+                                                <connections>
+                                                    <outlet property="addressField" destination="6CQ-vb-RHy" id="5cK-OG-2fq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQK-4w-c2j" userLabel="4" customClass="UIDigitButton">
+                                                <rect key="frame" x="0.0" y="211" width="246" height="200"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="4"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <state key="normal" image="numpad_4_default.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="highlighted" image="numpad_4_over.png" backgroundImage="numpad_over_background.png"/>
+                                                <connections>
+                                                    <outlet property="addressField" destination="6CQ-vb-RHy" id="q8V-8k-8jP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aah-xp-lKJ" userLabel="5" customClass="UIDigitButton">
+                                                <rect key="frame" x="261.5" y="211" width="246" height="200"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <state key="normal" image="numpad_5_default.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="highlighted" image="numpad_5_over.png" backgroundImage="numpad_over_background.png"/>
+                                                <connections>
+                                                    <outlet property="addressField" destination="6CQ-vb-RHy" id="I8W-qL-XOO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaP-X2-npf" userLabel="6" customClass="UIDigitButton">
+                                                <rect key="frame" x="522" y="211" width="246" height="200"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="6"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <state key="normal" image="numpad_6_default.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="highlighted" image="numpad_6_over.png" backgroundImage="numpad_over_background.png"/>
+                                                <connections>
+                                                    <outlet property="addressField" destination="6CQ-vb-RHy" id="jRX-4f-nD1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eie-kK-3fd" userLabel="7" customClass="UIDigitButton">
+                                                <rect key="frame" x="0.0" y="422.5" width="246" height="199"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="7"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <state key="normal" image="numpad_7_default.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="highlighted" image="numpad_7_over.png" backgroundImage="numpad_over_background.png"/>
+                                                <connections>
+                                                    <outlet property="addressField" destination="6CQ-vb-RHy" id="9d7-dQ-v2g"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGC-RE-Wdg" userLabel="8" customClass="UIDigitButton">
+                                                <rect key="frame" x="261.5" y="422.5" width="246" height="199"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="8"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <state key="normal" image="numpad_8_default.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="highlighted" image="numpad_8_over.png" backgroundImage="numpad_over_background.png"/>
+                                                <connections>
+                                                    <outlet property="addressField" destination="6CQ-vb-RHy" id="qXt-NO-UPb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLF-tf-Sjd" userLabel="9" customClass="UIDigitButton">
+                                                <rect key="frame" x="522" y="422.5" width="246" height="199"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="9"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <state key="normal" image="numpad_9_default.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="highlighted" image="numpad_9_over.png" backgroundImage="numpad_over_background.png"/>
+                                                <connections>
+                                                    <outlet property="addressField" destination="6CQ-vb-RHy" id="Ekl-9Z-chx"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7QW-4Q-iqc" userLabel="*" customClass="UIDigitButton">
+                                                <rect key="frame" x="0.0" y="636" width="246" height="199"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="Star"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <state key="normal" image="numpad_star_default.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="highlighted" image="numpad_star_over.png" backgroundImage="numpad_over_background.png"/>
+                                                <connections>
+                                                    <outlet property="addressField" destination="6CQ-vb-RHy" id="dpc-4h-mAC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5j-tO-aDg" userLabel="0" customClass="UIDigitButton">
+                                                <rect key="frame" x="261.5" y="636" width="246" height="199"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <state key="normal" image="numpad_0_default.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="highlighted" image="numpad_0_over.png" backgroundImage="numpad_over_background.png"/>
+                                                <connections>
+                                                    <outlet property="addressField" destination="6CQ-vb-RHy" id="Lz3-Zn-oUV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3B-MF-nSt" userLabel="#" customClass="UIDigitButton">
+                                                <rect key="frame" x="522" y="636" width="246" height="199"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="Hash"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <state key="normal" image="numpad_hash_default.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="highlighted" image="numpad_hash_over.png" backgroundImage="numpad_over_background.png"/>
+                                                <connections>
+                                                    <outlet property="addressField" destination="6CQ-vb-RHy" id="XYi-X9-LcR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tR3-7H-mVa" userLabel="bottomBar">
+                                        <rect key="frame" x="0.0" y="909" width="768" height="66"/>
+                                        <subviews>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeR-94-an3" userLabel="backButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="256" height="66"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="Back"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" image="call_alt_back_default.png" backgroundImage="color_F.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="disabled" image="call_alt_back_disabled.png"/>
+                                                <state key="highlighted" backgroundImage="color_E.png"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yf5-Ud-5el" userLabel="addContactButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="256" height="66"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="Add to contact"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" image="contact_add_default.png" backgroundImage="color_F.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="disabled" image="contact_add_disabled.png"/>
+                                                <state key="highlighted" backgroundImage="color_E.png"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXb-8T-Xqk" userLabel="callButton" customClass="UICallButton">
+                                                <rect key="frame" x="256" y="0.0" width="512" height="66"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="Call"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" image="call_audio_start_default.png" backgroundImage="color_A.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="disabled" image="call_audio_start_disabled.png"/>
+                                                <state key="highlighted" backgroundImage="color_L.png"/>
+                                                <connections>
+                                                    <outlet property="addressField" destination="6CQ-vb-RHy" id="cZA-va-jQU"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="66" id="es9-Wo-0CC"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="tR3-7H-mVa" secondAttribute="trailing" id="1dc-k7-wqr"/>
+                                    <constraint firstItem="tR3-7H-mVa" firstAttribute="top" secondItem="uZv-WZ-gEp" secondAttribute="bottom" id="1dd-mD-cFo"/>
+                                    <constraint firstItem="lgK-Ow-0yr" firstAttribute="centerY" secondItem="tef-9I-xLO" secondAttribute="centerY" id="1gd-cA-uOl"/>
+                                    <constraint firstItem="uZv-WZ-gEp" firstAttribute="top" secondItem="YHU-MT-5U6" secondAttribute="bottom" id="G58-yU-BxB"/>
+                                    <constraint firstItem="YHU-MT-5U6" firstAttribute="top" secondItem="tef-9I-xLO" secondAttribute="top" id="O4b-k1-cff"/>
+                                    <constraint firstItem="lgK-Ow-0yr" firstAttribute="centerX" secondItem="tef-9I-xLO" secondAttribute="centerX" id="R7X-Pn-nFh"/>
+                                    <constraint firstItem="YHU-MT-5U6" firstAttribute="leading" secondItem="tef-9I-xLO" secondAttribute="leading" id="UIZ-fo-OLR"/>
+                                    <constraint firstItem="tR3-7H-mVa" firstAttribute="leading" secondItem="tef-9I-xLO" secondAttribute="leading" id="Wfd-Zp-ovD"/>
+                                    <constraint firstItem="uZv-WZ-gEp" firstAttribute="leading" secondItem="tef-9I-xLO" secondAttribute="leading" id="ZMf-Zk-NIu"/>
+                                    <constraint firstAttribute="trailing" secondItem="YHU-MT-5U6" secondAttribute="trailing" id="iDl-9Y-4rN"/>
+                                    <constraint firstAttribute="bottom" secondItem="tR3-7H-mVa" secondAttribute="bottom" id="iGj-1I-urB"/>
+                                    <constraint firstAttribute="trailing" secondItem="uZv-WZ-gEp" secondAttribute="trailing" id="nKz-NQ-a0j"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tef-9I-xLO" firstAttribute="top" secondItem="ObT-AL-hIh" secondAttribute="top" id="Abl-W3-bL8"/>
+                            <constraint firstAttribute="trailing" secondItem="tef-9I-xLO" secondAttribute="trailing" id="aQ0-NC-Lho"/>
+                            <constraint firstItem="Uj9-U2-TvJ" firstAttribute="top" secondItem="tef-9I-xLO" secondAttribute="bottom" id="hyY-UM-Fns"/>
+                            <constraint firstItem="tef-9I-xLO" firstAttribute="leading" secondItem="ObT-AL-hIh" secondAttribute="leading" id="vd5-PB-LGc"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="7pT-KY-o2i"/>
+                    <tabBarItem key="tabBarItem" title="Dial" id="7pT-KY-o2i"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Obg-Qv-w3x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="909" y="-1972"/>
+            <point key="canvasLocation" x="909" y="-1927"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="S8M-HO-h8d">
+            <objects>
+                <viewController id="fSV-mB-DfC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tlk-N7-TPf"/>
+                        <viewControllerLayoutGuide type="bottom" id="ndE-S7-M8t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FPt-Y7-Nue">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Setting" id="gCz-fr-gea"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uMN-hy-qpu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1873" y="-2454"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="69A-pE-YTb">
@@ -55,16 +490,134 @@
                         <viewControllerLayoutGuide type="top" id="9vj-8V-9v7"/>
                         <viewControllerLayoutGuide type="bottom" id="a10-TQ-7hh"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YJS-Qa-c45">
+                    <view key="view" contentMode="scaleToFill" id="h15-8F-YdJ">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="leo-pk-i4P" userLabel="topBar">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="66"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_F.png" translatesAutoresizingMaskIntoConstraints="NO" id="MPb-SP-6rq" userLabel="backgroundColor">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tKF-Uj-g6X" userLabel="switchView">
+                                        <rect key="frame" x="0.0" y="0.0" width="307" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eye-ST-53f" userLabel="allButton" customClass="UIIconButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="153.5" height="66"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="All contacts filter"/>
+                                                <inset key="titleEdgeInsets" minX="0.0" minY="16" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" image="history_all_default.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="disabled" image="history_all_disabled.png"/>
+                                                <state key="selected" image="history_all_selected.png"/>
+                                                <state key="highlighted" backgroundImage="color_E.png"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="bottom" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wD-b4-tr8" userLabel="missedButton" customClass="UIIconButton">
+                                                <rect key="frame" x="153.5" y="0.0" width="153.5" height="66"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="Missed contacts filter"/>
+                                                <state key="normal" image="history_missed_default.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="disabled" image="history_missed_disabled.png"/>
+                                                <state key="selected" image="history_missed_selected.png"/>
+                                                <state key="highlighted" backgroundImage="color_E.png"/>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_A.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lvd-Yg-PNA" userLabel="selectedButtonImage">
+                                                <rect key="frame" x="0.0" y="63" width="153.5" height="3"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                    </view>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HyI-cU-qa9" userLabel="cancelButton" customClass="UIIconButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="153.5" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="Delete all"/>
+                                        <state key="normal" image="cancel_edit_default.png">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="disabled" image="cancel_edit_disabled.png"/>
+                                        <state key="highlighted" backgroundImage="color_E.png"/>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYx-F3-kps" userLabel="toggleSelectionButton" customClass="UIIconButton">
+                                        <rect key="frame" x="460.5" y="0.0" width="153.5" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="Select all"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="deselect_all.png">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="disabled" image="select_all_disabled.png"/>
+                                        <state key="selected" image="select_all_default.png"/>
+                                        <state key="highlighted" backgroundImage="color_E.png"/>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZ5-rr-3TF" userLabel="deleteButton" customClass="UIIconButton">
+                                        <rect key="frame" x="614" y="0.0" width="154" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="Delete all"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="delete_default.png">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="disabled" image="delete_disabled.png"/>
+                                        <state key="highlighted" backgroundImage="color_E.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cE-cT-cg4" userLabel="editButton" customClass="UIIconButton">
+                                        <rect key="frame" x="614" y="0.0" width="154" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="Edit"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="edit_list_default.png">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="disabled" image="edit_list_disabled.png"/>
+                                        <state key="highlighted" backgroundImage="color_E.png"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="Xzu-t6-ZoB"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="35" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="DNz-nt-sP7" userLabel="tableView">
+                                <rect key="frame" x="0.0" y="66" width="768" height="958"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                                <color key="separatorColor" red="0.67030966280000004" green="0.71867996450000005" blue="0.75078284740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No call in your history" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAm-Kc-mRF" userLabel="emptyTableLabel">
+                                <rect key="frame" x="0.0" y="66" width="768" height="958"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="leo-pk-i4P" firstAttribute="top" secondItem="h15-8F-YdJ" secondAttribute="top" id="7WH-Gh-65s"/>
+                            <constraint firstAttribute="trailing" secondItem="DNz-nt-sP7" secondAttribute="trailing" id="9rT-UZ-k5A"/>
+                            <constraint firstAttribute="trailing" secondItem="leo-pk-i4P" secondAttribute="trailing" id="GOe-Ac-05L"/>
+                            <constraint firstItem="DNz-nt-sP7" firstAttribute="top" secondItem="leo-pk-i4P" secondAttribute="bottom" id="fjv-U9-8cK"/>
+                            <constraint firstItem="EAm-Kc-mRF" firstAttribute="top" secondItem="leo-pk-i4P" secondAttribute="bottom" id="gYq-6g-4eV"/>
+                            <constraint firstAttribute="trailing" secondItem="EAm-Kc-mRF" secondAttribute="trailing" id="hDF-2o-1Wg"/>
+                            <constraint firstItem="EAm-Kc-mRF" firstAttribute="leading" secondItem="h15-8F-YdJ" secondAttribute="leading" id="hF2-Iy-Cxv"/>
+                            <constraint firstItem="leo-pk-i4P" firstAttribute="leading" secondItem="h15-8F-YdJ" secondAttribute="leading" id="jQY-BF-hfO"/>
+                            <constraint firstItem="DNz-nt-sP7" firstAttribute="leading" secondItem="h15-8F-YdJ" secondAttribute="leading" id="nKf-P5-QsY"/>
+                            <constraint firstAttribute="bottom" secondItem="DNz-nt-sP7" secondAttribute="bottom" id="qx7-Fg-XuP"/>
+                            <constraint firstAttribute="bottom" secondItem="EAm-Kc-mRF" secondAttribute="bottom" id="saB-lI-tv5"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="history" id="Asy-IW-e0m"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gjg-qc-SE9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919" y="-4219"/>
+            <point key="canvasLocation" x="1236" y="-4482"/>
         </scene>
         <!--Main Tab View Controller-->
         <scene sceneID="1S5-RV-8dT">
@@ -79,6 +632,7 @@
                         <segue destination="PiA-e5-rWf" kind="relationship" relationship="viewControllers" id="FwM-Rk-8Mz"/>
                         <segue destination="ez2-LL-LtY" kind="relationship" relationship="viewControllers" id="hOh-oc-OPg"/>
                         <segue destination="aD0-OD-vNJ" kind="relationship" relationship="viewControllers" id="p3B-OG-3V0"/>
+                        <segue destination="fSV-mB-DfC" kind="relationship" relationship="viewControllers" id="NXA-Pj-rMU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lhp-Ra-Agv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -86,6 +640,68 @@
             <point key="canvasLocation" x="-15" y="-2902"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backspace_default.png" width="36" height="19"/>
+        <image name="backspace_disabled.png" width="36" height="19"/>
+        <image name="backspace_over.png" width="36" height="19"/>
+        <image name="call_alt_back_default.png" width="51" height="36"/>
+        <image name="call_alt_back_disabled.png" width="51" height="36"/>
+        <image name="call_audio_start_default.png" width="36" height="36"/>
+        <image name="call_audio_start_disabled.png" width="36" height="36"/>
+        <image name="cancel_edit_default.png" width="29" height="29"/>
+        <image name="cancel_edit_disabled.png" width="29" height="29"/>
+        <image name="color_A.png" width="2" height="2"/>
+        <image name="color_E.png" width="2" height="2"/>
+        <image name="color_F.png" width="2" height="2"/>
+        <image name="color_L.png" width="2" height="2"/>
+        <image name="contact_add_default.png" width="34" height="29"/>
+        <image name="contact_add_disabled.png" width="34" height="29"/>
+        <image name="contacts_all_default.png" width="32" height="27"/>
+        <image name="contacts_all_disabled.png" width="32" height="27"/>
+        <image name="contacts_all_selected.png" width="32" height="27"/>
+        <image name="contacts_sip_default.png" width="38" height="30"/>
+        <image name="contacts_sip_disabled.png" width="38" height="30"/>
+        <image name="contacts_sip_selected.png" width="38" height="30"/>
+        <image name="delete_default.png" width="21" height="28"/>
+        <image name="delete_disabled.png" width="21" height="28"/>
+        <image name="deselect_all.png" width="27" height="27"/>
+        <image name="dialer_background.png" width="414" height="355"/>
+        <image name="edit_list_default.png" width="30" height="28"/>
+        <image name="edit_list_disabled.png" width="30" height="28"/>
+        <image name="history_all_default.png" width="33" height="32"/>
+        <image name="history_all_disabled.png" width="33" height="32"/>
+        <image name="history_all_selected.png" width="33" height="32"/>
+        <image name="history_missed_default.png" width="33" height="33"/>
+        <image name="history_missed_disabled.png" width="33" height="33"/>
+        <image name="history_missed_selected.png" width="33" height="33"/>
+        <image name="numpad_0_default.png" width="53" height="49"/>
+        <image name="numpad_0_over.png" width="27" height="25"/>
+        <image name="numpad_1_default.png" width="53" height="48"/>
+        <image name="numpad_1_over.png" width="27" height="25"/>
+        <image name="numpad_2_default.png" width="53" height="49"/>
+        <image name="numpad_2_over.png" width="27" height="25"/>
+        <image name="numpad_3_default.png" width="53" height="49"/>
+        <image name="numpad_3_over.png" width="27" height="25"/>
+        <image name="numpad_4_default.png" width="53" height="48"/>
+        <image name="numpad_4_over.png" width="27" height="24"/>
+        <image name="numpad_5_default.png" width="53" height="48"/>
+        <image name="numpad_5_over.png" width="27" height="24"/>
+        <image name="numpad_6_default.png" width="53" height="49"/>
+        <image name="numpad_6_over.png" width="27" height="25"/>
+        <image name="numpad_7_default.png" width="53" height="48"/>
+        <image name="numpad_7_over.png" width="27" height="24"/>
+        <image name="numpad_8_default.png" width="53" height="49"/>
+        <image name="numpad_8_over.png" width="27" height="25"/>
+        <image name="numpad_9_default.png" width="53" height="49"/>
+        <image name="numpad_9_over.png" width="27" height="25"/>
+        <image name="numpad_hash_default.png" width="53" height="49"/>
+        <image name="numpad_hash_over.png" width="27" height="24"/>
+        <image name="numpad_over_background.png" width="2" height="2"/>
+        <image name="numpad_star_default.png" width="53" height="51"/>
+        <image name="numpad_star_over.png" width="27" height="26"/>
+        <image name="select_all_default.png" width="27" height="27"/>
+        <image name="select_all_disabled.png" width="27" height="27"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
