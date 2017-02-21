@@ -8,7 +8,8 @@
 
 #import "ShopTableView.h"
 #import "ShopView.h"
-#import "PhoneMainView.h"
+//#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 #import "LinphoneUI/UIShopTableCell.h"
 
 @implementation ShopTableView

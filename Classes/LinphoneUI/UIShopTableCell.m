@@ -20,7 +20,8 @@
 #import "UIShopTableCell.h"
 #import "Utils.h"
 #import "UILabel+Boldify.h"
-#import "PhoneMainView.h"
+//#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 
 @implementation UIShopTableCell
 
@@ -65,7 +66,7 @@ UIImageView *infoImage;
 														  handler:^(UIAlertAction * action) {}];
 	
 	[errView addAction:defaultAction];
-	[PhoneMainView.instance presentViewController:errView animated:YES completion:nil];
+	[MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
 }
 
 - (void)touchUp:(id)sender {

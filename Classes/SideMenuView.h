@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 #import "SideMenuTableView.h"
-#import "PhoneMainView.h"
+//#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 
 @interface SideMenuView : UIViewController <ImagePickerDelegate>
 

@@ -8,7 +8,8 @@
 
 #import "UIBackToCallButton.h"
 #import "LinphoneManager.h"
-#import "PhoneMainView.h"
+//#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 
 @implementation UIBackToCallButton
 
@@ -35,7 +36,7 @@
 }
 
 - (IBAction)onBackToCallClick:(id)sender {
-	[PhoneMainView.instance popToView:CallView.compositeViewDescription];
+	[MainTabViewController.instance popToView:CallView.compositeViewDescription];
 }
 
 @end

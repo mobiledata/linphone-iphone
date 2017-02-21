@@ -9,7 +9,8 @@
 #import "SideMenuTableView.h"
 #import "Utils.h"
 
-#import "PhoneMainView.h"
+//#import "MainTabViewController.h"
+#import "MainTabViewController.h"
 #import "StatusBarView.h"
 #import "ShopView.h"
 #import "LinphoneManager.h"
@@ -44,7 +45,7 @@
 	[_sideMenuEntries
 		addObject:[[SideMenuEntry alloc] initWithTitle:NSLocalizedString(@"Assistant", nil)
 											  tapBlock:^() {
-												[PhoneMainView.instance
+												[MainTabViewController.instance
 													changeCurrentView:AssistantView.compositeViewDescription];
 											  }]];
 	BOOL mustLink = ([LinphoneManager.instance lpConfigIntForKey:@"must_link_account_time"] > 0);
@@ -52,7 +53,7 @@
 		[_sideMenuEntries
 			addObject:[[SideMenuEntry alloc] initWithTitle:NSLocalizedString(@"Link my account", nil)
 												  tapBlock:^() {
-													[PhoneMainView.instance
+													[MainTabViewController.instance
 														changeCurrentView:AssistantLinkView.compositeViewDescription];
 												  }]];
 	}
@@ -60,7 +61,7 @@
 	[_sideMenuEntries
 		addObject:[[SideMenuEntry alloc] initWithTitle:NSLocalizedString(@"Settings", nil)
 											  tapBlock:^() {
-												[PhoneMainView.instance
+												[MainTabViewController.instance
 													changeCurrentView:SettingsView.compositeViewDescription];
 											  }]];
 	InAppProductsManager *iapm = LinphoneManager.instance.iapManager;
@@ -68,13 +69,13 @@
 		[_sideMenuEntries
 			addObject:[[SideMenuEntry alloc] initWithTitle:NSLocalizedString(@"Shop", nil)
 												  tapBlock:^() {
-													[PhoneMainView.instance
+													[MainTabViewController.instance
 														changeCurrentView:ShopView.compositeViewDescription];
 												  }]];
 	}
 	[_sideMenuEntries addObject:[[SideMenuEntry alloc] initWithTitle:NSLocalizedString(@"About", nil)
 															tapBlock:^() {
-															  [PhoneMainView.instance
+															  [MainTabViewController.instance
 																  changeCurrentView:AboutView.compositeViewDescription];
 
 															}]];
@@ -127,7 +128,7 @@
 	[tableView deselectRowAtIndexPath:indexPath animated:NO];
 
 	if (indexPath.section == 0) {
-		[PhoneMainView.instance changeCurrentView:SettingsView.compositeViewDescription];
+		[MainTabViewController.instance changeCurrentView:SettingsView.compositeViewDescription];
 	} else {
 		SideMenuEntry *entry = [_sideMenuEntries objectAtIndex:indexPath.row];
 		LOGI(@"Entry %@ has been tapped", entry->title);
@@ -137,7 +138,7 @@
 			entry->onTapBlock();
 		}
 	}
-	[PhoneMainView.instance.mainViewController hideSideMenu:YES];
+	[MainTabViewController.instance.mainViewController hideSideMenu:YES];
 }
 
 @end

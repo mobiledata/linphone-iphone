@@ -42,7 +42,8 @@
 
 #import <AVFoundation/AVAudioPlayer.h>
 #import "Utils.h"
-#import "PhoneMainView.h"
+#import "MainTabViewController.h"
+#import "MainTabViewController.h"
 #import "ChatsListView.h"
 #import "ChatConversationView.h"
 #import <UserNotifications/UserNotifications.h>
@@ -61,7 +62,7 @@ NSString *const kLinphoneTextComposeEvent = @"LinphoneTextComposeStarted";
 NSString *const kLinphoneCallUpdate = @"LinphoneCallUpdate";
 NSString *const kLinphoneRegistrationUpdate = @"LinphoneRegistrationUpdate";
 NSString *const kLinphoneAddressBookUpdate = @"LinphoneAddressBookUpdate";
-NSString *const kLinphoneMainViewChange = @"LinphoneMainViewChange";
+//NSString *const kLinMainTabViewControllerChange = @"LinMainTabViewControllerChange";
 NSString *const kLinphoneLogsUpdate = @"LinphoneLogsUpdate";
 NSString *const kLinphoneSettingsUpdate = @"LinphoneSettingsUpdate";
 NSString *const kLinphoneBluetoothAvailabilityUpdate = @"LinphoneBluetoothAvailabilityUpdate";
@@ -685,7 +686,7 @@ static void linphone_iphone_display_status(struct _LinphoneCore *lc, const char 
 					 linphone_call_params_video_enabled(linphone_call_get_remote_params(call)));
 			[LinphoneManager.instance.providerDelegate reportIncomingCallwithUUID:uuid handle:address video:video];
 #else
-			[PhoneMainView.instance displayIncomingCall:call];
+			[MainTabViewController.instance displayIncomingCall:call];
 #endif
 		} else if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
 			// Create a UNNotification
@@ -901,7 +902,7 @@ static void linphone_iphone_display_status(struct _LinphoneCore *lc, const char 
 			}
 		}
 		if (state == LinphoneCallError) {
-			[PhoneMainView.instance popCurrentView];
+			[MainTabViewController.instance popCurrentView];
 		}
 	}
 
@@ -1086,7 +1087,7 @@ static void linphone_iphone_registration_state(LinphoneCore *lc, LinphoneProxyCo
 static void linphone_iphone_popup_password_request(LinphoneCore *lc, const char *realmC, const char *usernameC,
 												   const char *domainC) {
 	// let the wizard handle its own errors
-	if ([PhoneMainView.instance currentView] != AssistantView.compositeViewDescription) {
+	if ([MainTabViewController.instance currentView] != AssistantView.compositeViewDescription) {
 		static UIAlertController *alertView = nil;
 
 		// avoid having multiple popups
@@ -1135,13 +1136,13 @@ static void linphone_iphone_popup_password_request(LinphoneCore *lc, const char 
 		UIAlertAction* settingsAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Go to settings", nil)
 																 style:UIAlertActionStyleDefault
 															   handler:^(UIAlertAction * action) {
-																   [PhoneMainView.instance changeCurrentView:SettingsView.compositeViewDescription];
+																   [MainTabViewController.instance changeCurrentView:SettingsView.compositeViewDescription];
 															   }];
 		
 		[alertView addAction:defaultAction];
 		[alertView addAction:continueAction];
 		[alertView addAction:settingsAction];
-		[PhoneMainView.instance presentViewController:alertView animated:YES completion:nil];
+		[MainTabViewController.instance presentViewController:alertView animated:YES completion:nil];
 	}
 }
 
@@ -1166,7 +1167,7 @@ static void linphone_iphone_popup_password_request(LinphoneCore *lc, const char 
 	NSString *remote_uri = [NSString stringWithUTF8String:c_address];
 	ms_free(c_address);
 
-	if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground || ((PhoneMainView.instance.currentView != ChatsListView.compositeViewDescription) && ((PhoneMainView.instance.currentView != ChatConversationView.compositeViewDescription))) || (PhoneMainView.instance.currentView == ChatConversationView.compositeViewDescription && room != PhoneMainView.instance.currentRoom)) {
+	if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground || ((MainTabViewController.instance.currentView != ChatsListView.compositeViewDescription) && ((MainTabViewController.instance.currentView != ChatConversationView.compositeViewDescription))) || (MainTabViewController.instance.currentView == ChatConversationView.compositeViewDescription && room != MainTabViewController.instance.currentRoom)) {
 		// Create a new notification
         
         if(floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_9_x_Max) {
@@ -1354,7 +1355,7 @@ static void linphone_iphone_message_received_unable_decrypt(LinphoneCore *lc, Li
 
 		[errView addAction:defaultAction];
 		[errView addAction:callAction];
-		[PhoneMainView.instance presentViewController:errView animated:YES completion:nil];
+		[MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
 	}
 }
 
@@ -1449,7 +1450,7 @@ static void linphone_iphone_call_encryption_changed(LinphoneCore *lc, LinphoneCa
 															 [self call:linphone_chat_room_get_peer_address(room)];
 														   }];
 		[errView addAction:callAction];
-		[PhoneMainView.instance presentViewController:errView animated:YES completion:nil];
+		[MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
 	} else {
 		if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_x_Max) {
 			UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
@@ -1894,7 +1895,7 @@ static BOOL libStarted = FALSE;
 															  handler:^(UIAlertAction * action) {}];
 		
 		[errView addAction:defaultAction];
-		[PhoneMainView.instance presentViewController:errView animated:YES completion:nil];
+		[MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
 	}
 
 	// Disable notify policy
@@ -1931,12 +1932,12 @@ void popup_link_account_cb(LinphoneAccountCreator *creator, LinphoneAccountCreat
 			UIAlertAction* continueAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Let's go", nil)
 																	 style:UIAlertActionStyleDefault
 																   handler:^(UIAlertAction * action) {
-																	   [PhoneMainView.instance changeCurrentView:AssistantLinkView.compositeViewDescription];
+																	   [MainTabViewController.instance changeCurrentView:AssistantLinkView.compositeViewDescription];
 																   }];
 			defaultAction.accessibilityLabel = @"Later";
 			[errView addAction:defaultAction];
 			[errView addAction:continueAction];
-			[PhoneMainView.instance presentViewController:errView animated:YES completion:nil];
+			[MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
 
 			[LinphoneManager.instance
 				lpConfigSetInt:[[NSDate date] dateByAddingTimeInterval:[LinphoneManager.instance
@@ -2508,7 +2509,7 @@ static int comp_call_state_paused(const LinphoneCall *call, const void *param) {
 															  handler:^(UIAlertAction * action) {}];
 		
 		[errView addAction:defaultAction];
-		[PhoneMainView.instance presentViewController:errView animated:YES completion:nil];
+		[MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
 		return;
 	}
 
@@ -2525,7 +2526,7 @@ static int comp_call_state_paused(const LinphoneCall *call, const void *param) {
 															  handler:^(UIAlertAction * action) {}];
 
 		[errView addAction:defaultAction];
-		[PhoneMainView.instance presentViewController:errView animated:YES completion:nil];
+		[MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
 		return;
 	}
 
@@ -2541,7 +2542,7 @@ static int comp_call_state_paused(const LinphoneCall *call, const void *param) {
 															  handler:^(UIAlertAction * action) {}];
 		
 		[errView addAction:defaultAction];
-		[PhoneMainView.instance presentViewController:errView animated:YES completion:nil];
+		[MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
 		return;
 	}
 

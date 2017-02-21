@@ -18,7 +18,8 @@
  */
 
 #import "ChatsListView.h"
-#import "PhoneMainView.h"
+//#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 
 #import "ChatConversationCreateView.h"
 @implementation ChatsListView
@@ -80,7 +81,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 #pragma mark - Action Functions
 
 - (IBAction)onAddClick:(id)event {
-	[PhoneMainView.instance changeCurrentView:ChatConversationCreateView.compositeViewDescription];
+	[MainTabViewController.instance changeCurrentView:ChatConversationCreateView.compositeViewDescription];
 }
 
 - (IBAction)onEditionChangeClick:(id)sender {

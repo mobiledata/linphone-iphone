@@ -23,7 +23,7 @@
 // In app purchase are not supported by the Simulator
 #import "XMLRPCHelper.h"
 #import "LinphoneManager.h"
-#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 #import "StoreKit/StoreKit.h"
 
 @interface InAppProductsManager ()
@@ -419,7 +419,7 @@
 		UIAlertAction* buyAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Buy", nil)
 															style:UIAlertActionStyleDefault
 														  handler:^(UIAlertAction * action) {
-															  [PhoneMainView.instance changeCurrentView:ShopView.compositeViewDescription];
+															  [MainTabViewController.instance changeCurrentView:ShopView.compositeViewDescription];
 														  }];
 
 		UIAlertAction *laterAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Later", nil)
@@ -430,7 +430,7 @@
 
 		[alert addAction:buyAction];
 		[alert addAction:laterAction];
-		[PhoneMainView.instance presentViewController:alert animated:YES completion:nil];
+		[MainTabViewController.instance presentViewController:alert animated:YES completion:nil];
 	}
 }
 

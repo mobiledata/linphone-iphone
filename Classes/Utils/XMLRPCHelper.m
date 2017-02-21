@@ -11,7 +11,8 @@
 #import "LinphoneManager.h"
 #import "XMLRPCHelper.h"
 #import "Utils.h"
-#import "PhoneMainView.h"
+//#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 
 /* This subclass allows use to store the block to execute on success */
 @interface XMLRPCRequestObject : NSObject
@@ -139,7 +140,7 @@ static void linphone_xmlrpc_call_back_received(LinphoneXmlRpcRequest *request) {
 														  handler:^(UIAlertAction * action) {}];
 	
 	[errView addAction:defaultAction];
-	[PhoneMainView.instance presentViewController:errView animated:YES completion:nil];
+	[MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
 }
 
 @end

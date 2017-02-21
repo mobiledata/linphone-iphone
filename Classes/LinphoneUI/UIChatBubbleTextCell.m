@@ -19,7 +19,7 @@
 
 #import "UIChatBubbleTextCell.h"
 #import "LinphoneManager.h"
-#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 
 #import <AssetsLibrary/ALAsset.h>
 #import <AssetsLibrary/ALAssetRepresentation.h>
@@ -190,7 +190,7 @@
 														  }];
 
 	[errView addAction:defaultAction];
-	[PhoneMainView.instance presentViewController:errView animated:YES completion:nil];
+	[MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
 }
 
 #pragma mark - Action Functions

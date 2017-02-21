@@ -17,7 +17,7 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 #import "ContactsListView.h"
 #import "ContactDetailsView.h"
 #import "ShopView.h"
@@ -80,16 +80,16 @@
 
 	if (startedInBackground) {
 		startedInBackground = FALSE;
-		[PhoneMainView.instance startUp];
-		[PhoneMainView.instance updateStatusBar:nil];
+		[MainTabViewController.instance startUp];
+		[MainTabViewController.instance updateStatusBar:nil];
 	}
 	LinphoneManager *instance = LinphoneManager.instance;
 	[instance becomeActive];
 	
 	if (instance.fastAddressBook.needToUpdate) {
 		//Update address book for external changes
-		if (PhoneMainView.instance.currentView == ContactsListView.compositeViewDescription || PhoneMainView.instance.currentView == ContactDetailsView.compositeViewDescription) {
-			[PhoneMainView.instance changeCurrentView:DialerView.compositeViewDescription];
+		if (MainTabViewController.instance.currentView == ContactsListView.compositeViewDescription || MainTabViewController.instance.currentView == ContactDetailsView.compositeViewDescription) {
+			[MainTabViewController.instance changeCurrentView:DialerView.compositeViewDescription];
 		}
 		[instance.fastAddressBook reload];
 		instance.fastAddressBook.needToUpdate = FALSE;
@@ -118,12 +118,12 @@
 			if ((floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_9_x_Max)) {
 				if ([LinphoneManager.instance lpConfigBoolForKey:@"autoanswer_notif_preference"]) {
 					linphone_core_accept_call(LC, call);
-					[PhoneMainView.instance changeCurrentView:CallView.compositeViewDescription];
+					[MainTabViewController.instance changeCurrentView:CallView.compositeViewDescription];
 				} else {
-					[PhoneMainView.instance displayIncomingCall:call];
+					[MainTabViewController.instance displayIncomingCall:call];
 				}
 			} else if (linphone_core_get_calls_nb(LC) > 1) {
-				[PhoneMainView.instance displayIncomingCall:call];
+				[MainTabViewController.instance displayIncomingCall:call];
 			}
 
 			// in this case, the ringing sound comes from the notification.
@@ -322,11 +322,12 @@
 
 	[LinphoneManager.instance startLinphoneCore];
 	LinphoneManager.instance.iapManager.notificationCategory = @"expiry_notification";
-	// initialize UI
+	
+    // initialize UI
 	[self.window makeKeyAndVisible];
-	[RootViewManager setupWithPortrait:(PhoneMainView *)self.window.rootViewController];
-	[PhoneMainView.instance startUp];
-	[PhoneMainView.instance updateStatusBar:nil];
+	[RootViewManager setupWithPortrait:(MainTabViewController *)self.window.rootViewController];
+	[MainTabViewController.instance startUp];
+	[MainTabViewController.instance updateStatusBar:nil];
     
 	if (bgStartId != UIBackgroundTaskInvalid)
 		[[UIApplication sharedApplication] endBackgroundTask:bgStartId];
@@ -393,7 +394,7 @@
 		[errView addAction:defaultAction];
 		[errView addAction:yesAction];
 
-		[PhoneMainView.instance presentViewController:errView animated:YES completion:nil];
+		[MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
 	} else {
 		if ([[url scheme] isEqualToString:@"sip"]) {
 			// remove "sip://" from the URI, and do it correctly by taking resourceSpecifier and removing leading and
@@ -700,7 +701,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 
 	if ([response.actionIdentifier isEqual:@"Answer"]) {
 		// use the standard handler
-		[PhoneMainView.instance changeCurrentView:CallView.compositeViewDescription];
+		[MainTabViewController.instance changeCurrentView:CallView.compositeViewDescription];
 		linphone_core_accept_call(LC, call);
 	} else if ([response.actionIdentifier isEqual:@"Decline"]) {
 		linphone_core_decline_call(LC, call, LinphoneReasonDeclined);
@@ -717,20 +718,20 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 				[LinphoneManager.instance alertLIME:room];
 			}
 			linphone_chat_room_mark_as_read(room);
-			TabBarView *tab = (TabBarView *)[PhoneMainView.instance.mainViewController
+			TabBarView *tab = (TabBarView *)[MainTabViewController.instance.mainViewController
 				getCachedController:NSStringFromClass(TabBarView.class)];
 			[tab update:YES];
-			[PhoneMainView.instance updateApplicationBadgeNumber];
+			[MainTabViewController.instance updateApplicationBadgeNumber];
 		}
 	} else if ([response.actionIdentifier isEqual:@"Seen"]) {
 		NSString *from = [response.notification.request.content.userInfo objectForKey:@"from_addr"];
 		LinphoneChatRoom *room = linphone_core_get_chat_room_from_uri(LC, [from UTF8String]);
 		if (room) {
 			linphone_chat_room_mark_as_read(room);
-			TabBarView *tab = (TabBarView *)[PhoneMainView.instance.mainViewController
+			TabBarView *tab = (TabBarView *)[MainTabViewController.instance.mainViewController
 				getCachedController:NSStringFromClass(TabBarView.class)];
 			[tab update:YES];
-			[PhoneMainView.instance updateApplicationBadgeNumber];
+			[MainTabViewController.instance updateApplicationBadgeNumber];
 		}
 
 	} else if ([response.actionIdentifier isEqual:@"Cancel"]) {
@@ -744,7 +745,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 		LOGI(@"User accept video proposal");
 		if (call == linphone_core_get_current_call(LC)) {
 			[[UNUserNotificationCenter currentNotificationCenter] removeAllDeliveredNotifications];
-			[PhoneMainView.instance changeCurrentView:CallView.compositeViewDescription];
+			[MainTabViewController.instance changeCurrentView:CallView.compositeViewDescription];
 			LinphoneCallParams *params = linphone_core_create_call_params(LC, call);
 			linphone_call_params_enable_video(params, TRUE);
 			linphone_core_accept_call_update(LC, call, params);
@@ -762,11 +763,11 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 
 	} else { // in this case the value is : com.apple.UNNotificationDefaultActionIdentifier
 		if ([response.notification.request.content.categoryIdentifier isEqual:@"call_cat"]) {
-			[PhoneMainView.instance displayIncomingCall:call];
+			[MainTabViewController.instance displayIncomingCall:call];
 		} else if ([response.notification.request.content.categoryIdentifier isEqual:@"msg_cat"]) {
-			[PhoneMainView.instance changeCurrentView:ChatsListView.compositeViewDescription];
+			[MainTabViewController.instance changeCurrentView:ChatsListView.compositeViewDescription];
 		} else if ([response.notification.request.content.categoryIdentifier isEqual:@"video_request"]) {
-			[PhoneMainView.instance changeCurrentView:CallView.compositeViewDescription];
+			[MainTabViewController.instance changeCurrentView:CallView.compositeViewDescription];
 			NSTimer *videoDismissTimer = nil;
 
 			UIConfirmationDialog *sheet =
@@ -792,7 +793,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 						  [videoDismissTimer invalidate];
 					  }
 					}
-					inController:PhoneMainView.instance];
+					inController:MainTabViewController.instance];
 
 			videoDismissTimer = [NSTimer scheduledTimerWithTimeInterval:30
 																 target:self
@@ -831,7 +832,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 		} else if ([response.notification.request.content.categoryIdentifier isEqual:@"lime"]) {
 			return;
 		} else { // Missed call
-			[PhoneMainView.instance changeCurrentView:HistoryListView.compositeViewDescription];
+			[MainTabViewController.instance changeCurrentView:HistoryListView.compositeViewDescription];
 		}
 	}
 }
@@ -862,7 +863,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 		if ([notification.category isEqualToString:@"incoming_call"]) {
 			if ([identifier isEqualToString:@"answer"]) {
 				// use the standard handler
-				[PhoneMainView.instance changeCurrentView:CallView.compositeViewDescription];
+				[MainTabViewController.instance changeCurrentView:CallView.compositeViewDescription];
 				linphone_core_accept_call(LC, call);
 			} else if ([identifier isEqualToString:@"decline"]) {
 				LinphoneCall *call = linphone_core_get_current_call(LC);
@@ -872,16 +873,16 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 		} else if ([notification.category isEqualToString:@"incoming_msg"]) {
 			if ([identifier isEqualToString:@"reply"]) {
 				// use the standard handler
-				[PhoneMainView.instance changeCurrentView:ChatsListView.compositeViewDescription];
+				[MainTabViewController.instance changeCurrentView:ChatsListView.compositeViewDescription];
 			} else if ([identifier isEqualToString:@"mark_read"]) {
 				NSString *from = [notification.userInfo objectForKey:@"from_addr"];
 				LinphoneChatRoom *room = linphone_core_get_chat_room_from_uri(LC, [from UTF8String]);
 				if (room) {
 					linphone_chat_room_mark_as_read(room);
-					TabBarView *tab = (TabBarView *)[PhoneMainView.instance.mainViewController
+					TabBarView *tab = (TabBarView *)[MainTabViewController.instance.mainViewController
 						getCachedController:NSStringFromClass(TabBarView.class)];
 					[tab update:YES];
-					[PhoneMainView.instance updateApplicationBadgeNumber];
+					[MainTabViewController.instance updateApplicationBadgeNumber];
 				}
 			}
 		}
@@ -906,7 +907,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 	if ([notification.category isEqualToString:@"incoming_call"]) {
 		if ([identifier isEqualToString:@"answer"]) {
 			// use the standard handler
-			[PhoneMainView.instance changeCurrentView:CallView.compositeViewDescription];
+			[MainTabViewController.instance changeCurrentView:CallView.compositeViewDescription];
 			linphone_core_accept_call(LC, call);
 		} else if ([identifier isEqualToString:@"decline"]) {
 			LinphoneCall *call = linphone_core_get_current_call(LC);
@@ -928,7 +929,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 			}
 
 			linphone_chat_room_mark_as_read(room);
-			[PhoneMainView.instance updateApplicationBadgeNumber];
+			[MainTabViewController.instance updateApplicationBadgeNumber];
 		}
 	}
 	completionHandler();
@@ -952,9 +953,9 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 															  handler:^(UIAlertAction * action) {}];
 		
 		[errView addAction:defaultAction];
-		[PhoneMainView.instance presentViewController:errView animated:YES completion:nil];
+		[MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
 
-		[PhoneMainView.instance startUp];
+		[MainTabViewController.instance startUp];
 	}
 	if (state == LinphoneConfiguringFailed) {
 		[NSNotificationCenter.defaultCenter removeObserver:self name:kLinphoneConfiguringStateUpdate object:nil];
@@ -968,7 +969,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 															  handler:^(UIAlertAction * action) {}];
 		
 		[errView addAction:defaultAction];
-		[PhoneMainView.instance presentViewController:errView animated:YES completion:nil];
+		[MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
 	}
 }
 
@@ -984,7 +985,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 	[progress setColor:[UIColor blackColor]];
 	
 	[progress startAnimating];
-	[PhoneMainView.instance presentViewController:_waitingIndicator animated:YES completion:nil];
+	[MainTabViewController.instance presentViewController:_waitingIndicator animated:YES completion:nil];
 }
 
 - (void)attemptRemoteConfiguration {
@@ -1002,7 +1003,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 #pragma mark - Prevent ImagePickerView from rotating
 
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
-	if ([[(PhoneMainView*)self.window.rootViewController currentView] equal:ImagePickerView.compositeViewDescription])
+	if ([[(MainTabViewController*)self.window.rootViewController currentView] equal:ImagePickerView.compositeViewDescription])
 	{
 		//Prevent rotation of camera
 		NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];

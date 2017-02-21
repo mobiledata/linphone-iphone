@@ -7,7 +7,8 @@
 //
 
 #import "ChatConversationCreateView.h"
-#import "PhoneMainView.h"
+//#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 
 @implementation ChatConversationCreateView
 
@@ -54,7 +55,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 #pragma mark - searchBar delegate
 
 - (IBAction)onBackClick:(id)sender {
-	[PhoneMainView.instance popCurrentView];
+	[MainTabViewController.instance popCurrentView];
 }
 
 - (void)dismissKeyboards {

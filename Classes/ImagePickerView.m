@@ -20,7 +20,7 @@
 #import <MobileCoreServices/UTCoreTypes.h>
 
 #import "ImagePickerView.h"
-#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 
 @implementation ImagePickerView
 
@@ -106,7 +106,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 	[[UIApplication sharedApplication]
 		setStatusBarStyle:UIStatusBarStyleDefault]; // Fix UIImagePickerController status bar style change
 
-	[PhoneMainView.instance hideStatusBar:YES];
+	[MainTabViewController.instance hideStatusBar:YES];
 	
 	//Prevent rotation of camera
 	NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
@@ -119,7 +119,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 		[popoverController dismissPopoverAnimated:NO];
 	}
 
-	[PhoneMainView.instance hideStatusBar:NO];
+	[MainTabViewController.instance hideStatusBar:NO];
 }
 
 #pragma mark - Property Functions
@@ -151,8 +151,8 @@ static UICompositeViewDescription *compositeDescription = nil;
 #pragma mark -
 
 - (void)dismiss {
-	if ([[PhoneMainView.instance currentView] equal:ImagePickerView.compositeViewDescription]) {
-		[PhoneMainView.instance popCurrentView];
+	if ([[MainTabViewController.instance currentView] equal:ImagePickerView.compositeViewDescription]) {
+		[MainTabViewController.instance popCurrentView];
 	}
 }
 
@@ -218,7 +218,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 								permittedArrowDirections:UIPopoverArrowDirectionAny
 												animated:FALSE];
 	  } else {
-		  [PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
+		  [MainTabViewController.instance changeCurrentView:view.compositeViewDescription];
 	  }
 	};
 
@@ -237,7 +237,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 	}
 	[sheet addCancelButtonWithTitle:NSLocalizedString(@"Cancel", nil) block:nil];
 
-	[sheet showInView:PhoneMainView.instance.view];
+	[sheet showInView:MainTabViewController.instance.view];
 }
 
 @end

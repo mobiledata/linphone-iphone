@@ -23,7 +23,7 @@
 #import "FileTransferDelegate.h"
 
 #import "linphone/linphonecore.h"
-#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 #import "Utils.h"
 
 @implementation ChatsListTableView {
@@ -59,7 +59,7 @@
 	// we cannot do that in viewWillAppear because we will change view while previous transition
 	// was not finished, leading to "[CALayer retain]: message sent to deallocated instance" error msg
 	if (IPAD && [self totalNumberOfItems] > 0) {
-		[PhoneMainView.instance changeCurrentView:ChatConversationView.compositeViewDescription];
+		[MainTabViewController.instance changeCurrentView:ChatConversationView.compositeViewDescription];
 	}
 }
 
@@ -133,7 +133,7 @@ static void chatTable_free_chatrooms(void *data) {
 			NSIndexPath *indexPath = [NSIndexPath indexPathForRow:idx inSection:0];
 			[self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 		} else if (![self selectFirstRow]) {
-			[PhoneMainView.instance changeCurrentView:ChatConversationCreateView.compositeViewDescription];
+			[MainTabViewController.instance changeCurrentView:ChatConversationCreateView.compositeViewDescription];
 		}
 	}
 }
@@ -173,7 +173,7 @@ static void chatTable_free_chatrooms(void *data) {
 			UIChatCell *cell = (UIChatCell *)[tableView cellForRowAtIndexPath:indexPath];
 			[cell updateUnreadBadge];
 		}
-		[PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
+		[MainTabViewController.instance changeCurrentView:view.compositeViewDescription];
 	}
 }
 

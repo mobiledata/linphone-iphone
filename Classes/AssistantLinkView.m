@@ -66,7 +66,7 @@
 		linphone_account_creator_set_domain(account_creator, linphone_proxy_config_get_domain(cfg));
 	} else {
 		LOGW(@"Default proxy is NOT a sip.linphone.org, aborting");
-		[PhoneMainView.instance popToView:DialerView.compositeViewDescription];
+		[MainTabViewController.instance popToView:DialerView.compositeViewDescription];
 	}
 
 	CTTelephonyNetworkInfo *networkInfo = [CTTelephonyNetworkInfo new];
@@ -189,7 +189,7 @@ void assistant_activate_phone_number_link(LinphoneAccountCreator *creator, Linph
 			linphone_proxy_config_set_dial_prefix(cfg, prefix[0] == '+' ? &prefix[1] : prefix);
 			linphone_proxy_config_done(cfg);
 		}
-		[PhoneMainView.instance popToView:DialerView.compositeViewDescription];
+		[MainTabViewController.instance popToView:DialerView.compositeViewDescription];
 		[[NSNotificationCenter defaultCenter] postNotificationName:kLinphoneAddressBookUpdate object:NULL];
 		[LinphoneManager.instance.fastAddressBook reload];
 	} else {
@@ -229,7 +229,7 @@ void assistant_activate_phone_number_link(LinphoneAccountCreator *creator, Linph
 	self.firstTime = FALSE;
 	CountryListView *view = VIEW(CountryListView);
 	[view setDelegate:(id)self];
-	[PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
+	[MainTabViewController.instance changeCurrentView:view.compositeViewDescription];
 }
 
 - (IBAction)onLinkAccount:(id)sender {
@@ -250,7 +250,7 @@ void assistant_activate_phone_number_link(LinphoneAccountCreator *creator, Linph
 }
 
 - (IBAction)onDialerClick:(id)sender {
-	[PhoneMainView.instance popToView:DialerView.compositeViewDescription];
+	[MainTabViewController.instance popToView:DialerView.compositeViewDescription];
 }
 
 - (IBAction)onPhoneNumberDisclosureClick:(id)sender {

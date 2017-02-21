@@ -669,6 +669,7 @@
 		63FD3F121CA17FA400E9AECC /* libmbedx509.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63FD3F081CA17F9100E9AECC /* libmbedx509.a */; };
 		70E542F313E147E3002BA2C0 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E542F213E147E3002BA2C0 /* OpenGLES.framework */; };
 		70E542F513E147EB002BA2C0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E542F413E147EB002BA2C0 /* QuartzCore.framework */; };
+		83EB20241E57F8400095C3F2 /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EB20231E57F8400095C3F2 /* MainTabViewController.m */; };
 		8C2595DD1DEDC92D007A6424 /* ProviderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2595DC1DEDC92D007A6424 /* ProviderDelegate.m */; };
 		8C2595DF1DEDCC8E007A6424 /* CallKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2595DE1DEDCC8E007A6424 /* CallKit.framework */; };
 		8C2595E11DEDDC67007A6424 /* callkit_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2595E01DEDDC67007A6424 /* callkit_logo.png */; };
@@ -749,7 +750,6 @@
 		D3F795D615A582810077328B /* ChatConversationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F795D415A582800077328B /* ChatConversationView.m */; };
 		D3F7998115BD32370018C273 /* TPMultiLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F7998015BD32370018C273 /* TPMultiLayoutViewController.m */; };
 		D3F83EEC1582021700336684 /* CallView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F83EEA1582021700336684 /* CallView.m */; };
-		D3F83F8E15822ABE00336684 /* PhoneMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F83F8D15822ABD00336684 /* PhoneMainView.m */; };
 		F03CA84318C72F1A0008889D /* UITextViewNoDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = F03CA84218C72F1A0008889D /* UITextViewNoDefine.m */; };
 		F05BAA621A5D594E00411815 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F05BAA611A5D594E00411815 /* libz.dylib */; };
 		F05BAA631A5D75BC00411815 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F05BAA611A5D594E00411815 /* libz.dylib */; };
@@ -1592,6 +1592,8 @@
 		7066FC0B13E830E400EFC6DC /* libvpx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvpx.a; path = "liblinphone-sdk/apple-darwin/lib/libvpx.a"; sourceTree = "<group>"; };
 		70E542F213E147E3002BA2C0 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		70E542F413E147EB002BA2C0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		83EB20221E57F8400095C3F2 /* MainTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabViewController.h; sourceTree = "<group>"; };
+		83EB20231E57F8400095C3F2 /* MainTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabViewController.m; sourceTree = "<group>"; };
 		8C1C42E61E43408E00FE9A91 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/AboutView.strings; sourceTree = "<group>"; };
 		8C1C42E71E43408F00FE9A91 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/AssistantLinkView.strings; sourceTree = "<group>"; };
 		8C1C42E81E43409000FE9A91 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/AssistantView.strings; sourceTree = "<group>"; };
@@ -1763,8 +1765,6 @@
 		D3F7998015BD32370018C273 /* TPMultiLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPMultiLayoutViewController.m; path = Utils/TPMultiLayoutViewController/TPMultiLayoutViewController.m; sourceTree = "<group>"; };
 		D3F83EE91582021700336684 /* CallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallView.h; sourceTree = "<group>"; };
 		D3F83EEA1582021700336684 /* CallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallView.m; sourceTree = "<group>"; };
-		D3F83F8C158229C500336684 /* PhoneMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneMainView.h; sourceTree = "<group>"; };
-		D3F83F8D15822ABD00336684 /* PhoneMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneMainView.m; sourceTree = "<group>"; };
 		F0181B6B18BF7B1200A9A357 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		F03A9B7E18C0D9C900C4D7FE /* libcunit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcunit.a; path = "liblinphone-sdk/apple-darwin/lib/libcunit.a"; sourceTree = "<group>"; };
 		F03A9B9418C0DAE100C4D7FE /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
@@ -2084,9 +2084,9 @@
 				D3EA53FB159850E80037DC6B /* LinphoneManager.h */,
 				D3EA53FC159850E80037DC6B /* LinphoneManager.m */,
 				2214EB7012F84668002A5394 /* LinphoneUI */,
+				83EB20221E57F8400095C3F2 /* MainTabViewController.h */,
+				83EB20231E57F8400095C3F2 /* MainTabViewController.m */,
 				F0642EF019DAC891009DB336 /* MainStoryboard.storyboard */,
-				D3F83F8C158229C500336684 /* PhoneMainView.h */,
-				D3F83F8D15822ABD00336684 /* PhoneMainView.m */,
 				639E9CB31C0DB88200019A75 /* PhoneMainView.xib */,
 				D35E759C159460B50066B1C1 /* SettingsView.h */,
 				D35E759D159460B50066B1C1 /* SettingsView.m */,
@@ -3918,7 +3918,6 @@
 				D3F83EEC1582021700336684 /* CallView.m in Sources */,
 				8C2595DD1DEDC92D007A6424 /* ProviderDelegate.m in Sources */,
 				63F1DF4B1BCE983200EDED90 /* CallConferenceTableView.m in Sources */,
-				D3F83F8E15822ABE00336684 /* PhoneMainView.m in Sources */,
 				6377AC801BDE4069007F7625 /* UIBackToCallButton.m in Sources */,
 				6308F9C51BF0DD6600D1234B /* XMLRPCHelper.m in Sources */,
 				D3ED3E871586291E006C0DE4 /* TabBarView.m in Sources */,
@@ -3932,6 +3931,7 @@
 				D35498211587716B000081D8 /* StatusBarView.m in Sources */,
 				D3A55FBC15877E5E003FD403 /* UIContactCell.m in Sources */,
 				6341807C1BBC103100F71761 /* ChatConversationCreateTableView.m in Sources */,
+				83EB20241E57F8400095C3F2 /* MainTabViewController.m in Sources */,
 				63BE7A781D75BDF6000990EF /* ShopTableView.m in Sources */,
 				D326483815887D5200930C67 /* OrderedDictionary.m in Sources */,
 				D32648441588F6FC00930C67 /* UIToggleButton.m in Sources */,

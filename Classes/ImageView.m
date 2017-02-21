@@ -18,7 +18,7 @@
  */
 
 #import "ImageView.h"
-#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 
 @implementation UIImageScrollView
 
@@ -146,8 +146,8 @@ static UICompositeViewDescription *compositeDescription = nil;
 #pragma mark - Action Functions
 
 - (IBAction)onBackClick:(id)sender {
-	if ([[PhoneMainView.instance currentView] equal:ImageView.compositeViewDescription]) {
-		[PhoneMainView.instance popCurrentView];
+	if ([[MainTabViewController.instance currentView] equal:ImageView.compositeViewDescription]) {
+		[MainTabViewController.instance popCurrentView];
 	}
 }
 

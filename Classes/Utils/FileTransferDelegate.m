@@ -8,7 +8,7 @@
 
 #import "FileTransferDelegate.h"
 #import "LinphoneManager.h"
-#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 #import "Utils.h"
 
 @interface FileTransferDelegate ()
@@ -62,7 +62,7 @@ static void linphone_iphone_file_transfer_recv(LinphoneChatMessage *message, con
 																  }];
 
 			[errView addAction:defaultAction];
-			[PhoneMainView.instance presentViewController:errView animated:YES completion:nil];
+			[MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
 			return;
 		}
 
@@ -90,7 +90,7 @@ static void linphone_iphone_file_transfer_recv(LinphoneChatMessage *message, con
 																					 handler:^(UIAlertAction * action) {}];
 							   
 							   [errView addAction:defaultAction];
-							   [PhoneMainView.instance presentViewController:errView animated:YES completion:nil];
+							   [MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
 						   } else {
 							   LOGI(@"Image saved to [%@]", [assetURL absoluteString]);
 							   [LinphoneManager setValueInMessageAppData:[assetURL absoluteString]

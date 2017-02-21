@@ -18,7 +18,8 @@
  */
 
 #import "HistoryDetailsView.h"
-#import "PhoneMainView.h"
+//#import "MainTabViewController.h"
+#import "MainTabViewController.h"
 #import "FastAddressBook.h"
 
 @implementation HistoryDetailsView
@@ -147,7 +148,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 
 - (IBAction)onBackClick:(id)event {
 	HistoryListView *view = VIEW(HistoryListView);
-	[PhoneMainView.instance popToView:view.compositeViewDescription];
+	[MainTabViewController.instance popToView:view.compositeViewDescription];
 }
 
 - (IBAction)onContactClick:(id)event {
@@ -155,7 +156,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 	Contact *contact = [FastAddressBook getContactWithAddress:addr];
 	if (contact) {
 		ContactDetailsView *view = VIEW(ContactDetailsView);
-		[PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
+		[MainTabViewController.instance changeCurrentView:view.compositeViewDescription];
 		[ContactSelection setSelectionMode:ContactSelectionModeNone];
 		[view setContact:contact];
 	}
@@ -171,7 +172,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 		[ContactSelection setSipFilter:nil];
 		[ContactSelection enableEmailFilter:FALSE];
 		[ContactSelection setNameOrEmailFilter:nil];
-		[PhoneMainView.instance changeCurrentView:ContactsListView.compositeViewDescription];
+		[MainTabViewController.instance changeCurrentView:ContactsListView.compositeViewDescription];
 		ms_free(lAddress);
 	}
 }
@@ -188,7 +189,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 	ChatConversationView *view = VIEW(ChatConversationView);
 	LinphoneChatRoom *room = linphone_core_get_chat_room(LC, addr);
 	[view setChatRoom:room];
-	[PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
+	[MainTabViewController.instance changeCurrentView:view.compositeViewDescription];
 }
 
 @end

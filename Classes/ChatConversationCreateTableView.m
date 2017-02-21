@@ -9,7 +9,8 @@
 #import "ChatConversationCreateTableView.h"
 #import "UIChatCreateCell.h"
 #import "LinphoneManager.h"
-#import "PhoneMainView.h"
+//#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 
 @interface ChatConversationCreateTableView ()
 
@@ -93,7 +94,7 @@
 	}
 	LinphoneChatRoom *room = linphone_core_get_chat_room_from_uri(LC, uri.UTF8String);
 	if (!room) {
-		[PhoneMainView.instance popCurrentView];
+		[MainTabViewController.instance popCurrentView];
 		UIAlertController *errView = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Invalid address", nil)
 																		 message:NSLocalizedString(@"Please specify the entire SIP address for the chat",
 																									   nil)
@@ -104,12 +105,12 @@
 																handler:^(UIAlertAction * action) {}];
 		defaultAction.accessibilityLabel = @"OK";
 		[errView addAction:defaultAction];
-		[PhoneMainView.instance presentViewController:errView animated:YES completion:nil];
+		[MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
 	} else {
 		ChatConversationView *view = VIEW(ChatConversationView);
 		[view setChatRoom:room];
-		[PhoneMainView.instance popCurrentView];
-		[PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
+		[MainTabViewController.instance popCurrentView];
+		[MainTabViewController.instance changeCurrentView:view.compositeViewDescription];
 		// refresh list of chatrooms if we are using fragment
 		if (IPAD) {
 			ChatsListView *listView = VIEW(ChatsListView);

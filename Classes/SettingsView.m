@@ -20,7 +20,8 @@
 #import "SettingsView.h"
 #import "LinphoneManager.h"
 #import "LinphoneAppDelegate.h"
-#import "PhoneMainView.h"
+//#import "MainTabViewController.h"
+#import "MainTabViewController.h"
 #import "Utils.h"
 
 #import "DCRoundSwitch.h"
@@ -750,8 +751,8 @@ void update_hash_cbs(LinphoneAccountCreator *creator, LinphoneAccountCreatorStat
 		[LinphoneManager.instance destroyLinphoneCore];
 		[LinphoneManager instanceRelease];
 	} else if ([key isEqual:@"clear_cache_button"]) {
-		[PhoneMainView.instance.mainViewController
-			clearCache:[NSArray arrayWithObject:[PhoneMainView.instance currentView]]];
+		[MainTabViewController.instance.mainViewController
+			clearCache:[NSArray arrayWithObject:[MainTabViewController.instance currentView]]];
 	} else if ([key isEqual:@"battery_alert_button"]) {
 		[[UIDevice currentDevice] _setBatteryState:UIDeviceBatteryStateUnplugged];
 		[[UIDevice currentDevice] _setBatteryLevel:0.01f];
@@ -772,7 +773,7 @@ void update_hash_cbs(LinphoneAccountCreator *creator, LinphoneAccountCreatorStat
 	}
 #endif
 	if ([key isEqual:@"assistant_button"]) {
-		[PhoneMainView.instance changeCurrentView:AssistantView.compositeViewDescription];
+		[MainTabViewController.instance changeCurrentView:AssistantView.compositeViewDescription];
 		return;
 	} else if ([key isEqual:@"account_mandatory_remove_button"]) {
 		UIAlertController *errView = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Warning", nil)
@@ -1028,7 +1029,7 @@ void update_hash_cbs(LinphoneAccountCreator *creator, LinphoneAccountCreatorStat
 
 - (IBAction)onDialerBackClick:(id)sender {
 	[_settingsController.navigationController popViewControllerAnimated:NO];
-	[PhoneMainView.instance popToView:DialerView.compositeViewDescription];
+	[MainTabViewController.instance popToView:DialerView.compositeViewDescription];
 }
 
 - (IBAction)onBackClick:(id)sender {

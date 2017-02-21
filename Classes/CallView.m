@@ -28,7 +28,8 @@
 #import "CallView.h"
 #import "CallSideMenuView.h"
 #import "LinphoneManager.h"
-#import "PhoneMainView.h"
+//#import "MainTabViewController.h"
+#import "MainTabViewController.h"
 #import "Utils.h"
 
 #include "linphone/linphonecore.h"
@@ -127,7 +128,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 }
 
 - (void)dealloc {
-	[PhoneMainView.instance.view removeGestureRecognizer:singleFingerTap];
+	[MainTabViewController.instance.view removeGestureRecognizer:singleFingerTap];
 	// Remove all observer
 	[NSNotificationCenter.defaultCenter removeObserver:self];
 }
@@ -180,7 +181,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 	[[UIApplication sharedApplication] setIdleTimerDisabled:YES];
 	UIDevice.currentDevice.proximityMonitoringEnabled = YES;
 
-	[PhoneMainView.instance setVolumeHidden:TRUE];
+	[MainTabViewController.instance setVolumeHidden:TRUE];
 	hiddenVolume = TRUE;
 
 	// we must wait didAppear to reset fullscreen mode because we cannot change it in viewwillappear
@@ -200,7 +201,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 	}
 
 	if (hiddenVolume) {
-		[PhoneMainView.instance setVolumeHidden:FALSE];
+		[MainTabViewController.instance setVolumeHidden:FALSE];
 		hiddenVolume = FALSE;
 	}
 
@@ -220,7 +221,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 	[[UIApplication sharedApplication] setIdleTimerDisabled:false];
 	UIDevice.currentDevice.proximityMonitoringEnabled = NO;
 
-	[PhoneMainView.instance fullScreen:false];
+	[MainTabViewController.instance fullScreen:false];
 	// Disable tap
 	[singleFingerTap setEnabled:FALSE];
 
@@ -301,7 +302,7 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
 		hideControlsTimer = nil;
 	}
 
-	if ([[PhoneMainView.instance currentView] equal:CallView.compositeViewDescription]) {
+	if ([[MainTabViewController.instance currentView] equal:CallView.compositeViewDescription]) {
 		// show controls
 		[UIView beginAnimations:nil context:nil];
 		[UIView setAnimationDuration:0.35];
@@ -313,7 +314,7 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
 
 		[UIView commitAnimations];
 
-		[PhoneMainView.instance hideTabBar:hidden];
+		[MainTabViewController.instance hideTabBar:hidden];
 
 		if (!hidden) {
 			// hide controls in 5 sec
@@ -356,8 +357,8 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
 		hideControlsTimer = nil;
 	}
 
-	[PhoneMainView.instance fullScreen:!disabled];
-	[PhoneMainView.instance hideTabBar:!disabled];
+	[MainTabViewController.instance fullScreen:!disabled];
+	[MainTabViewController.instance hideTabBar:!disabled];
 
 	if (!disabled) {
 #ifdef TEST_VIDEO_VIEW_CHANGE
@@ -389,10 +390,10 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
 }
 
 - (void)hideStatusBar:(BOOL)hide {
-	/* we cannot use [PhoneMainView.instance show]; because it will automatically
+	/* we cannot use [MainTabViewController.instance show]; because it will automatically
 	 resize current view to fill empty space, which will resize video. This is
 	 indesirable since we do not want to crop/rescale video view */
-	PhoneMainView.instance.mainViewController.statusBarView.hidden = hide;
+	MainTabViewController.instance.mainViewController.statusBarView.hidden = hide;
 }
 
 - (void)callDurationUpdate {
@@ -495,7 +496,7 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
 - (void)callUpdate:(LinphoneCall *)call state:(LinphoneCallState)state animated:(BOOL)animated {
 	[self updateBottomBar:call state:state];
 	if (hiddenVolume) {
-		[PhoneMainView.instance setVolumeHidden:FALSE];
+		[MainTabViewController.instance setVolumeHidden:FALSE];
 		hiddenVolume = FALSE;
 	}
 
@@ -705,7 +706,7 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
 }
 
 - (IBAction)onChatClick:(id)sender {
-	[PhoneMainView.instance changeCurrentView:ChatsListView.compositeViewDescription];
+	[MainTabViewController.instance changeCurrentView:ChatsListView.compositeViewDescription];
 }
 
 - (IBAction)onRoutesBluetoothClick:(id)sender {
@@ -745,7 +746,7 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
 	DialerView *view = VIEW(DialerView);
 	[view setAddress:@""];
 	LinphoneManager.instance.nextCallIsTransfer = YES;
-	[PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
+	[MainTabViewController.instance changeCurrentView:view.compositeViewDescription];
 }
 
 - (IBAction)onOptionsAddClick:(id)sender {
@@ -753,7 +754,7 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
 	DialerView *view = VIEW(DialerView);
 	[view setAddress:@""];
 	LinphoneManager.instance.nextCallIsTransfer = NO;
-	[PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
+	[MainTabViewController.instance changeCurrentView:view.compositeViewDescription];
 }
 
 - (IBAction)onOptionsConferenceClick:(id)sender {

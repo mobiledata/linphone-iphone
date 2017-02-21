@@ -19,7 +19,8 @@
 
 #import "UIChatBubblePhotoCell.h"
 #import "LinphoneManager.h"
-#import "PhoneMainView.h"
+//#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 
 #import <AssetsLibrary/ALAsset.h>
 #import <AssetsLibrary/ALAssetRepresentation.h>
@@ -183,7 +184,7 @@
 	} else {
 		if (![_messageImageView isLoading]) {
 			ImageView *view = VIEW(ImageView);
-			[PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
+			[MainTabViewController.instance changeCurrentView:view.compositeViewDescription];
 			CGImageRef fullScreenRef = [[_messageImageView.fullImageUrl defaultRepresentation] fullScreenImage];
 			UIImage *fullScreen = [UIImage imageWithCGImage:fullScreenRef];
 			[view setImage:fullScreen];

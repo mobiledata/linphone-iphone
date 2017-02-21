@@ -17,7 +17,8 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#import "PhoneMainView.h"
+//#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 #import <AddressBook/ABPerson.h>
 
 @implementation ContactSelection
@@ -145,7 +146,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 		
 		[errView addAction:defaultAction];
 		[self presentViewController:errView animated:YES completion:nil];
-		[PhoneMainView.instance popCurrentView];
+		[MainTabViewController.instance popCurrentView];
 	}
 }
 
@@ -193,7 +194,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 
 - (IBAction)onAddContactClick:(id)event {
 	ContactDetailsView *view = VIEW(ContactDetailsView);
-	[PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
+	[MainTabViewController.instance changeCurrentView:view.compositeViewDescription];
 	view.isAdding = TRUE;
 	if ([ContactSelection getAddAddress] == nil) {
 		[view newContact];

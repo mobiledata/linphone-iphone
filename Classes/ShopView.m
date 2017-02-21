@@ -17,7 +17,8 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#import "PhoneMainView.h"
+//#import "MainTabViewController.h"
+#import "MainTabViewController.h"
 #import "ShopView.h"
 #import "LinphoneManager.h"
 #import "LinphoneIOSVersion.h"
@@ -57,7 +58,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 #pragma mark - Action Functions
 
 - (IBAction)onDialerBackClick:(id)sender {
-	[PhoneMainView.instance popToView:DialerView.compositeViewDescription];
+	[MainTabViewController.instance popToView:DialerView.compositeViewDescription];
 }
 
 @end

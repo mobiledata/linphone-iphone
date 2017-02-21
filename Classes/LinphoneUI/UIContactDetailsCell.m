@@ -20,7 +20,8 @@
 #import "UIContactDetailsCell.h"
 #import "FastAddressBook.h"
 #import "Contact.h"
-#import "PhoneMainView.h"
+//#import "MainTabViewController.h"
+#import "MainTabViewController.h"
 
 @implementation UIContactDetailsCell
 
@@ -139,7 +140,7 @@
 	ChatConversationView *view = VIEW(ChatConversationView);
 	LinphoneChatRoom *room = linphone_core_get_chat_room(LC, addr);
 	[view setChatRoom:room];
-	[PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
+	[MainTabViewController.instance changeCurrentView:view.compositeViewDescription];
 	linphone_address_destroy(addr);
 }
 

@@ -19,7 +19,8 @@
 
 #import "StatusBarView.h"
 #import "LinphoneManager.h"
-#import "PhoneMainView.h"
+//#import "MainTabViewController.h"
+#import "MainTabViewController.h"
 #import <UserNotifications/UserNotifications.h>
 
 @implementation StatusBarView {
@@ -58,7 +59,7 @@
 											 object:nil];
 	[NSNotificationCenter.defaultCenter addObserver:self
 										   selector:@selector(mainViewChanged:)
-											   name:kLinphoneMainViewChange
+											   name:@"LinMainTabViewControllerChange"
 											 object:nil];
 
 	[NSNotificationCenter.defaultCenter addObserver:self
@@ -87,7 +88,7 @@
 	[NSNotificationCenter.defaultCenter removeObserver:self name:kLinphoneGlobalStateUpdate object:nil];
 	[NSNotificationCenter.defaultCenter removeObserver:self name:kLinphoneNotifyReceived object:nil];
 	[NSNotificationCenter.defaultCenter removeObserver:self name:kLinphoneCallUpdate object:nil];
-	[NSNotificationCenter.defaultCenter removeObserver:self name:kLinphoneMainViewChange object:nil];
+	[NSNotificationCenter.defaultCenter removeObserver:self name:@"LinMainTabViewControllerChange" object:nil];
 
 	if (callQualityTimer != nil) {
 		[callQualityTimer invalidate];
@@ -184,7 +185,7 @@
 	NSString *message = nil;
 	LinphoneGlobalState gstate = linphone_core_get_global_state(LC);
 	
-	if ([PhoneMainView.instance.currentView equal:AssistantView.compositeViewDescription] || [PhoneMainView.instance.currentView equal:CountryListView.compositeViewDescription]) {
+	if ([MainTabViewController.instance.currentView equal:AssistantView.compositeViewDescription] || [MainTabViewController.instance.currentView equal:CountryListView.compositeViewDescription]) {
 		message = NSLocalizedString(@"Configuring account", nil);
 	} else if (gstate == LinphoneGlobalOn && !linphone_core_is_network_reachable(LC)) {
 		message = NSLocalizedString(@"Network down", nil);
@@ -383,7 +384,7 @@
 }
 
 - (IBAction)onSideMenuClick:(id)sender {
-	UICompositeView *cvc = PhoneMainView.instance.mainViewController;
+	UICompositeView *cvc = MainTabViewController.instance.mainViewController;
 	[cvc hideSideMenu:(cvc.sideMenuView.frame.origin.x == 0)];
 }
 
@@ -391,9 +392,9 @@
 	if (linphone_core_get_default_proxy_config(LC)) {
 		linphone_core_refresh_registers(LC);
 	} else if (linphone_core_get_proxy_config_list(LC)) {
-		[PhoneMainView.instance changeCurrentView:SettingsView.compositeViewDescription];
+		[MainTabViewController.instance changeCurrentView:SettingsView.compositeViewDescription];
 	} else {
-		[PhoneMainView.instance changeCurrentView:AssistantView.compositeViewDescription];
+		[MainTabViewController.instance changeCurrentView:AssistantView.compositeViewDescription];
 	}
 }
 

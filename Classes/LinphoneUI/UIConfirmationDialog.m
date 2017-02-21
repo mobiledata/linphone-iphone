@@ -7,7 +7,8 @@
 //
 
 #import "UIConfirmationDialog.h"
-#import "PhoneMainView.h"
+//#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 
 @implementation UIConfirmationDialog
 + (UIConfirmationDialog *)ShowWithMessage:(NSString *)message
@@ -19,7 +20,7 @@
 	UIConfirmationDialog *dialog =
 		[[UIConfirmationDialog alloc] initWithNibName:NSStringFromClass(self.class) bundle:NSBundle.mainBundle];
 
-	dialog.view.frame = PhoneMainView.instance.mainViewController.view.frame;
+	dialog.view.frame = MainTabViewController.instance.mainViewController.view.frame;
 	[controller.view addSubview:dialog.view];
 	[controller addChildViewController:dialog];
 
@@ -51,7 +52,7 @@
 				  confirmMessage:confirm
 				   onCancelClick:onCancel
 			 onConfirmationClick:onConfirm
-					inController:PhoneMainView.instance.mainViewController];
+					inController:MainTabViewController.instance.mainViewController];
 }
 
 - (IBAction)onCancelClick:(id)sender {

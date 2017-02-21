@@ -21,7 +21,8 @@
 #import <AudioToolbox/AudioToolbox.h>
 
 #import "LinphoneManager.h"
-#import "PhoneMainView.h"
+//#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 
 @implementation DialerView
 
@@ -53,7 +54,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 	[super viewWillAppear:animated];
 
 	_padView.hidden =
-		!IPAD && UIInterfaceOrientationIsLandscape(PhoneMainView.instance.mainViewController.currentOrientation);
+		!IPAD && UIInterfaceOrientationIsLandscape(MainTabViewController.instance.mainViewController.currentOrientation);
 
 	// Set observer
 	[NSNotificationCenter.defaultCenter addObserver:self
@@ -387,11 +388,11 @@ static UICompositeViewDescription *compositeDescription = nil;
 	[ContactSelection setSipFilter:nil];
 	[ContactSelection setNameOrEmailFilter:nil];
 	[ContactSelection enableEmailFilter:FALSE];
-	[PhoneMainView.instance changeCurrentView:ContactsListView.compositeViewDescription];
+	[MainTabViewController.instance changeCurrentView:ContactsListView.compositeViewDescription];
 }
 
 - (IBAction)onBackClick:(id)event {
-	[PhoneMainView.instance popToView:CallView.compositeViewDescription];
+	[MainTabViewController.instance popToView:CallView.compositeViewDescription];
 }
 
 - (IBAction)onAddressChange:(id)sender {

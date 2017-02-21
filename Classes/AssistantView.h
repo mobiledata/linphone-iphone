@@ -20,7 +20,8 @@
 #import <UIKit/UIKit.h>
 #import "UICompositeView.h"
 #import "TPKeyboardAvoidingScrollView.h"
-#import "PhoneMainView.h"
+//#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 
 @interface AssistantView : UIViewController <UITextFieldDelegate, UICompositeViewDelegate> {
 

@@ -8,7 +8,8 @@
 
 #import "ProviderDelegate.h"
 #import "LinphoneManager.h"
-#import "PhoneMainView.h"
+//#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 #include "linphone/linphonecore.h"
 #import <AVFoundation/AVAudioSession.h>
 #import <Foundation/Foundation.h>
@@ -133,8 +134,8 @@
 
 - (void)provider:(CXProvider *)provider performSetMutedCallAction:(nonnull CXSetMutedCallAction *)action {
 	[action fulfill];
-	if ([[PhoneMainView.instance currentView] equal:CallView.compositeViewDescription]) {
-		CallView *view = (CallView *)[PhoneMainView.instance popToView:CallView.compositeViewDescription];
+	if ([[MainTabViewController.instance currentView] equal:CallView.compositeViewDescription]) {
+		CallView *view = (CallView *)[MainTabViewController.instance popToView:CallView.compositeViewDescription];
 		[view.microButton toggle];
 	}
 }

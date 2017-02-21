@@ -20,7 +20,8 @@
 #import "CallIncomingView.h"
 #import "LinphoneManager.h"
 #import "FastAddressBook.h"
-#import "PhoneMainView.h"
+//#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 #import "Utils.h"
 
 @implementation CallIncomingView

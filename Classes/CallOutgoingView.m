@@ -18,7 +18,7 @@
  */
 
 #import "CallOutgoingView.h"
-#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 
 @implementation CallOutgoingView
 
@@ -83,7 +83,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 	// directly in viewWillAppear (this would lead to crash in deallocated memory - easily
 	// reproductible on iPad mini).
 	if (!linphone_core_get_current_call(LC)) {
-		[PhoneMainView.instance popCurrentView];
+		[MainTabViewController.instance popCurrentView];
 	}
 }
 

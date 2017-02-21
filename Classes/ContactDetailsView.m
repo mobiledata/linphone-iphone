@@ -18,7 +18,7 @@
 */
 
 #import "ContactDetailsView.h"
-#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 #import "UIContactDetailsCell.h"
 
 @implementation ContactDetailsView
@@ -45,8 +45,8 @@
 
 - (void)onAddressBookUpdate:(NSNotification *)k {
 	if (!inhibUpdate && ![_tableController isEditing] &&
-		(PhoneMainView.instance.currentView == self.compositeViewDescription) &&
-		(_nameLabel.text == PhoneMainView.instance.currentName)) {
+		(MainTabViewController.instance.currentView == self.compositeViewDescription) &&
+		(_nameLabel.text == MainTabViewController.instance.currentName)) {
 		[self resetData];
 	}
 }
@@ -69,12 +69,12 @@
 	inhibUpdate = TRUE;
 	[[LinphoneManager.instance fastAddressBook] removeContact:_contact];
 	inhibUpdate = FALSE;
-	[PhoneMainView.instance popCurrentView];
+	[MainTabViewController.instance popCurrentView];
 }
 
 - (void)saveData {
 	if (_contact == NULL) {
-		[PhoneMainView.instance popCurrentView];
+		[MainTabViewController.instance popCurrentView];
 		return;
 	}
 
@@ -188,7 +188,7 @@
 		_editButton.hidden = TRUE;
 		_deleteButton.hidden = TRUE;
 	}
-	PhoneMainView.instance.currentName = _nameLabel.text;
+	MainTabViewController.instance.currentName = _nameLabel.text;
 	// Update presence for contact
 	for (NSInteger j = 0; j < [self.tableController.tableView numberOfSections]; ++j) {
 		for (NSInteger i = 0; i < [self.tableController.tableView numberOfRowsInSection:j]; ++i) {
@@ -224,7 +224,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
 	[_tableController.tableView removeObserver:self forKeyPath:@"contentSize"];
 	[super viewWillDisappear:animated];
-	PhoneMainView.instance.currentName = NULL;
+	MainTabViewController.instance.currentName = NULL;
 	if (self.tmpContact) {
 		_contact.firstName = _tmpContact.firstName.copy;
 		_contact.lastName = _tmpContact.lastName.copy;
@@ -431,7 +431,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 		_editButton.hidden = !_emptyLabel.hidden;
 	} else {
 		if (_isAdding) {
-			[PhoneMainView.instance popCurrentView];
+			[MainTabViewController.instance popCurrentView];
 		} else {
 			_avatarImage.hidden = FALSE;
 			_deleteButton.hidden = FALSE;
@@ -441,7 +441,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 	
 	self.tmpContact = NULL;
 	if (_isAdding) {
-		[PhoneMainView.instance popToView:ContactsListView.compositeViewDescription];
+		[MainTabViewController.instance popToView:ContactsListView.compositeViewDescription];
 		_isAdding = FALSE;
 	}
 }
@@ -452,7 +452,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 	}
 
 	ContactsListView *view = VIEW(ContactsListView);
-	[PhoneMainView.instance popToView:view.compositeViewDescription];
+	[MainTabViewController.instance popToView:view.compositeViewDescription];
 }
 
 - (IBAction)onEditClick:(id)event {

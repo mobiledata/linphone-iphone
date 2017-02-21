@@ -18,7 +18,8 @@
  */
 
 #import "TabBarView.h"
-#import "PhoneMainView.h"
+//#import "MainTabViewController.h"
+#import "MainTabViewController.h"
 
 @implementation TabBarView
 
@@ -29,7 +30,7 @@
 
 	[NSNotificationCenter.defaultCenter addObserver:self
 										   selector:@selector(changeViewEvent:)
-											   name:kLinphoneMainViewChange
+											   name:@"LinMainTabViewControllerChange"
 											 object:nil];
 	[NSNotificationCenter.defaultCenter addObserver:self
 										   selector:@selector(callUpdate:)
@@ -73,7 +74,7 @@
 #pragma mark - UI Update
 
 - (void)update:(BOOL)appear {
-	[self updateSelectedButton:[PhoneMainView.instance currentView]];
+	[self updateSelectedButton:[MainTabViewController.instance currentView]];
 	[self updateMissedCall:linphone_core_get_missed_calls_count(LC) appear:appear];
 	[self updateUnreadMessage:appear];
 }
@@ -142,26 +143,26 @@
 #pragma mark - Action Functions
 
 - (IBAction)onHistoryClick:(id)event {
-	[PhoneMainView.instance changeCurrentView:HistoryListView.compositeViewDescription];
+	[MainTabViewController.instance changeCurrentView:HistoryListView.compositeViewDescription];
 }
 
 - (IBAction)onContactsClick:(id)event {
 	[ContactSelection setAddAddress:nil];
 	[ContactSelection enableEmailFilter:FALSE];
 	[ContactSelection setNameOrEmailFilter:nil];
-	[PhoneMainView.instance changeCurrentView:ContactsListView.compositeViewDescription];
+	[MainTabViewController.instance changeCurrentView:ContactsListView.compositeViewDescription];
 }
 
 - (IBAction)onDialerClick:(id)event {
-	[PhoneMainView.instance changeCurrentView:DialerView.compositeViewDescription];
+	[MainTabViewController.instance changeCurrentView:DialerView.compositeViewDescription];
 }
 
 - (IBAction)onSettingsClick:(id)event {
-	[PhoneMainView.instance changeCurrentView:SettingsView.compositeViewDescription];
+	[MainTabViewController.instance changeCurrentView:SettingsView.compositeViewDescription];
 }
 
 - (IBAction)onChatClick:(id)event {
-	[PhoneMainView.instance changeCurrentView:ChatsListView.compositeViewDescription];
+	[MainTabViewController.instance changeCurrentView:ChatsListView.compositeViewDescription];
 }
 
 @end

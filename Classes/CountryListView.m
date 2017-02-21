@@ -113,7 +113,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 
 		[self.delegate didSelectCountry:dict];
 	}
-	[PhoneMainView.instance popCurrentView];
+	[MainTabViewController.instance popCurrentView];
 }
 
 #pragma mark - Filtering
@@ -124,7 +124,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 }
 
 - (IBAction)onCancelClick:(id)sender {
-	[PhoneMainView.instance popCurrentView];
+	[MainTabViewController.instance popCurrentView];
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString{

@@ -20,7 +20,8 @@
 #import "ContactsListTableView.h"
 #import "UIContactCell.h"
 #import "LinphoneManager.h"
-#import "PhoneMainView.h"
+//#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 #import "Utils.h"
 
 @implementation ContactsListTableView
@@ -36,7 +37,7 @@
 }
 
 - (void)onAddressBookUpdate:(NSNotification *)k {
-	if (!_ongoing && (PhoneMainView.instance.currentView == ContactsListView.compositeViewDescription)) {
+	if (!_ongoing && (MainTabViewController.instance.currentView == ContactsListView.compositeViewDescription)) {
 		[self loadData];
 	}
 }
@@ -338,7 +339,7 @@ static int ms_strcmpfuz(const char *fuzzy_word, const char *sentence) {
 
 		// Go to Contact details view
 		ContactDetailsView *view = VIEW(ContactDetailsView);
-		[PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
+		[MainTabViewController.instance changeCurrentView:view.compositeViewDescription];
 		if (([ContactSelection getSelectionMode] != ContactSelectionModeEdit) || !([ContactSelection getAddAddress])) {
 			[view setContact:contact];
 		} else {

@@ -1,42 +1,89 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="eUP-Pz-8te">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="cso-YB-loR">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Phone Main View-->
-        <scene sceneID="qBS-cv-8Um">
+        <!--View Controller-->
+        <scene sceneID="76X-8P-tVg">
             <objects>
-                <viewController storyboardIdentifier="PhoneMainView" wantsFullScreenLayout="YES" id="eUP-Pz-8te" customClass="PhoneMainView" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6Tz-cV-9RM">
+                <viewController id="ez2-LL-LtY" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a3D-xE-I2b"/>
+                        <viewControllerLayoutGuide type="bottom" id="Prr-T9-CTd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Feh-m4-24d">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view tag="1" contentMode="scaleToFill" id="rUw-rG-KgP" userLabel="background">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" id="rlH-Ra-JOu" userLabel="statusBarBG">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="20"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="mainViewController" destination="emC-P9-oZj" id="goX-7a-wOn"/>
-                        <outlet property="statusBarBG" destination="rlH-Ra-JOu" id="gTV-n5-AgJ"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="Nbe-91-8Ey"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qO2-xf-enZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="uicompositevc" nibName="UICompositeView" wantsFullScreenLayout="YES" id="emC-P9-oZj" userLabel="mainViewController" customClass="UICompositeView">
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <nil key="simulatedStatusBarMetrics"/>
-                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UIg-80-sQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="342" y="73"/>
+            <point key="canvasLocation" x="919" y="-3104"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="jEn-45-4xH">
+            <objects>
+                <viewController id="aD0-OD-vNJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pDx-GM-qfe"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uj9-U2-TvJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ObT-AL-hIh">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="7pT-KY-o2i"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Obg-Qv-w3x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="909" y="-1972"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="69A-pE-YTb">
+            <objects>
+                <viewController id="PiA-e5-rWf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9vj-8V-9v7"/>
+                        <viewControllerLayoutGuide type="bottom" id="a10-TQ-7hh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YJS-Qa-c45">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="Asy-IW-e0m"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gjg-qc-SE9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="919" y="-4219"/>
+        </scene>
+        <!--Main Tab View Controller-->
+        <scene sceneID="1S5-RV-8dT">
+            <objects>
+                <tabBarController id="cso-YB-loR" customClass="MainTabViewController" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Hq7-l3-xYD">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="PiA-e5-rWf" kind="relationship" relationship="viewControllers" id="FwM-Rk-8Mz"/>
+                        <segue destination="ez2-LL-LtY" kind="relationship" relationship="viewControllers" id="hOh-oc-OPg"/>
+                        <segue destination="aD0-OD-vNJ" kind="relationship" relationship="viewControllers" id="p3B-OG-3V0"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lhp-Ra-Agv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-15" y="-2902"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

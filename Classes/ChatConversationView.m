@@ -18,7 +18,7 @@
  */
 
 #import "ChatConversationView.h"
-#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 #import "Utils.h"
 #import "FileTransferDelegate.h"
 #import "UIChatBubbleTextCell.h"
@@ -129,7 +129,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 	[_pictureButton setEnabled:fileSharingEnabled];
 
 	[self callUpdateEvent:nil];
-	PhoneMainView.instance.currentRoom = self.chatRoom;
+	MainTabViewController.instance.currentRoom = self.chatRoom;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -140,7 +140,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 	[self setComposingVisible:FALSE withDelay:0]; // will hide the "user is composing.." message
 
 	[NSNotificationCenter.defaultCenter removeObserver:self];
-	PhoneMainView.instance.currentRoom = NULL;
+	MainTabViewController.instance.currentRoom = NULL;
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
@@ -166,10 +166,10 @@ static UICompositeViewDescription *compositeDescription = nil;
 		[self update];
 		linphone_chat_room_mark_as_read(_chatRoom);
 		[self setComposingVisible:linphone_chat_room_is_remote_composing(_chatRoom) withDelay:0];
-		TabBarView *tab = (TabBarView *)[PhoneMainView.instance.mainViewController
+		TabBarView *tab = (TabBarView *)[MainTabViewController.instance.mainViewController
 			getCachedController:NSStringFromClass(TabBarView.class)];
 		[tab update:YES];
-		[PhoneMainView.instance updateApplicationBadgeNumber];
+		[MainTabViewController.instance updateApplicationBadgeNumber];
 	} else {
 		_chatView.hidden = YES;
 	}
@@ -178,10 +178,10 @@ static UICompositeViewDescription *compositeDescription = nil;
 - (void)applicationWillEnterForeground:(NSNotification *)notif {
 	if (_chatRoom != nil) {
 		linphone_chat_room_mark_as_read(_chatRoom);
-		TabBarView *tab = (TabBarView *)[PhoneMainView.instance.mainViewController
+		TabBarView *tab = (TabBarView *)[MainTabViewController.instance.mainViewController
 			getCachedController:NSStringFromClass(TabBarView.class)];
 		[tab update:YES];
-		[PhoneMainView.instance updateApplicationBadgeNumber];
+		[MainTabViewController.instance updateApplicationBadgeNumber];
 	}
 }
 
@@ -198,7 +198,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 
 	const LinphoneAddress *addr = linphone_chat_room_get_peer_address(_chatRoom);
 	if (addr == NULL) {
-		[PhoneMainView.instance popCurrentView];
+		[MainTabViewController.instance popCurrentView];
 		UIAlertController *errView = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Invalid SIP address", nil)
 																		 message:NSLocalizedString(@"Either configure a SIP proxy server from settings prior to send a "
 																								   @"message or use a valid SIP address (I.E sip:john@example.net)",
@@ -295,7 +295,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 	  }
 	  [sheet addCancelButtonWithTitle:NSLocalizedString(@"Cancel", nil) block:nil];
 	  dispatch_async(dispatch_get_main_queue(), ^{
-		[sheet showInView:PhoneMainView.instance.view];
+		[sheet showInView:MainTabViewController.instance.view];
 	  });
 	});
 }
@@ -492,7 +492,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 
 - (IBAction)onBackClick:(id)event {
 	[_tableController setChatRoom:NULL];
-	[PhoneMainView.instance popToView:ChatsListView.compositeViewDescription];
+	[MainTabViewController.instance popToView:ChatsListView.compositeViewDescription];
 }
 
 - (IBAction)onEditClick:(id)event {
@@ -614,10 +614,10 @@ static UICompositeViewDescription *compositeDescription = nil;
 
 		  // somehow, it breaks rotation if we put that in the block above when rotating portrait -> landscape
 		  //						 if (!UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
-		  [PhoneMainView.instance hideTabBar:NO];
+		  [MainTabViewController.instance hideTabBar:NO];
 		  //						 }
-		  [PhoneMainView.instance hideStatusBar:NO];
-		  [PhoneMainView.instance fullScreen:NO];
+		  [MainTabViewController.instance hideStatusBar:NO];
+		  [MainTabViewController.instance fullScreen:NO];
 		  _topBar.alpha = 1.0;
 
 		  // Resize chat view
@@ -672,15 +672,15 @@ static UICompositeViewDescription *compositeDescription = nil;
 		  }
 
 		  // Hide TabBar and status bar and also top bar
-		  [PhoneMainView.instance hideTabBar:YES];
-		  [PhoneMainView.instance hideStatusBar:YES];
-		  [PhoneMainView.instance fullScreen:YES];
+		  [MainTabViewController.instance hideTabBar:YES];
+		  [MainTabViewController.instance hideStatusBar:YES];
+		  [MainTabViewController.instance fullScreen:YES];
 		  _topBar.alpha = 0.0;
 
 		  // Resize chat view
 		  {
 			  CGRect viewFrame = [[self view] frame];
-			  CGRect rect = PhoneMainView.instance.view.bounds;
+			  CGRect rect = MainTabViewController.instance.view.bounds;
 			  CGPoint pos = {viewFrame.size.width, viewFrame.size.height};
 			  CGPoint gPos =
 				  [self.view convertPoint:pos

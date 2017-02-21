@@ -8,7 +8,8 @@
 
 #import "SideMenuView.h"
 #import "LinphoneManager.h"
-#import "PhoneMainView.h"
+//#import "MainTabViewController.h"
+#import "MainTabViewController.h"
 
 @implementation SideMenuView
 
@@ -76,25 +77,25 @@
 
 #pragma deploymate push "ignored-api-availability"
 - (void)onLateralSwipe:(UIScreenEdgePanGestureRecognizer *)pan {
-	[PhoneMainView.instance.mainViewController hideSideMenu:YES];
+	[MainTabViewController.instance.mainViewController hideSideMenu:YES];
 }
 #pragma deploymate pop
 
 - (IBAction)onHeaderClick:(id)sender {
-	[PhoneMainView.instance changeCurrentView:SettingsView.compositeViewDescription];
-	[PhoneMainView.instance.mainViewController hideSideMenu:YES];
+	[MainTabViewController.instance changeCurrentView:SettingsView.compositeViewDescription];
+	[MainTabViewController.instance.mainViewController hideSideMenu:YES];
 }
 
 - (IBAction)onAvatarClick:(id)sender {
 	// hide ourself because we are on top of image picker
 	if (!IPAD) {
-		[PhoneMainView.instance.mainViewController hideSideMenu:YES];
+		[MainTabViewController.instance.mainViewController hideSideMenu:YES];
 	}
 	[ImagePickerView SelectImageFromDevice:self atPosition:_avatarImage inView:self.view];
 }
 
 - (IBAction)onBackgroundClicked:(id)sender {
-	[PhoneMainView.instance.mainViewController hideSideMenu:YES];
+	[MainTabViewController.instance.mainViewController hideSideMenu:YES];
 }
 
 - (void)registrationUpdateEvent:(NSNotification *)notif {
@@ -118,7 +119,7 @@
 	if (IPAD) {
 		[VIEW(ImagePickerView).popoverController dismissPopoverAnimated:TRUE];
 	} else {
-		[PhoneMainView.instance.mainViewController hideSideMenu:NO];
+		[MainTabViewController.instance.mainViewController hideSideMenu:NO];
 	}
 
 	NSURL *url = [info valueForKey:UIImagePickerControllerReferenceURL];

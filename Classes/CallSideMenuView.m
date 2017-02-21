@@ -8,7 +8,8 @@
 
 #import "CallSideMenuView.h"
 #import "LinphoneManager.h"
-#import "PhoneMainView.h"
+//#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 
 @implementation CallSideMenuView {
 	NSTimer *updateTimer;
@@ -39,7 +40,8 @@
 }
 
 - (IBAction)onLateralSwipe:(id)sender {
-	[PhoneMainView.instance.mainViewController hideSideMenu:YES];
+//	[PhoneMainView.instance.mainViewController hideSideMenu:YES];
+    [MainTabViewController.instance.mainViewController hideSideMenu:YES];
 }
 
 + (NSString *)iceToString:(LinphoneIceState)state {

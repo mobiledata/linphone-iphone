@@ -21,7 +21,8 @@
 #import "ChatConversationTableView.h"
 #import "UIChatBubbleTextCell.h"
 #import "UIChatBubblePhotoCell.h"
-#import "PhoneMainView.h"
+//#import "MainTabViewController.h"
+#import "MainTabViewController.h"
 
 @implementation ChatConversationTableView
 
@@ -128,7 +129,7 @@
 	}
 
 	linphone_chat_room_mark_as_read(_chatRoom);
-	TabBarView *tab = (TabBarView *)[PhoneMainView.instance.mainViewController
+	TabBarView *tab = (TabBarView *)[MainTabViewController.instance.mainViewController
 		getCachedController:NSStringFromClass(TabBarView.class)];
 	[tab update:YES];
 

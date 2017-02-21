@@ -25,7 +25,7 @@
 #import "AssistantView.h"
 #import "CountryListView.h"
 #import "LinphoneManager.h"
-#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 #import "UIAssistantTextField.h"
 #import "UITextField+DoneButton.h"
 
@@ -674,7 +674,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 				lpConfigSetInt:[NSDate new].timeIntervalSince1970 +
 							   [LinphoneManager.instance lpConfigIntForKey:@"link_account_popup_time" withDefault:84200]
 						forKey:@"must_link_account_time"];
-			[PhoneMainView.instance popToView:_outgoingView];
+			[MainTabViewController.instance popToView:_outgoingView];
 			break;
 		}
 		case LinphoneRegistrationNone:
@@ -695,7 +695,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 			UIAlertAction* continueAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Continue", nil)
 																	 style:UIAlertActionStyleDefault
 																   handler:^(UIAlertAction * action) {
-																	   [PhoneMainView.instance popToView:DialerView.compositeViewDescription];
+																	   [MainTabViewController.instance popToView:DialerView.compositeViewDescription];
 																   }];
 			
 			[errView addAction:defaultAction];
@@ -835,7 +835,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 		UIAlertAction* continueAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Continue", nil)
 																 style:UIAlertActionStyleDefault
 															   handler:^(UIAlertAction * action) {
-																   [PhoneMainView.instance popToView:DialerView.compositeViewDescription];
+																   [MainTabViewController.instance popToView:DialerView.compositeViewDescription];
 															   }];
 
 		defaultAction.accessibilityLabel = @"PopUpResp";
@@ -954,9 +954,9 @@ static UICompositeViewDescription *compositeDescription = nil;
 	if (currentView != _createAccountView) {
 		if( linphone_account_creator_get_phone_number(account_creator) == NULL) {
 			[self configureProxyConfig];
-			[PhoneMainView.instance changeCurrentView:AssistantLinkView.compositeViewDescription];
+			[MainTabViewController.instance changeCurrentView:AssistantLinkView.compositeViewDescription];
 		} else {
-			[PhoneMainView.instance changeCurrentView:DialerView.compositeViewDescription];
+			[MainTabViewController.instance changeCurrentView:DialerView.compositeViewDescription];
 		}
 	} else {
 		if (!linphone_account_creator_get_username(account_creator)) {
@@ -1321,7 +1321,7 @@ void assistant_is_account_linked(LinphoneAccountCreator *creator, LinphoneAccoun
 
 	CountryListView *view = VIEW(CountryListView);
 	[view setDelegate:(id)self];
-	[PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
+	[MainTabViewController.instance changeCurrentView:view.compositeViewDescription];
 }
 
 - (void)updateCountry:(BOOL)force {
@@ -1371,7 +1371,7 @@ void assistant_is_account_linked(LinphoneAccountCreator *creator, LinphoneAccoun
 }
 
 - (IBAction)onDialerClick:(id)sender {
-	[PhoneMainView.instance popToView:DialerView.compositeViewDescription];
+	[MainTabViewController.instance popToView:DialerView.compositeViewDescription];
 }
 
 - (IBAction)onLinkTap:(id)sender {

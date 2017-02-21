@@ -19,7 +19,8 @@
 
 #import "LinphoneCoreSettingsStore.h"
 #import "Utils.h"
-#import "PhoneMainView.h"
+//#import "MainTabViewController.h"
+#import "MainTabViewController.h"
 
 #include "linphone/linphone_tunnel.h"
 #include "linphone/lpconfig.h"
@@ -434,7 +435,7 @@
 														  handler:^(UIAlertAction * action) {}];
 	
 	[errView addAction:defaultAction];
-	[PhoneMainView.instance presentViewController:errView animated:YES completion:nil];
+	[MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
 }
 
 - (void)synchronizeAccounts {
@@ -631,7 +632,7 @@
 																  handler:^(UIAlertAction * action) {}];
 			
 			[errView addAction:defaultAction];
-			[PhoneMainView.instance presentViewController:errView animated:YES completion:nil];
+			[MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
 		}
 	}
 	// reload address book to prepend proxy config domain to contacts' phone number
@@ -784,7 +785,7 @@
 																	  handler:^(UIAlertAction *action){
 																	  }];
 				[errView addAction:defaultAction];
-				[PhoneMainView.instance presentViewController:errView animated:YES completion:nil];
+				[MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
 			}
 			linphone_core_set_file_transfer_server(
 				LC, [[self stringForKey:@"file_transfer_server_url_preference"] UTF8String]);

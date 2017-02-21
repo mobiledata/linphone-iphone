@@ -20,7 +20,8 @@
 #import "LinphoneManager.h"
 #import "FirstLoginView.h"
 #import "LinphoneManager.h"
-#import "PhoneMainView.h"
+//#import "MainTabViewController.h"
+#import "MainTabViewController.h"
 #import "Utils/XMLRPCHelper.h"
 
 @implementation FirstLoginView
@@ -223,7 +224,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 		case LinphoneRegistrationOk: {
 			[[LinphoneManager instance] lpConfigSetBool:FALSE forKey:@"enable_first_login_view_preference"];
 			[_waitView setHidden:true];
-			[PhoneMainView.instance changeCurrentView:DialerView.compositeViewDescription];
+			[MainTabViewController.instance changeCurrentView:DialerView.compositeViewDescription];
 			break;
 		}
 		case LinphoneRegistrationNone:

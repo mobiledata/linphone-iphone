@@ -20,7 +20,8 @@
 #import "UIContactCell.h"
 #import "ContactsListTableView.h"
 #import "FastAddressBook.h"
-#import "PhoneMainView.h"
+//#import "PhoneMainView.h"
+#import "MainTabViewController.h"
 #import "UILabel+Boldify.h"
 #import "Utils.h"
 
@@ -64,7 +65,7 @@
 - (void)onPresenceChanged:(NSNotification *)k {
 	LinphoneFriend *f = [[k.userInfo valueForKey:@"friend"] pointerValue];
 	// only consider event if it's about us
-	if (_contact && _nameLabel.text == PhoneMainView.instance.currentName) {
+	if (_contact && _nameLabel.text == MainTabViewController.instance.currentName) {
 		if (!_contact.friend || f != _contact.friend) {
 			return;
 		}
