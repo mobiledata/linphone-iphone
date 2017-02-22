@@ -63,6 +63,9 @@
     }
     mustRestoreView = NO;
     _outgoingView = DialerView.compositeViewDescription;
+    
+    // Load config
+    [self loadAssistantConfig:@"assistant_external_sip.rc"];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

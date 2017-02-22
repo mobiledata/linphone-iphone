@@ -49,7 +49,7 @@
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Richard Branson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1M-jg-6Yc">
                                                 <rect key="frame" x="55" y="0.0" width="713" height="44"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -94,7 +94,7 @@
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Brm-Et-hpb">
                                                 <rect key="frame" x="55" y="0.0" width="713" height="44"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -139,7 +139,7 @@
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ll-g5-eL2">
                                                 <rect key="frame" x="55" y="0.0" width="713" height="44"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -175,6 +175,7 @@
                                             <constraint firstAttribute="height" constant="50" id="dL4-ov-nUZ"/>
                                             <constraint firstAttribute="width" constant="200" id="uF0-5M-0hZ"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Logout">
                                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -263,6 +264,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                                 <connections>
+                                    <outlet property="delegate" destination="u3m-Gh-9ax" id="4L3-0o-oZF"/>
                                     <outlet property="errorLabel" destination="HgP-Ez-RLq" id="SnJ-Al-IZn"/>
                                     <outlet property="nextFieldResponder" destination="77e-aR-Ici" id="Fnx-jf-EZt"/>
                                 </connections>
@@ -287,6 +289,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" secureTextEntry="YES"/>
                                 <connections>
+                                    <outlet property="delegate" destination="u3m-Gh-9ax" id="cvf-ub-vGg"/>
                                     <outlet property="errorLabel" destination="svE-cV-WXV" id="Q69-Aa-Ntk"/>
                                     <outlet property="nextFieldResponder" destination="Jqf-BL-G0d" id="qMR-om-Fgr"/>
                                 </connections>
@@ -311,6 +314,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                                 <connections>
+                                    <outlet property="delegate" destination="u3m-Gh-9ax" id="sVO-6H-6Qx"/>
                                     <outlet property="errorLabel" destination="2qp-Jn-M5e" id="Tm0-Ub-K61"/>
                                     <outlet property="nextFieldResponder" destination="0IM-cR-cL2" id="hQ0-TA-V6r"/>
                                 </connections>
@@ -335,6 +339,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
+                                    <outlet property="delegate" destination="u3m-Gh-9ax" id="hx5-nF-rUr"/>
                                     <outlet property="errorLabel" destination="6lW-gC-CKF" id="fn3-ko-XKc"/>
                                 </connections>
                             </textField>
@@ -372,6 +377,9 @@
                                     <color key="titleColor" red="0.71885228160000003" green="0.71883076430000004" blue="0.71884298319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <state key="highlighted" backgroundImage="color_F.png"/>
+                                <connections>
+                                    <action selector="onLoginClick:" destination="u3m-Gh-9ax" eventType="touchUpInside" id="SMu-Tn-Wf0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
