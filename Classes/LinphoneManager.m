@@ -1087,7 +1087,9 @@ static void linphone_iphone_registration_state(LinphoneCore *lc, LinphoneProxyCo
 static void linphone_iphone_popup_password_request(LinphoneCore *lc, const char *realmC, const char *usernameC,
 												   const char *domainC) {
 	// let the wizard handle its own errors
-	if ([MainTabViewController.instance currentView] != AssistantView.compositeViewDescription) {
+    //TODO Tuong cmt
+//	if ([MainTabViewController.instance currentView] != AssistantView.compositeViewDescription) {
+    if (false) {
 		static UIAlertController *alertView = nil;
 
 		// avoid having multiple popups
@@ -1929,14 +1931,17 @@ void popup_link_account_cb(LinphoneAccountCreator *creator, LinphoneAccountCreat
 																	style:UIAlertActionStyleDefault
 																  handler:^(UIAlertAction * action) {}];
 			
+            // TODO
+            /*
 			UIAlertAction* continueAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Let's go", nil)
 																	 style:UIAlertActionStyleDefault
 																   handler:^(UIAlertAction * action) {
 																	   [MainTabViewController.instance changeCurrentView:AssistantLinkView.compositeViewDescription];
 																   }];
+             */
 			defaultAction.accessibilityLabel = @"Later";
 			[errView addAction:defaultAction];
-			[errView addAction:continueAction];
+//			[errView addAction:continueAction];
 			[MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
 
 			[LinphoneManager.instance

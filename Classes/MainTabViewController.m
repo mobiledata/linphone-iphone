@@ -279,34 +279,36 @@ static RootViewManager *rootViewManagerInstance = nil;
 }
 
 - (void)registrationUpdate:(NSNotification *)notif {
-    LinphoneRegistrationState state = [[notif.userInfo objectForKey:@"state"] intValue];
-    if (state == LinphoneRegistrationFailed && ![currentView equal:AssistantView.compositeViewDescription] &&
-        [UIApplication sharedApplication].applicationState != UIApplicationStateBackground) {
-        UIAlertController *errView = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Registration failure", nil)
-                                                                         message:[notif.userInfo objectForKey:@"message"]
-                                                                  preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Continue", nil)
-                                                                style:UIAlertActionStyleDefault
-                                                              handler:^(UIAlertAction * action) {}];
-        
-        [errView addAction:defaultAction];
-        [self presentViewController:errView animated:YES completion:nil];
-    }
+    //TODO TUONG cmt
+//    LinphoneRegistrationState state = [[notif.userInfo objectForKey:@"state"] intValue];
+//    if (state == LinphoneRegistrationFailed && ![currentView equal:AssistantView.compositeViewDescription] &&
+//        [UIApplication sharedApplication].applicationState != UIApplicationStateBackground) {
+//        UIAlertController *errView = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Registration failure", nil)
+//                                                                         message:[notif.userInfo objectForKey:@"message"]
+//                                                                  preferredStyle:UIAlertControllerStyleAlert];
+//        
+//        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Continue", nil)
+//                                                                style:UIAlertActionStyleDefault
+//                                                              handler:^(UIAlertAction * action) {}];
+//        
+//        [errView addAction:defaultAction];
+//        [self presentViewController:errView animated:YES completion:nil];
+//    }
 }
 
 - (void)onGlobalStateChanged:(NSNotification *)notif {
-    LinphoneGlobalState state = (LinphoneGlobalState)[[[notif userInfo] valueForKey:@"state"] integerValue];
-    static BOOL already_shown = FALSE;
-    if (state == LinphoneGlobalOn && !already_shown && LinphoneManager.instance.wasRemoteProvisioned) {
-        LinphoneProxyConfig *conf = linphone_core_get_default_proxy_config(LC);
-        if ([LinphoneManager.instance lpConfigBoolForKey:@"show_login_view" inSection:@"app"] && conf == NULL) {
-            already_shown = TRUE;
-            AssistantView *view = VIEW(AssistantView);
-            [MainTabViewController.instance changeCurrentView:view.compositeViewDescription];
-            [view fillDefaultValues];
-        }
-    }
+    //TODO Tuong cmnt
+//    LinphoneGlobalState state = (LinphoneGlobalState)[[[notif userInfo] valueForKey:@"state"] integerValue];
+//    static BOOL already_shown = FALSE;
+//    if (state == LinphoneGlobalOn && !already_shown && LinphoneManager.instance.wasRemoteProvisioned) {
+//        LinphoneProxyConfig *conf = linphone_core_get_default_proxy_config(LC);
+//        if ([LinphoneManager.instance lpConfigBoolForKey:@"show_login_view" inSection:@"app"] && conf == NULL) {
+//            already_shown = TRUE;
+//            AssistantView *view = VIEW(AssistantView);
+//            [MainTabViewController.instance changeCurrentView:view.compositeViewDescription];
+//            [view fillDefaultValues];
+//        }
+//    }
 }
 
 - (void)callUpdate:(NSNotification *)notif {
@@ -488,9 +490,10 @@ static RootViewManager *rootViewManagerInstance = nil;
             if (list != NULL || ([lm lpConfigBoolForKey:@"hide_assistant_preference"] == true) || lm.isTesting) {
                 [self changeCurrentView:DialerView.compositeViewDescription];
             } else {
-                AssistantView *view = VIEW(AssistantView);
-                [MainTabViewController.instance changeCurrentView:view.compositeViewDescription];
-                [view reset];
+                //TODO Tuong cmnt
+//                AssistantView *view = VIEW(AssistantView);
+//                [MainTabViewController.instance changeCurrentView:view.compositeViewDescription];
+//                [view reset];
             }
         }
         [self updateApplicationBadgeNumber]; // Update Badge at startup

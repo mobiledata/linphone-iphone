@@ -23,7 +23,7 @@
 //#import "PhoneMainView.h"
 #import "MainTabViewController.h"
 
-@interface SipSettingViewController : UIViewController <UITextFieldDelegate, UICompositeViewDelegate> {
+@interface SipSettingViewController : UIViewController <UITextFieldDelegate> {
     
 @private
     LinphoneAccountCreator *account_creator;
@@ -44,7 +44,6 @@
 // ************* end new Mapping ********
 
 @property(nonatomic) UICompositeViewDescription *outgoingView;
-@property (weak, nonatomic) IBOutlet UILabel *subtileLabel_useLinphoneAccount;
 
 @property(nonatomic, strong) IBOutlet TPKeyboardAvoidingScrollView *contentView;
 @property(nonatomic, strong) IBOutlet UIView *waitView;
@@ -53,19 +52,8 @@
 
 @property(nonatomic, strong) IBOutlet UIView *loginView;
 
-@property(nonatomic, strong) IBOutlet UIImageView *welcomeLogoImage;
-@property(nonatomic, strong) IBOutlet UIButton *gotoCreateAccountButton;
-@property(nonatomic, strong) IBOutlet UIButton *gotoLinphoneLoginButton;
-@property(nonatomic, strong) IBOutlet UIButton *gotoLoginButton;
-@property(nonatomic, strong) IBOutlet UIButton *gotoRemoteProvisioningButton;
-@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
-@property (weak, nonatomic) IBOutlet UILabel *phoneTitle;
-@property (weak, nonatomic) IBOutlet UILabel *activationTitle;
-@property (weak, nonatomic) IBOutlet UILabel *activationEmailText;
-@property (weak, nonatomic) IBOutlet UILabel *activationSMSText;
-
 @property (weak, nonatomic) IBOutlet UILabel *accountLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *createAccountNextButtonPositionConstraint;
+//@property (weak, nonatomic) IBOutlet NSLayoutConstraint *createAccountNextButtonPositionConstraint;
 
 + (NSString *)errorForStatus:(LinphoneAccountCreatorStatus)status;
 + (NSString *)StringForXMLRPCError:(const char *)err;

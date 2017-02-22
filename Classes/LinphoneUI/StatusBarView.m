@@ -181,11 +181,14 @@
 	}
 }
 - (void)proxyConfigUpdate:(LinphoneProxyConfig *)config {
+    
 	LinphoneRegistrationState state = LinphoneRegistrationNone;
 	NSString *message = nil;
 	LinphoneGlobalState gstate = linphone_core_get_global_state(LC);
 	
-	if ([MainTabViewController.instance.currentView equal:AssistantView.compositeViewDescription] || [MainTabViewController.instance.currentView equal:CountryListView.compositeViewDescription]) {
+    //TODO Tuong cmnt
+//	if ([MainTabViewController.instance.currentView equal:AssistantView.compositeViewDescription] || [MainTabViewController.instance.currentView equal:CountryListView.compositeViewDescription]) {
+    if (false) {
 		message = NSLocalizedString(@"Configuring account", nil);
 	} else if (gstate == LinphoneGlobalOn && !linphone_core_is_network_reachable(LC)) {
 		message = NSLocalizedString(@"Network down", nil);
@@ -220,6 +223,7 @@
 				break;
 		}
 	}
+    
 	[_registrationState setTitle:message forState:UIControlStateNormal];
 	_registrationState.accessibilityValue = message;
 	[_registrationState setImage:[self.class imageForState:state] forState:UIControlStateNormal];
@@ -394,7 +398,8 @@
 	} else if (linphone_core_get_proxy_config_list(LC)) {
 		[MainTabViewController.instance changeCurrentView:SettingsView.compositeViewDescription];
 	} else {
-		[MainTabViewController.instance changeCurrentView:AssistantView.compositeViewDescription];
+        //TODO Tuong cmnt
+//		[MainTabViewController.instance changeCurrentView:AssistantView.compositeViewDescription];
 	}
 }
 

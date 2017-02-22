@@ -13,8 +13,8 @@
 #import "TabBarView.h"
 
 #import "AboutView.h"
-#import "AssistantLinkView.h"
-#import "AssistantView.h"
+//#import "AssistantLinkView.h"
+//#import "AssistantView.h"
 #import "CallIncomingView.h"
 #import "CallOutgoingView.h"
 #import "CallSideMenuView.h"

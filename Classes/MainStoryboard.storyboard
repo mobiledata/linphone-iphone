@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Contact-->
         <scene sceneID="76X-8P-tVg">
             <objects>
                 <viewController id="ez2-LL-LtY" sceneMemberID="viewController">
@@ -166,7 +166,7 @@
                             <constraint firstAttribute="trailing" secondItem="foA-GD-yZA" secondAttribute="trailing" id="oiN-Vb-AXj"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="Nbe-91-8Ey"/>
+                    <tabBarItem key="tabBarItem" title="Contact" selectedImage="footer_contacts_default.png" id="Nbe-91-8Ey"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIg-80-sQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -175,7 +175,7 @@
         <!--Settings-->
         <scene sceneID="JoJ-bT-aBN">
             <objects>
-                <viewController title="Settings" id="A4V-T8-O9L" sceneMemberID="viewController">
+                <viewController id="A4V-T8-O9L" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s8y-vv-dvV"/>
                         <viewControllerLayoutGuide type="bottom" id="Pvz-dB-hKb"/>
@@ -234,16 +234,16 @@
                             <constraint firstAttribute="trailing" secondItem="pZL-6h-qtx" secondAttribute="trailing" id="wH4-ub-XLT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="6ms-kt-vP9"/>
+                    <navigationItem key="navigationItem" title="Settings" id="6ms-kt-vP9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adQ-Lm-eDK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2283" y="-2317"/>
+            <point key="canvasLocation" x="3263" y="-2317"/>
         </scene>
         <!--USE YOUR SIP ACCOUNT-->
         <scene sceneID="RNT-zJ-jLM">
             <objects>
-                <viewController title="USE YOUR SIP ACCOUNT" id="u3m-Gh-9ax" customClass="SipSettingViewController" sceneMemberID="viewController">
+                <viewController id="u3m-Gh-9ax" customClass="SipSettingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6e2-13-w8x"/>
                         <viewControllerLayoutGuide type="bottom" id="keG-wx-Xhj"/>
@@ -437,7 +437,7 @@
                             <constraint firstAttribute="trailing" secondItem="Jqf-BL-G0d" secondAttribute="trailing" constant="20" id="yn1-0g-Bku"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qmL-Se-WTQ"/>
+                    <navigationItem key="navigationItem" title="USE YOUR SIP ACCOUNT" id="qmL-Se-WTQ"/>
                     <connections>
                         <outlet property="createUsername" destination="KDq-lK-Pz9" id="zey-Au-Pn0"/>
                         <outlet property="displayName" destination="0IM-cR-cL2" id="pdO-6X-Kdb"/>
@@ -448,9 +448,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gad-Vp-wro" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3304" y="-2215"/>
+            <point key="canvasLocation" x="4284" y="-2215"/>
         </scene>
-        <!--Dial-->
+        <!--Dialer-->
         <scene sceneID="jEn-45-4xH">
             <objects>
                 <viewController id="aD0-OD-vNJ" customClass="DialerView" sceneMemberID="viewController">
@@ -458,8 +458,8 @@
                         <viewControllerLayoutGuide type="top" id="pDx-GM-qfe"/>
                         <viewControllerLayoutGuide type="bottom" id="Uj9-U2-TvJ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ObT-AL-hIh">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="ObT-AL-hIh">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tef-9I-xLO" userLabel="Container">
@@ -747,7 +747,8 @@
                             <constraint firstItem="tef-9I-xLO" firstAttribute="leading" secondItem="ObT-AL-hIh" secondAttribute="leading" id="vd5-PB-LGc"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Dial" id="7pT-KY-o2i"/>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="Dialer" id="Ixt-Of-WMM"/>
                     <connections>
                         <outlet property="addContactButton" destination="Yf5-Ud-5el" id="eYk-NP-Q20"/>
                         <outlet property="addressField" destination="6CQ-vb-RHy" id="4cZ-A1-onV"/>
@@ -771,9 +772,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Obg-Qv-w3x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12" y="-1805"/>
+            <point key="canvasLocation" x="202" y="-656"/>
         </scene>
-        <!--View Controller-->
+        <!--History-->
         <scene sceneID="69A-pE-YTb">
             <objects>
                 <viewController id="PiA-e5-rWf" sceneMemberID="viewController">
@@ -904,7 +905,7 @@
                             <constraint firstAttribute="bottom" secondItem="EAm-Kc-mRF" secondAttribute="bottom" id="saB-lI-tv5"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="Asy-IW-e0m"/>
+                    <tabBarItem key="tabBarItem" title="History" selectedImage="footer_history_default.png" id="Asy-IW-e0m"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gjg-qc-SE9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -922,7 +923,7 @@
                     <connections>
                         <segue destination="PiA-e5-rWf" kind="relationship" relationship="viewControllers" id="FwM-Rk-8Mz"/>
                         <segue destination="ez2-LL-LtY" kind="relationship" relationship="viewControllers" id="hOh-oc-OPg"/>
-                        <segue destination="aD0-OD-vNJ" kind="relationship" relationship="viewControllers" id="p3B-OG-3V0"/>
+                        <segue destination="pBJ-CS-JQx" kind="relationship" relationship="viewControllers" id="p3B-OG-3V0"/>
                         <segue destination="KuU-Cg-acD" kind="relationship" relationship="viewControllers" id="ozM-e9-Idg"/>
                     </connections>
                 </tabBarController>
@@ -933,12 +934,14 @@
         <!--Settings-->
         <scene sceneID="eKj-kd-G9b">
             <objects>
-                <navigationController title="Settings" automaticallyAdjustsScrollViewInsets="NO" id="KuU-Cg-acD" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KuU-Cg-acD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" id="Hb2-ON-N97"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j1W-9d-Wl6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="j1W-9d-Wl6">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.2274509804" green="0.80784313730000001" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -947,7 +950,27 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kra-Qc-U3L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1124" y="-2036"/>
+            <point key="canvasLocation" x="2104" y="-2036"/>
+        </scene>
+        <!--Dialer-->
+        <scene sceneID="ubI-Ol-BrD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pBJ-CS-JQx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Dialer" selectedImage="footer_dialer_default.png" id="7pT-KY-o2i"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="H61-kB-FeN">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.2274509804" green="0.80784313730000001" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aD0-OD-vNJ" kind="relationship" relationship="rootViewController" id="UuV-iW-p5k"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="heZ-zm-Njm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="450" y="-1828"/>
         </scene>
     </scenes>
     <resources>
@@ -978,6 +1001,9 @@
         <image name="dialer_background.png" width="414" height="355"/>
         <image name="edit_list_default.png" width="30" height="28"/>
         <image name="edit_list_disabled.png" width="30" height="28"/>
+        <image name="footer_contacts_default.png" width="29" height="29"/>
+        <image name="footer_dialer_default.png" width="27" height="27"/>
+        <image name="footer_history_default.png" width="29" height="29"/>
         <image name="history_all_default.png" width="33" height="32"/>
         <image name="history_all_disabled.png" width="33" height="32"/>
         <image name="history_all_selected.png" width="33" height="32"/>

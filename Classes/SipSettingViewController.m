@@ -23,7 +23,6 @@
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 
 #import "SipSettingViewController.h"
-#import "CountryListView.h"
 #import "LinphoneManager.h"
 #import "MainTabViewController.h"
 #import "UIAssistantTextField.h"
@@ -33,37 +32,15 @@
 
 #pragma mark - Lifecycle Functions
 
-- (id)init {
-    self = [super initWithNibName:NSStringFromClass(self.class) bundle:[NSBundle mainBundle]];
-    if (self != nil) {
-        [[NSBundle mainBundle] loadNibNamed:@"SipSettingViewControllerScreens" owner:self options:nil];
-        mustRestoreView = NO;
-    }
-    return self;
-}
+//- (id)init {
+//    self = [super initWithNibName:NSStringFromClass(self.class) bundle:[NSBundle mainBundle]];
+//    if (self != nil) {
+//        [[NSBundle mainBundle] loadNibNamed:@"SipSettingViewControllerScreens" owner:self options:nil];
+//        mustRestoreView = NO;
+//    }
+//    return self;
+//}
 
-#pragma mark - UICompositeViewDelegate Functions
-
-static UICompositeViewDescription *compositeDescription = nil;
-
-+ (UICompositeViewDescription *)compositeViewDescription {
-    if (compositeDescription == nil) {
-        compositeDescription = [[UICompositeViewDescription alloc] init:self.class
-                                                              statusBar:StatusBarView.class
-                                                                 tabBar:nil
-                                                               sideMenu:SideMenuView.class
-                                                             fullscreen:false
-                                                         isLeftFragment:NO
-                                                           fragmentWith:nil];
-        
-        compositeDescription.darkBackground = true;
-    }
-    return compositeDescription;
-}
-
-- (UICompositeViewDescription *)compositeViewDescription {
-    return self.class.compositeViewDescription;
-}
 
 #pragma mark - ViewController Functions
 
@@ -607,7 +584,7 @@ static UICompositeViewDescription *compositeDescription = nil;
     
         if( linphone_account_creator_get_phone_number(account_creator) == NULL) {
             [self configureProxyConfig];
-            [MainTabViewController.instance changeCurrentView:AssistantLinkView.compositeViewDescription];
+//            [MainTabViewController.instance changeCurrentView:AssistantLinkView.compositeViewDescription];
         } else {
             [MainTabViewController.instance changeCurrentView:DialerView.compositeViewDescription];
         }
@@ -626,15 +603,15 @@ void assistant_create_account(LinphoneAccountCreator *creator, LinphoneAccountCr
     SipSettingViewController *thiz = (__bridge SipSettingViewController *)(linphone_account_creator_get_user_data(creator));
     thiz.waitView.hidden = YES;
     if (status == LinphoneAccountCreatorAccountCreated) {
-        if (linphone_account_creator_get_phone_number(creator)) {
-            NSString* phoneNumber = [NSString stringWithUTF8String:linphone_account_creator_get_phone_number(creator)];
-            thiz.activationSMSText.text = [NSString stringWithFormat:NSLocalizedString(@"We have sent a SMS with a validation code to %@. To complete your phone number verification, please enter the 4 digit code below:", nil), phoneNumber];
-//            [thiz changeView:thiz.createAccountActivateSMSView back:FALSE animation:TRUE];
-        } else {
-            NSString* email = [NSString stringWithUTF8String:linphone_account_creator_get_email(creator)];
-            thiz.activationEmailText.text = [NSString stringWithFormat:NSLocalizedString(@" Your account is created. We have sent a confirmation email to %@. Please check your mails to validate your account. Once it is done, come back here and click on the button.", nil), email];
-//            [thiz changeView:thiz.createAccountActivateEmailView back:FALSE animation:TRUE];
-        }
+//        if (linphone_account_creator_get_phone_number(creator)) {
+//            NSString* phoneNumber = [NSString stringWithUTF8String:linphone_account_creator_get_phone_number(creator)];
+//            thiz.activationSMSText.text = [NSString stringWithFormat:NSLocalizedString(@"We have sent a SMS with a validation code to %@. To complete your phone number verification, please enter the 4 digit code below:", nil), phoneNumber];
+////            [thiz changeView:thiz.createAccountActivateSMSView back:FALSE animation:TRUE];
+//        } else {
+//            NSString* email = [NSString stringWithUTF8String:linphone_account_creator_get_email(creator)];
+//            thiz.activationEmailText.text = [NSString stringWithFormat:NSLocalizedString(@" Your account is created. We have sent a confirmation email to %@. Please check your mails to validate your account. Once it is done, come back here and click on the button.", nil), email];
+////            [thiz changeView:thiz.createAccountActivateEmailView back:FALSE animation:TRUE];
+//        }
     } else {
         [thiz showErrorPopup:resp];
     }
@@ -644,17 +621,17 @@ void assistant_recover_phone_account(LinphoneAccountCreator *creator, LinphoneAc
                                      const char *resp) {
     SipSettingViewController *thiz = (__bridge SipSettingViewController *)(linphone_account_creator_get_user_data(creator));
     thiz.waitView.hidden = YES;
-    if (status == LinphoneAccountCreatorOK) {
-        NSString* phoneNumber = [NSString stringWithUTF8String:linphone_account_creator_get_phone_number(creator)];
-        thiz.activationSMSText.text = [NSString stringWithFormat:NSLocalizedString(@"We have sent a SMS with a validation code to %@. To complete your phone number verification, please enter the 4 digit code below:", nil), phoneNumber];
-//        [thiz changeView:thiz.createAccountActivateSMSView back:FALSE animation:TRUE];
-    } else {
-        if(!resp) {
-            [thiz showErrorPopup:"ERROR_CANNOT_SEND_SMS"];
-        } else {
-            [thiz showErrorPopup:resp];
-        }
-    }
+//    if (status == LinphoneAccountCreatorOK) {
+//        NSString* phoneNumber = [NSString stringWithUTF8String:linphone_account_creator_get_phone_number(creator)];
+//        thiz.activationSMSText.text = [NSString stringWithFormat:NSLocalizedString(@"We have sent a SMS with a validation code to %@. To complete your phone number verification, please enter the 4 digit code below:", nil), phoneNumber];
+////        [thiz changeView:thiz.createAccountActivateSMSView back:FALSE animation:TRUE];
+//    } else {
+//        if(!resp) {
+//            [thiz showErrorPopup:"ERROR_CANNOT_SEND_SMS"];
+//        } else {
+//            [thiz showErrorPopup:resp];
+//        }
+//    }
 }
 
 void assistant_activate_account(LinphoneAccountCreator *creator, LinphoneAccountCreatorStatus status,
@@ -755,24 +732,12 @@ void assistant_is_account_linked(LinphoneAccountCreator *creator, LinphoneAccoun
         return replace;
 }
 
-// Change button color and wait the display of this
-#define ONCLICKBUTTON(button, timewaitmsec, body) \
-[button setBackgroundColor:[UIColor lightGrayColor]]; \
-_waitView.hidden = NO; \
-dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (timewaitmsec * NSEC_PER_MSEC)); \
-dispatch_after(popTime, dispatch_get_main_queue(), ^(void){ \
-body \
-[button setBackgroundColor:[UIColor clearColor]]; \
-_waitView.hidden = YES; \
-}); \
-
 #pragma mark - Action Functions
 
 - (IBAction)onLoginClick:(id)sender {
-    ONCLICKBUTTON(sender, 100, {
-        _waitView.hidden = NO;
-        [self configureProxyConfig];
-    });
+    
+    _waitView.hidden = NO;
+    [self configureProxyConfig];
 }
 
 - (void)refreshYourUsername {
