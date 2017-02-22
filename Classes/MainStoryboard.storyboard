@@ -192,7 +192,7 @@
                                         <rect key="frame" x="0.0" y="28" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o23-CY-sPM" id="Iwt-d4-AEt">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIP Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq1-zh-IAc" userLabel="SIP Account">
@@ -243,7 +243,7 @@
         <!--USE YOUR SIP ACCOUNT-->
         <scene sceneID="RNT-zJ-jLM">
             <objects>
-                <viewController title="USE YOUR SIP ACCOUNT" id="u3m-Gh-9ax" sceneMemberID="viewController">
+                <viewController title="USE YOUR SIP ACCOUNT" id="u3m-Gh-9ax" customClass="SipSettingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6e2-13-w8x"/>
                         <viewControllerLayoutGuide type="bottom" id="keG-wx-Xhj"/>
@@ -438,6 +438,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qmL-Se-WTQ"/>
+                    <connections>
+                        <outlet property="createUsername" destination="KDq-lK-Pz9" id="zey-Au-Pn0"/>
+                        <outlet property="displayName" destination="0IM-cR-cL2" id="pdO-6X-Kdb"/>
+                        <outlet property="domain" destination="Jqf-BL-G0d" id="0hV-Ch-8cP"/>
+                        <outlet property="password" destination="77e-aR-Ici" id="9ue-bc-d5G"/>
+                        <outlet property="transportSegment" destination="opp-GD-Z6v" id="1W6-b3-IvP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gad-Vp-wro" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
