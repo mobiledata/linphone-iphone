@@ -175,7 +175,7 @@
         <!--Dial-->
         <scene sceneID="jEn-45-4xH">
             <objects>
-                <viewController id="aD0-OD-vNJ" sceneMemberID="viewController">
+                <viewController id="aD0-OD-vNJ" customClass="DialerView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pDx-GM-qfe"/>
                         <viewControllerLayoutGuide type="bottom" id="Uj9-U2-TvJ"/>
@@ -201,6 +201,9 @@
                                                 <accessibility key="accessibilityConfiguration" label="Enter an address"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" returnKeyType="join"/>
+                                                <connections>
+                                                    <action selector="onAddressChange:" destination="aD0-OD-vNJ" eventType="editingDidEnd" id="1Zz-1T-RMg"/>
+                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k90-EC-k1g" userLabel="backspaceButton" customClass="UIIconButton">
                                                 <rect key="frame" x="703" y="0.0" width="60" height="66"/>
@@ -210,6 +213,9 @@
                                                 </state>
                                                 <state key="disabled" image="backspace_disabled.png"/>
                                                 <state key="highlighted" image="backspace_over.png"/>
+                                                <connections>
+                                                    <action selector="onBackspaceClick:" destination="aD0-OD-vNJ" eventType="touchUpInside" id="71X-r3-uIN"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -399,6 +405,9 @@
                                                 </state>
                                                 <state key="disabled" image="call_alt_back_disabled.png"/>
                                                 <state key="highlighted" backgroundImage="color_E.png"/>
+                                                <connections>
+                                                    <action selector="onBackClick:" destination="aD0-OD-vNJ" eventType="touchUpInside" id="HJt-Hs-MzS"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yf5-Ud-5el" userLabel="addContactButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="256" height="66"/>
@@ -410,6 +419,9 @@
                                                 </state>
                                                 <state key="disabled" image="contact_add_disabled.png"/>
                                                 <state key="highlighted" backgroundImage="color_E.png"/>
+                                                <connections>
+                                                    <action selector="onAddContactClick:" destination="aD0-OD-vNJ" eventType="touchUpInside" id="uCP-L9-oTh"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXb-8T-Xqk" userLabel="callButton" customClass="UICallButton">
                                                 <rect key="frame" x="256" y="0.0" width="512" height="66"/>
@@ -458,6 +470,26 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Dial" id="7pT-KY-o2i"/>
+                    <connections>
+                        <outlet property="addContactButton" destination="Yf5-Ud-5el" id="eYk-NP-Q20"/>
+                        <outlet property="addressField" destination="6CQ-vb-RHy" id="4cZ-A1-onV"/>
+                        <outlet property="backButton" destination="IeR-94-an3" id="44B-fi-i27"/>
+                        <outlet property="backspaceButton" destination="k90-EC-k1g" id="zIX-Wb-ReC"/>
+                        <outlet property="callButton" destination="xXb-8T-Xqk" id="8Z6-tH-RHb"/>
+                        <outlet property="eightButton" destination="IGC-RE-Wdg" id="lBt-aJ-TOl"/>
+                        <outlet property="fiveButton" destination="Aah-xp-lKJ" id="F57-uj-30T"/>
+                        <outlet property="fourButton" destination="hQK-4w-c2j" id="UKu-2T-ysv"/>
+                        <outlet property="hashButton" destination="G3B-MF-nSt" id="YWv-VQ-rhx"/>
+                        <outlet property="nineButton" destination="hLF-tf-Sjd" id="fDh-Sc-SS6"/>
+                        <outlet property="oneButton" destination="SBd-bt-Y7p" id="xzo-gI-tWS"/>
+                        <outlet property="padView" destination="uZv-WZ-gEp" id="btU-75-86U"/>
+                        <outlet property="sevenButton" destination="eie-kK-3fd" id="0pl-6H-Zhp"/>
+                        <outlet property="sixButton" destination="XaP-X2-npf" id="57h-Xf-HOs"/>
+                        <outlet property="starButton" destination="7QW-4Q-iqc" id="b8S-Qz-pnT"/>
+                        <outlet property="threeButton" destination="YKY-pa-5fz" id="ejQ-Dh-gFW"/>
+                        <outlet property="twoButton" destination="rAc-lH-iFS" id="VBK-98-O6z"/>
+                        <outlet property="zeroButton" destination="h5j-tO-aDg" id="GFh-sB-p63"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Obg-Qv-w3x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
