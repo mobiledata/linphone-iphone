@@ -149,13 +149,13 @@ static UICompositeViewDescription *compositeDescription = nil;
 		
 		[errView addAction:defaultAction];
 		[self presentViewController:errView animated:YES completion:nil];
-//		[MainTabViewController.instance popCurrentView];
+		[MainTabViewController.instance popCurrentView];
 	}
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
-	self.view = NULL;
-//    [self.tableController removeAllContacts];
+//	self.view = NULL;
+    [self.tableController removeAllContacts];
 }
 
 #pragma mark -
