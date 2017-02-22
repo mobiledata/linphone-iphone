@@ -106,11 +106,14 @@ static UICompositeViewDescription *compositeDescription = nil;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	tableController.tableView.accessibilityIdentifier = @"Contacts table";
+//	tableController.tableView.accessibilityIdentifier = @"Contacts table";
 	[self changeView:ContactsAll];
 	/*if ([tableController totalNumberOfItems] == 0) {
 		[self changeView:ContactsAll];
 	 }*/
+    
+    tableController = (ContactsListTableView *)[self.childViewControllers firstObject];
+    
 	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
 								   initWithTarget:self
 								   action:@selector(dismissKeyboards)];
@@ -146,13 +149,13 @@ static UICompositeViewDescription *compositeDescription = nil;
 		
 		[errView addAction:defaultAction];
 		[self presentViewController:errView animated:YES completion:nil];
-		[MainTabViewController.instance popCurrentView];
+//		[MainTabViewController.instance popCurrentView];
 	}
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
 	self.view = NULL;
-	[self.tableController removeAllContacts];
+//    [self.tableController removeAllContacts];
 }
 
 #pragma mark -
@@ -165,14 +168,14 @@ static UICompositeViewDescription *compositeDescription = nil;
 		[ContactSelection enableEmailFilter:FALSE];
 		allButton.selected = TRUE;
 		linphoneButton.selected = FALSE;
-		[tableController loadData];
+        [tableController loadData];
 	} else if (view == ContactsLinphone && !linphoneButton.selected) {
 		frame.origin.x = linphoneButton.frame.origin.x;
 		[ContactSelection setSipFilter:LinphoneManager.instance.contactFilter];
 		[ContactSelection enableEmailFilter:FALSE];
 		linphoneButton.selected = TRUE;
 		allButton.selected = FALSE;
-		[tableController loadData];
+        [tableController loadData];
 	}
 	_selectedButtonImage.frame = frame;
 }
@@ -212,21 +215,21 @@ static UICompositeViewDescription *compositeDescription = nil;
 		  [self onEditionChangeClick:nil];
 		}
 		onConfirmationClick:^() {
-		  [tableController removeSelectionUsing:nil];
-		  [tableController loadData];
+            [tableController removeSelectionUsing:nil];
+            [tableController loadData];
 		  [self onEditionChangeClick:nil];
 		}];
 }
 
 - (IBAction)onEditionChangeClick:(id)sender {
-	allButton.hidden = linphoneButton.hidden = _selectedButtonImage.hidden = addButton.hidden =
+allButton.hidden = linphoneButton.hidden = _selectedButtonImage.hidden = addButton.hidden =
 		self.tableController.isEditing;
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
 	searchBar.text = @"";
 	[self searchBar:searchBar textDidChange:@""];
-	[tableController loadData];
+    [tableController loadData];
 	[searchBar resignFirstResponder];
 }
 
@@ -243,9 +246,9 @@ static UICompositeViewDescription *compositeDescription = nil;
 	// searchBar.text = [searchText uppercaseString];
 	[ContactSelection setNameOrEmailFilter:searchText];
 	if (searchText.length == 0) {
-		[tableController loadData];
+        [tableController loadData];
 	} else {
-		[tableController loadSearchedData];
+        [tableController loadSearchedData];
 	}
 }
 

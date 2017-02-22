@@ -9,169 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Contact-->
-        <scene sceneID="76X-8P-tVg">
-            <objects>
-                <viewController id="ez2-LL-LtY" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="a3D-xE-I2b"/>
-                        <viewControllerLayoutGuide type="bottom" id="Prr-T9-CTd"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8H1-ZQ-e7Z">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SHe-6b-xCs" userLabel="topBar">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="66"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_F.png" translatesAutoresizingMaskIntoConstraints="NO" id="0zK-kr-luc" userLabel="backgroundColor">
-                                        <rect key="frame" x="0.0" y="0.0" width="768" height="66"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dbN-dI-EWX" userLabel="switchView">
-                                        <rect key="frame" x="0.0" y="0.0" width="307" height="66"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPh-aj-KrW" userLabel="allButton" customClass="UIIconButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="153.5" height="66"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                                <accessibility key="accessibilityConfiguration" label="All contacts filter"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                                <inset key="titleEdgeInsets" minX="-38" minY="15" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" image="contacts_all_default.png">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <state key="disabled" image="contacts_all_disabled.png"/>
-                                                <state key="selected" image="contacts_all_selected.png">
-                                                    <color key="titleColor" red="0.98766469960000003" green="0.27512490750000002" blue="0.029739789660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <state key="highlighted" backgroundImage="color_E.png"/>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_A.png" translatesAutoresizingMaskIntoConstraints="NO" id="8mP-fB-REC" userLabel="selectedButtonImage">
-                                                <rect key="frame" x="0.0" y="63" width="153.5" height="3"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTb-Ka-TVI" userLabel="sipButton" customClass="UIIconButton">
-                                                <rect key="frame" x="153.5" y="0.0" width="153.5" height="66"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
-                                                <accessibility key="accessibilityConfiguration" label="Linphone contacts filter"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                                <state key="normal" image="contacts_sip_default.png">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <state key="disabled" image="contacts_sip_disabled.png"/>
-                                                <state key="selected" image="contacts_sip_selected.png">
-                                                    <color key="titleColor" red="0.98766469960000003" green="0.27512490750000002" blue="0.029739789660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <state key="highlighted" backgroundImage="color_E.png"/>
-                                            </button>
-                                        </subviews>
-                                    </view>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2A-rn-IT2" userLabel="cancelButton" customClass="UIIconButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="153.5" height="66"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <accessibility key="accessibilityConfiguration" label="Delete all"/>
-                                        <state key="normal" image="cancel_edit_default.png">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <state key="disabled" image="cancel_edit_disabled.png"/>
-                                        <state key="highlighted" backgroundImage="color_E.png"/>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ek-7D-K2v" userLabel="deleteButton" customClass="UIIconButton">
-                                        <rect key="frame" x="614" y="0.0" width="154" height="66"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <accessibility key="accessibilityConfiguration" label="Delete all"/>
-                                        <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" image="delete_default.png">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <state key="disabled" image="delete_disabled.png"/>
-                                        <state key="highlighted" backgroundImage="color_E.png"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeF-yT-eUz" userLabel="editButton" customClass="UIIconButton">
-                                        <rect key="frame" x="614" y="0.0" width="154" height="66"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <accessibility key="accessibilityConfiguration" label="Edit"/>
-                                        <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" image="edit_list_default.png">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <state key="disabled" image="edit_list_disabled.png"/>
-                                        <state key="highlighted" backgroundImage="color_E.png"/>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoc-CS-NOl" userLabel="toggleSelectionButton" customClass="UIIconButton">
-                                        <rect key="frame" x="460.5" y="0.0" width="153.5" height="66"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <accessibility key="accessibilityConfiguration" label="Select all"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" image="deselect_all.png">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <state key="disabled" image="select_all_disabled.png"/>
-                                        <state key="selected" image="select_all_default.png"/>
-                                        <state key="highlighted" backgroundImage="color_E.png"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LrB-WH-jTH" userLabel="addButton" customClass="UIIconButton">
-                                        <rect key="frame" x="460.5" y="0.0" width="153.5" height="66"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <accessibility key="accessibilityConfiguration" label="Add contact"/>
-                                        <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" image="contact_add_default.png">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <state key="disabled" image="contact_add_disabled.png"/>
-                                        <state key="highlighted" backgroundImage="color_E.png"/>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="66" id="abJ-Wn-lmJ"/>
-                                </constraints>
-                            </view>
-                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="foA-GD-yZA" userLabel="searchBar">
-                                <rect key="frame" x="0.0" y="66" width="768" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="ZDx-b5-5SG"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="D9J-qj-Yjv" userLabel="tableView">
-                                <rect key="frame" x="0.0" y="110" width="768" height="914"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
-                                <color key="separatorColor" red="0.67030966280000004" green="0.71867996450000005" blue="0.75078284740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </tableView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No contact found in your address book" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlh-Z3-7ta" userLabel="emptyTableLabel">
-                                <rect key="frame" x="0.0" y="110" width="768" height="914"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="SHe-6b-xCs" firstAttribute="leading" secondItem="8H1-ZQ-e7Z" secondAttribute="leading" id="8aG-bd-9BM"/>
-                            <constraint firstAttribute="trailing" secondItem="SHe-6b-xCs" secondAttribute="trailing" id="CR2-hY-dEC"/>
-                            <constraint firstAttribute="bottom" secondItem="D9J-qj-Yjv" secondAttribute="bottom" id="HNd-B5-2Vm"/>
-                            <constraint firstAttribute="trailing" secondItem="D9J-qj-Yjv" secondAttribute="trailing" id="Loh-vh-dJq"/>
-                            <constraint firstItem="foA-GD-yZA" firstAttribute="leading" secondItem="8H1-ZQ-e7Z" secondAttribute="leading" id="PfO-0d-Sw1"/>
-                            <constraint firstItem="SHe-6b-xCs" firstAttribute="top" secondItem="8H1-ZQ-e7Z" secondAttribute="top" id="Tkp-SD-tJE"/>
-                            <constraint firstItem="D9J-qj-Yjv" firstAttribute="top" secondItem="foA-GD-yZA" secondAttribute="bottom" id="fbz-F9-xRj"/>
-                            <constraint firstItem="foA-GD-yZA" firstAttribute="top" secondItem="SHe-6b-xCs" secondAttribute="bottom" id="gaq-oQ-Fex"/>
-                            <constraint firstItem="D9J-qj-Yjv" firstAttribute="leading" secondItem="8H1-ZQ-e7Z" secondAttribute="leading" id="nGU-qm-CLu"/>
-                            <constraint firstAttribute="trailing" secondItem="foA-GD-yZA" secondAttribute="trailing" id="oiN-Vb-AXj"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Contact" selectedImage="footer_contacts_default.png" id="Nbe-91-8Ey"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UIg-80-sQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1199" y="-3397"/>
-        </scene>
         <!--Settings-->
         <scene sceneID="JoJ-bT-aBN">
             <objects>
@@ -458,12 +295,12 @@
                         <viewControllerLayoutGuide type="top" id="pDx-GM-qfe"/>
                         <viewControllerLayoutGuide type="bottom" id="Uj9-U2-TvJ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="ObT-AL-hIh">
+                    <view key="view" contentMode="scaleToFill" id="ObT-AL-hIh">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tef-9I-xLO" userLabel="Container">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHU-MT-5U6" userLabel="dialer">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="66"/>
@@ -501,17 +338,17 @@
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dialer_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="lgK-Ow-0yr" userLabel="logoImage">
-                                        <rect key="frame" x="214" y="340.5" width="340" height="294"/>
+                                        <rect key="frame" x="214" y="308.5" width="340" height="294"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="340" id="S0G-2E-WPJ"/>
                                             <constraint firstAttribute="height" constant="294" id="la4-Qk-vns"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZv-WZ-gEp" userLabel="pad">
-                                        <rect key="frame" x="0.0" y="66" width="768" height="843"/>
+                                        <rect key="frame" x="0.0" y="66" width="768" height="779"/>
                                         <subviews>
                                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBd-bt-Y7p" userLabel="1" customClass="UIDigitButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="246" height="199"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="246" height="184"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.40000001000000002" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <accessibility key="accessibilityConfiguration" label="1"/>
@@ -525,7 +362,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAc-lH-iFS" userLabel="2" customClass="UIDigitButton">
-                                                <rect key="frame" x="261.5" y="0.0" width="246" height="199"/>
+                                                <rect key="frame" x="261.5" y="0.0" width="246" height="184"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" label="2"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -538,7 +375,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKY-pa-5fz" userLabel="3" customClass="UIDigitButton">
-                                                <rect key="frame" x="522" y="0.0" width="246" height="199"/>
+                                                <rect key="frame" x="522" y="0.0" width="246" height="184"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" label="3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -551,7 +388,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQK-4w-c2j" userLabel="4" customClass="UIDigitButton">
-                                                <rect key="frame" x="0.0" y="211" width="246" height="200"/>
+                                                <rect key="frame" x="0.0" y="195" width="246" height="185"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" label="4"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -564,7 +401,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aah-xp-lKJ" userLabel="5" customClass="UIDigitButton">
-                                                <rect key="frame" x="261.5" y="211" width="246" height="200"/>
+                                                <rect key="frame" x="261.5" y="195" width="246" height="185"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" label="5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -577,7 +414,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaP-X2-npf" userLabel="6" customClass="UIDigitButton">
-                                                <rect key="frame" x="522" y="211" width="246" height="200"/>
+                                                <rect key="frame" x="522" y="195" width="246" height="185"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" label="6"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -590,7 +427,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eie-kK-3fd" userLabel="7" customClass="UIDigitButton">
-                                                <rect key="frame" x="0.0" y="422.5" width="246" height="199"/>
+                                                <rect key="frame" x="0.0" y="390.5" width="246" height="184"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" label="7"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -603,7 +440,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGC-RE-Wdg" userLabel="8" customClass="UIDigitButton">
-                                                <rect key="frame" x="261.5" y="422.5" width="246" height="199"/>
+                                                <rect key="frame" x="261.5" y="390.5" width="246" height="184"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" label="8"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -616,7 +453,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLF-tf-Sjd" userLabel="9" customClass="UIDigitButton">
-                                                <rect key="frame" x="522" y="422.5" width="246" height="199"/>
+                                                <rect key="frame" x="522" y="390.5" width="246" height="184"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" label="9"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -629,7 +466,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7QW-4Q-iqc" userLabel="*" customClass="UIDigitButton">
-                                                <rect key="frame" x="0.0" y="636" width="246" height="199"/>
+                                                <rect key="frame" x="0.0" y="587.5" width="246" height="184"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" label="Star"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -642,7 +479,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5j-tO-aDg" userLabel="0" customClass="UIDigitButton">
-                                                <rect key="frame" x="261.5" y="636" width="246" height="199"/>
+                                                <rect key="frame" x="261.5" y="587.5" width="246" height="184"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" label="0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -655,7 +492,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3B-MF-nSt" userLabel="#" customClass="UIDigitButton">
-                                                <rect key="frame" x="522" y="636" width="246" height="199"/>
+                                                <rect key="frame" x="522" y="587.5" width="246" height="184"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" label="Hash"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -671,7 +508,7 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tR3-7H-mVa" userLabel="bottomBar">
-                                        <rect key="frame" x="0.0" y="909" width="768" height="66"/>
+                                        <rect key="frame" x="0.0" y="845" width="768" height="66"/>
                                         <subviews>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeR-94-an3" userLabel="backButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="256" height="66"/>
@@ -922,9 +759,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="PiA-e5-rWf" kind="relationship" relationship="viewControllers" id="FwM-Rk-8Mz"/>
-                        <segue destination="ez2-LL-LtY" kind="relationship" relationship="viewControllers" id="hOh-oc-OPg"/>
-                        <segue destination="pBJ-CS-JQx" kind="relationship" relationship="viewControllers" id="p3B-OG-3V0"/>
-                        <segue destination="KuU-Cg-acD" kind="relationship" relationship="viewControllers" id="ozM-e9-Idg"/>
+                        <segue destination="0zC-yf-Qnh" kind="relationship" relationship="viewControllers" id="rNa-o3-95i"/>
+                        <segue destination="pBJ-CS-JQx" kind="relationship" relationship="viewControllers" id="6fK-EM-nV5"/>
+                        <segue destination="KuU-Cg-acD" kind="relationship" relationship="viewControllers" id="oL9-tL-430"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lhp-Ra-Agv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -937,7 +774,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KuU-Cg-acD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" id="Hb2-ON-N97"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="j1W-9d-Wl6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j1W-9d-Wl6">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -958,7 +795,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pBJ-CS-JQx" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Dialer" selectedImage="footer_dialer_default.png" id="7pT-KY-o2i"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="H61-kB-FeN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H61-kB-FeN">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.2274509804" green="0.80784313730000001" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -971,6 +808,216 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="heZ-zm-Njm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="450" y="-1828"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="KjN-le-jWb">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="0zC-yf-Qnh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="8oV-Hy-tHX"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Cs-rW-v29">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QLJ-2e-jdo" kind="relationship" relationship="rootViewController" id="Psn-Pp-aX6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jg7-e3-bfB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1181" y="-3410"/>
+        </scene>
+        <!--Contact-->
+        <scene sceneID="KBv-DM-Ggp">
+            <objects>
+                <viewController storyboardIdentifier="ContactsListView" id="QLJ-2e-jdo" customClass="ContactsListView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qW4-Yl-71i"/>
+                        <viewControllerLayoutGuide type="bottom" id="8rZ-uJ-YCs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="byw-ZZ-vUb">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ACP-SU-OpO" userLabel="topBar">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="66"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_F.png" translatesAutoresizingMaskIntoConstraints="NO" id="XWo-so-xq4" userLabel="backgroundColor">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n0d-dS-yjP" userLabel="switchView">
+                                        <rect key="frame" x="0.0" y="0.0" width="307" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70j-li-eUc" userLabel="allButton" customClass="UIIconButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="153.5" height="66"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="All contacts filter"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                <inset key="titleEdgeInsets" minX="-38" minY="15" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" image="contacts_all_default.png">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="disabled" image="contacts_all_disabled.png"/>
+                                                <state key="selected" image="contacts_all_selected.png">
+                                                    <color key="titleColor" red="0.98766469960000003" green="0.27512490750000002" blue="0.029739789660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="highlighted" backgroundImage="color_E.png"/>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_A.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sd9-Rq-EQj" userLabel="selectedButtonImage">
+                                                <rect key="frame" x="0.0" y="63" width="153.5" height="3"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lze-aw-Uf9" userLabel="sipButton" customClass="UIIconButton">
+                                                <rect key="frame" x="153.5" y="0.0" width="153.5" height="66"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="Linphone contacts filter"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                <state key="normal" image="contacts_sip_default.png">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="disabled" image="contacts_sip_disabled.png"/>
+                                                <state key="selected" image="contacts_sip_selected.png">
+                                                    <color key="titleColor" red="0.98766469960000003" green="0.27512490750000002" blue="0.029739789660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="highlighted" backgroundImage="color_E.png"/>
+                                            </button>
+                                        </subviews>
+                                    </view>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRJ-AB-Lr9" userLabel="cancelButton" customClass="UIIconButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="153.5" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="Delete all"/>
+                                        <state key="normal" image="cancel_edit_default.png">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="disabled" image="cancel_edit_disabled.png"/>
+                                        <state key="highlighted" backgroundImage="color_E.png"/>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceg-EF-2PC" userLabel="deleteButton" customClass="UIIconButton">
+                                        <rect key="frame" x="614" y="0.0" width="154" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="Delete all"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="delete_default.png">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="disabled" image="delete_disabled.png"/>
+                                        <state key="highlighted" backgroundImage="color_E.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ch7-yJ-sxt" userLabel="editButton" customClass="UIIconButton">
+                                        <rect key="frame" x="614" y="0.0" width="154" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="Edit"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="edit_list_default.png">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="disabled" image="edit_list_disabled.png"/>
+                                        <state key="highlighted" backgroundImage="color_E.png"/>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Igg-eu-XuU" userLabel="toggleSelectionButton" customClass="UIIconButton">
+                                        <rect key="frame" x="460.5" y="0.0" width="153.5" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="Select all"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="deselect_all.png">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="disabled" image="select_all_disabled.png"/>
+                                        <state key="selected" image="select_all_default.png"/>
+                                        <state key="highlighted" backgroundImage="color_E.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IuV-by-0WH" userLabel="addButton" customClass="UIIconButton">
+                                        <rect key="frame" x="460.5" y="0.0" width="153.5" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="Add contact"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="contact_add_default.png">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="disabled" image="contact_add_disabled.png"/>
+                                        <state key="highlighted" backgroundImage="color_E.png"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="YEG-q0-eSs"/>
+                                </constraints>
+                            </view>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lsZ-6Z-OQD" userLabel="searchBar">
+                                <rect key="frame" x="0.0" y="66" width="768" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="amB-Z8-11Z"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No contact found in your address book" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZg-IC-5rP" userLabel="emptyTableLabel">
+                                <rect key="frame" x="0.0" y="110" width="768" height="914"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8dm-gh-0hV">
+                                <rect key="frame" x="0.0" y="110" width="768" height="914"/>
+                                <connections>
+                                    <segue destination="yZL-1o-gZh" kind="embed" id="j1W-Jq-Bxt"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="8dm-gh-0hV" firstAttribute="top" secondItem="lsZ-6Z-OQD" secondAttribute="bottom" id="4wz-f4-ZYm"/>
+                            <constraint firstItem="lsZ-6Z-OQD" firstAttribute="leading" secondItem="byw-ZZ-vUb" secondAttribute="leading" id="CWT-Wg-NNa"/>
+                            <constraint firstItem="ACP-SU-OpO" firstAttribute="leading" secondItem="byw-ZZ-vUb" secondAttribute="leading" id="I61-Kd-Rzb"/>
+                            <constraint firstItem="ACP-SU-OpO" firstAttribute="top" secondItem="byw-ZZ-vUb" secondAttribute="top" id="If7-j4-qzg"/>
+                            <constraint firstAttribute="trailing" secondItem="8dm-gh-0hV" secondAttribute="trailing" id="ON6-G9-Prn"/>
+                            <constraint firstItem="8rZ-uJ-YCs" firstAttribute="top" secondItem="8dm-gh-0hV" secondAttribute="bottom" id="P9B-87-YWz"/>
+                            <constraint firstItem="lsZ-6Z-OQD" firstAttribute="top" secondItem="ACP-SU-OpO" secondAttribute="bottom" id="QQo-n9-fys"/>
+                            <constraint firstItem="8dm-gh-0hV" firstAttribute="leading" secondItem="byw-ZZ-vUb" secondAttribute="leading" id="WDK-sx-u7H"/>
+                            <constraint firstAttribute="trailing" secondItem="lsZ-6Z-OQD" secondAttribute="trailing" id="WmX-cV-3Cn"/>
+                            <constraint firstAttribute="trailing" secondItem="ACP-SU-OpO" secondAttribute="trailing" id="jo0-Ch-NIY"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Contact" selectedImage="footer_contacts_default.png" id="Htf-0n-leD"/>
+                    <navigationItem key="navigationItem" id="wOP-Xh-VBL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gd9-dK-LfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2027" y="-3410"/>
+        </scene>
+        <!--Contacts List Table View-->
+        <scene sceneID="Xpw-uE-8Zr">
+            <objects>
+                <tableViewController id="yZL-1o-gZh" customClass="ContactsListTableView" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9qy-Mo-0Kc">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="914"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uhR-Gm-Y3v">
+                                <rect key="frame" x="0.0" y="28" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uhR-Gm-Y3v" id="UNO-EA-ZBm">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yZL-1o-gZh" id="mEd-Vf-Ua0"/>
+                            <outlet property="delegate" destination="yZL-1o-gZh" id="ac4-0h-WkL"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tmO-8F-fhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2948" y="-3411"/>
         </scene>
     </scenes>
     <resources>

@@ -451,8 +451,9 @@ static UICompositeViewDescription *compositeDescription = nil;
 		[ContactSelection setSelectionMode:ContactSelectionModeNone];
 	}
 
-	ContactsListView *view = VIEW(ContactsListView);
-	[MainTabViewController.instance popToView:view.compositeViewDescription];
+//	ContactsListView *view = VIEW(ContactsListView);
+    [self.navigationController popViewControllerAnimated:true];
+//	[MainTabViewController.instance popToView:view.compositeViewDescription];
 }
 
 - (IBAction)onEditClick:(id)event {
