@@ -229,7 +229,7 @@
             </objects>
             <point key="canvasLocation" x="2431" y="-2027"/>
         </scene>
-        <!--USE YOUR SIP ACCOUNT-->
+        <!--SIP ACCOUNT-->
         <scene sceneID="RNT-zJ-jLM">
             <objects>
                 <viewController id="u3m-Gh-9ax" customClass="SipSettingViewController" sceneMemberID="viewController">
@@ -426,7 +426,7 @@
                             <constraint firstAttribute="trailing" secondItem="Jqf-BL-G0d" secondAttribute="trailing" constant="20" id="yn1-0g-Bku"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="USE YOUR SIP ACCOUNT" id="qmL-Se-WTQ"/>
+                    <navigationItem key="navigationItem" title="SIP ACCOUNT" id="qmL-Se-WTQ"/>
                     <connections>
                         <outlet property="createUsername" destination="KDq-lK-Pz9" id="zey-Au-Pn0"/>
                         <outlet property="displayName" destination="0IM-cR-cL2" id="pdO-6X-Kdb"/>
@@ -894,7 +894,7 @@
                             <constraint firstAttribute="bottom" secondItem="EAm-Kc-mRF" secondAttribute="bottom" id="saB-lI-tv5"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="History" selectedImage="footer_history_default.png" id="Asy-IW-e0m"/>
+                    <tabBarItem key="tabBarItem" title="History" image="footer_history_default.png" id="Asy-IW-e0m"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gjg-qc-SE9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -908,6 +908,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.15056313569999999" green="0.91382655199999996" blue="0.15056121350000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="PiA-e5-rWf" kind="relationship" relationship="viewControllers" id="FwM-Rk-8Mz"/>
@@ -926,12 +927,15 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KuU-Cg-acD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" id="Hb2-ON-N97"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j1W-9d-Wl6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="j1W-9d-Wl6">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.2274509804" green="0.80784313730000001" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -946,12 +950,15 @@
         <scene sceneID="ubI-Ol-BrD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pBJ-CS-JQx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Dialer" selectedImage="footer_dialer_default.png" id="7pT-KY-o2i"/>
+                    <tabBarItem key="tabBarItem" title="Dialer" image="footer_dialer_default.png" id="7pT-KY-o2i"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H61-kB-FeN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="H61-kB-FeN">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.2274509804" green="0.80784313730000001" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -962,11 +969,11 @@
             </objects>
             <point key="canvasLocation" x="450" y="-1828"/>
         </scene>
-        <!--Item-->
+        <!--Contact-->
         <scene sceneID="KjN-le-jWb">
             <objects>
                 <navigationController navigationBarHidden="YES" id="0zC-yf-Qnh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="8oV-Hy-tHX"/>
+                    <tabBarItem key="tabBarItem" title="Contact" image="footer_contacts_default.png" id="8oV-Hy-tHX"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Cs-rW-v29">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
@@ -1118,7 +1125,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8dm-gh-0hV">
-                                <rect key="frame" x="0.0" y="110" width="768" height="914"/>
+                                <rect key="frame" x="0.0" y="110" width="768" height="865"/>
                                 <connections>
                                     <segue destination="yZL-1o-gZh" kind="embed" id="j1W-Jq-Bxt"/>
                                 </connections>
@@ -1137,7 +1144,7 @@
                             <constraint firstAttribute="trailing" secondItem="ACP-SU-OpO" secondAttribute="trailing" id="jo0-Ch-NIY"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Contact" selectedImage="footer_contacts_default.png" id="Htf-0n-leD"/>
+                    <tabBarItem key="tabBarItem" title="Contact" id="Htf-0n-leD"/>
                     <navigationItem key="navigationItem" id="wOP-Xh-VBL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gd9-dK-LfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1149,7 +1156,7 @@
             <objects>
                 <tableViewController id="yZL-1o-gZh" customClass="ContactsListTableView" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9qy-Mo-0Kc">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="914"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="865"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
