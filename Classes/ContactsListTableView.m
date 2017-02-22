@@ -338,8 +338,10 @@ static int ms_strcmpfuz(const char *fuzzy_word, const char *sentence) {
 		Contact *contact = subAr[indexPath.row];
 
 		// Go to Contact details view
-		ContactDetailsView *view = VIEW(ContactDetailsView);
-		[MainTabViewController.instance changeCurrentView:view.compositeViewDescription];
+        ContactDetailsView *view = [[ContactDetailsView alloc] initWithNibName:@"ContactDetailsView" bundle:nil]; // VIEW(ContactDetailsView);
+//		[MainTabViewController.instance changeCurrentView:view.compositeViewDescription];
+        [self.navigationController pushViewController:view animated:true];
+        
 		if (([ContactSelection getSelectionMode] != ContactSelectionModeEdit) || !([ContactSelection getAddAddress])) {
 			[view setContact:contact];
 		} else {
