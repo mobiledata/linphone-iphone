@@ -584,6 +584,7 @@
     
         if( linphone_account_creator_get_phone_number(account_creator) == NULL) {
             [self configureProxyConfig];
+            //TODO Tuong cmt
 //            [MainTabViewController.instance changeCurrentView:AssistantLinkView.compositeViewDescription];
         } else {
             [MainTabViewController.instance changeCurrentView:DialerView.compositeViewDescription];
