@@ -159,7 +159,7 @@
 		_backButton.alpha = 0;
 	}
 
-	[self setContact:NULL];
+//	[self setContact:NULL];
 
 	_tableController.tableView.accessibilityIdentifier = @"Contact table";
 
@@ -178,7 +178,7 @@
 	_editButton.hidden = ([ContactSelection getSelectionMode] != ContactSelectionModeEdit &&
 						  [ContactSelection getSelectionMode] != ContactSelectionModeNone);
 	[_tableController.tableView addObserver:self forKeyPath:@"contentSize" options:0 context:NULL];
-	self.tmpContact = NULL;
+//	self.tmpContact = NULL;
 	
 	[[NSNotificationCenter defaultCenter] addObserver: self
 											 selector: @selector(deviceOrientationDidChange:)
