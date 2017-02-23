@@ -47,6 +47,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    [self prepareErrorLabels];
+    
     [NSNotificationCenter.defaultCenter addObserver:self
                                            selector:@selector(registrationUpdateEvent:)
                                                name:kLinphoneRegistrationUpdate

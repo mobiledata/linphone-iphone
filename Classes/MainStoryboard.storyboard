@@ -364,7 +364,7 @@
                                 </segments>
                                 <color key="tintColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
-                            <button opaque="NO" tag="130" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDn-lF-JQ9" userLabel="loginButton" customClass="UIRoundBorderedButton">
+                            <button opaque="NO" tag="130" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDn-lF-JQ9" userLabel="loginButton" customClass="UIRoundBorderedButton">
                                 <rect key="frame" x="20" y="537" width="728" height="32"/>
                                 <accessibility key="accessibilityConfiguration" label="Login">
                                     <bool key="isElement" value="YES"/>
