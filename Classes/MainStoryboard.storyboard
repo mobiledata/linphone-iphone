@@ -1154,6 +1154,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Contact" id="Htf-0n-leD"/>
                     <navigationItem key="navigationItem" id="wOP-Xh-VBL"/>
+                    <connections>
+                        <outlet property="searchBar" destination="lsZ-6Z-OQD" id="UUh-Uh-GKB"/>
+                        <outlet property="topBar" destination="ACP-SU-OpO" id="NYK-I2-3QG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gd9-dK-LfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
