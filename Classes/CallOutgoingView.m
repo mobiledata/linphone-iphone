@@ -132,6 +132,9 @@ static UICompositeViewDescription *compositeDescription = nil;
 		} else {*/
 		linphone_core_terminate_call(LC, call);
 		//}
+        
+        // Add by TUong Nguyen
+        [self dismissViewControllerAnimated:NO completion:nil];
 	}
 }
 
