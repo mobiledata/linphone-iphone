@@ -74,10 +74,7 @@ static NSString *sNameOrEmailFilter;
 @implementation ContactsListView
 
 @synthesize tableController;
-@synthesize allButton;
-@synthesize linphoneButton;
-@synthesize addButton;
-@synthesize topBar;
+//@synthesize topBar;
 
 typedef enum { ContactsAll, ContactsLinphone, ContactsMAX } ContactsCategory;
 
@@ -131,7 +128,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 	if (tableController.isEditing) {
 		tableController.editing = NO;
 	}
-	[self refreshButtons];
+//	[self refreshButtons];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -161,70 +158,70 @@ static UICompositeViewDescription *compositeDescription = nil;
 #pragma mark -
 
 - (void)changeView:(ContactsCategory)view {
-	CGRect frame = _selectedButtonImage.frame;
-	if (view == ContactsAll && !allButton.selected) {
-		frame.origin.x = allButton.frame.origin.x;
-		[ContactSelection setSipFilter:nil];
-		[ContactSelection enableEmailFilter:FALSE];
-		allButton.selected = TRUE;
-		linphoneButton.selected = FALSE;
-        [tableController loadData];
-	} else if (view == ContactsLinphone && !linphoneButton.selected) {
-		frame.origin.x = linphoneButton.frame.origin.x;
-		[ContactSelection setSipFilter:LinphoneManager.instance.contactFilter];
-		[ContactSelection enableEmailFilter:FALSE];
-		linphoneButton.selected = TRUE;
-		allButton.selected = FALSE;
-        [tableController loadData];
-	}
-	_selectedButtonImage.frame = frame;
+//	CGRect frame = _selectedButtonImage.frame;
+//	if (view == ContactsAll && !allButton.selected) {
+//		frame.origin.x = allButton.frame.origin.x;
+//		[ContactSelection setSipFilter:nil];
+//		[ContactSelection enableEmailFilter:FALSE];
+//		allButton.selected = TRUE;
+//		linphoneButton.selected = FALSE;
+//        [tableController loadData];
+//	} else if (view == ContactsLinphone && !linphoneButton.selected) {
+//		frame.origin.x = linphoneButton.frame.origin.x;
+//		[ContactSelection setSipFilter:LinphoneManager.instance.contactFilter];
+//		[ContactSelection enableEmailFilter:FALSE];
+//		linphoneButton.selected = TRUE;
+//		allButton.selected = FALSE;
+//        [tableController loadData];
+//	}
+//	_selectedButtonImage.frame = frame;
 }
 
-- (void)refreshButtons {
-	[addButton setHidden:FALSE];
-	[self changeView:[ContactSelection getSipFilter] ? ContactsLinphone : ContactsAll];
-}
+//- (void)refreshButtons {
+//	[addButton setHidden:FALSE];
+//	[self changeView:[ContactSelection getSipFilter] ? ContactsLinphone : ContactsAll];
+//}
 
 #pragma mark - Action Functions
 
-- (IBAction)onAllClick:(id)event {
-	[self changeView:ContactsAll];
-}
-
-- (IBAction)onLinphoneClick:(id)event {
-	[self changeView:ContactsLinphone];
-}
-
-- (IBAction)onAddContactClick:(id)event {
-	ContactDetailsView *view = VIEW(ContactDetailsView);
-	[MainTabViewController.instance changeCurrentView:view.compositeViewDescription];
-	view.isAdding = TRUE;
-	if ([ContactSelection getAddAddress] == nil) {
-		[view newContact];
-	} else {
-		[view newContact:[ContactSelection getAddAddress]];
-	}
-}
-
-- (IBAction)onDeleteClick:(id)sender {
-	NSString *msg = [NSString stringWithFormat:NSLocalizedString(@"Do you want to delete selected contacts?", nil)];
-	[UIConfirmationDialog ShowWithMessage:msg
-		cancelMessage:nil
-		confirmMessage:nil
-		onCancelClick:^() {
-		  [self onEditionChangeClick:nil];
-		}
-		onConfirmationClick:^() {
-            [tableController removeSelectionUsing:nil];
-            [tableController loadData];
-		  [self onEditionChangeClick:nil];
-		}];
-}
-
-- (IBAction)onEditionChangeClick:(id)sender {
-allButton.hidden = linphoneButton.hidden = _selectedButtonImage.hidden = addButton.hidden =
-		self.tableController.isEditing;
-}
+//- (IBAction)onAllClick:(id)event {
+//	[self changeView:ContactsAll];
+//}
+//
+//- (IBAction)onLinphoneClick:(id)event {
+//	[self changeView:ContactsLinphone];
+//}
+//
+//- (IBAction)onAddContactClick:(id)event {
+//	ContactDetailsView *view = VIEW(ContactDetailsView);
+//	[MainTabViewController.instance changeCurrentView:view.compositeViewDescription];
+//	view.isAdding = TRUE;
+//	if ([ContactSelection getAddAddress] == nil) {
+//		[view newContact];
+//	} else {
+//		[view newContact:[ContactSelection getAddAddress]];
+//	}
+//}
+//
+//- (IBAction)onDeleteClick:(id)sender {
+//	NSString *msg = [NSString stringWithFormat:NSLocalizedString(@"Do you want to delete selected contacts?", nil)];
+//	[UIConfirmationDialog ShowWithMessage:msg
+//		cancelMessage:nil
+//		confirmMessage:nil
+//		onCancelClick:^() {
+//		  [self onEditionChangeClick:nil];
+//		}
+//		onConfirmationClick:^() {
+//            [tableController removeSelectionUsing:nil];
+//            [tableController loadData];
+//		  [self onEditionChangeClick:nil];
+//		}];
+//}
+//
+//- (IBAction)onEditionChangeClick:(id)sender {
+//allButton.hidden = linphoneButton.hidden = _selectedButtonImage.hidden = addButton.hidden =
+//		self.tableController.isEditing;
+//}
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
 	searchBar.text = @"";

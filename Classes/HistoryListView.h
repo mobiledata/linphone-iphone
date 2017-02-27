@@ -24,16 +24,13 @@
 #import "UIToggleButton.h"
 
 @interface HistoryListView : UIViewController <UICompositeViewDelegate> {
+    HistoryListTableView *historyVC;
 }
 
-@property(nonatomic, strong) IBOutlet HistoryListTableView *tableController;
+//@property(nonatomic, strong) IBOutlet HistoryListTableView *tableController;
 
-@property(nonatomic, strong) IBOutlet UIButton *allButton;
-@property(nonatomic, strong) IBOutlet UIButton *missedButton;
-@property(weak, nonatomic) IBOutlet UIImageView *selectedButtonImage;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *changeHistorySegment;
 
-- (IBAction)onAllClick:(id)event;
-- (IBAction)onMissedClick:(id)event;
 - (IBAction)onDeleteClick:(id)event;
 - (IBAction)onEditionChangeClick:(id)sender;
 

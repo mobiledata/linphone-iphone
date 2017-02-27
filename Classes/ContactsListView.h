@@ -75,18 +75,18 @@ typedef enum _ContactSelectionMode { ContactSelectionModeNone, ContactSelectionM
 
 //@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(strong, nonatomic) ContactsListTableView *tableController;
-@property(strong, nonatomic) IBOutlet UIView *topBar;
-@property(nonatomic, strong) IBOutlet UIButton *allButton;
-@property(nonatomic, strong) IBOutlet UIButton *linphoneButton;
-@property(nonatomic, strong) IBOutlet UIButton *addButton;
+//@property(strong, nonatomic) IBOutlet UIView *topBar;
+//@property(nonatomic, strong) IBOutlet UIButton *allButton;
+//@property(nonatomic, strong) IBOutlet UIButton *linphoneButton;
+//@property(nonatomic, strong) IBOutlet UIButton *addButton;
 @property(strong, nonatomic) IBOutlet UISearchBar *searchBar;
-@property(weak, nonatomic) IBOutlet UIIconButton *deleteButton;
-@property(weak, nonatomic) IBOutlet UIImageView *selectedButtonImage;
+//@property(weak, nonatomic) IBOutlet UIIconButton *deleteButton;
+//@property(weak, nonatomic) IBOutlet UIImageView *selectedButtonImage;
 
-- (IBAction)onAllClick:(id)event;
-- (IBAction)onLinphoneClick:(id)event;
-- (IBAction)onAddContactClick:(id)event;
-- (IBAction)onDeleteClick:(id)sender;
-- (IBAction)onEditionChangeClick:(id)sender;
+//- (IBAction)onAllClick:(id)event;
+//- (IBAction)onLinphoneClick:(id)event;
+//- (IBAction)onAddContactClick:(id)event;
+//- (IBAction)onDeleteClick:(id)sender;
+//- (IBAction)onEditionChangeClick:(id)sender;
 
 @end

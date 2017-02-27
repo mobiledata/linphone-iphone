@@ -52,9 +52,9 @@ static UICompositeViewDescription *compositeDescription = nil;
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 
-	if ([_tableController isEditing]) {
-		[_tableController setEditing:FALSE animated:FALSE];
-	}
+//	if ([_tableController isEditing]) {
+//		[_tableController setEditing:FALSE animated:FALSE];
+//	}
 	[self changeView:History_All];
 	[self onEditionChangeClick:nil];
 
@@ -71,29 +71,29 @@ static UICompositeViewDescription *compositeDescription = nil;
 #pragma mark -
 
 - (void)changeView:(HistoryView)view {
-	CGRect frame = _selectedButtonImage.frame;
 	if (view == History_All) {
-		frame.origin.x = _allButton.frame.origin.x;
-		_allButton.selected = TRUE;
-		[_tableController setMissedFilter:FALSE];
-		_missedButton.selected = FALSE;
+        [historyVC setMissedFilter:FALSE];
 	} else {
-		frame.origin.x = _missedButton.frame.origin.x;
-		_missedButton.selected = TRUE;
-		[_tableController setMissedFilter:TRUE];
-		_allButton.selected = FALSE;
+		[historyVC setMissedFilter:TRUE];
 	}
-	_selectedButtonImage.frame = frame;
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
+    if ([[segue identifier] isEqualToString:@"historyTableViewSegue"])
+    {
+        historyVC = [segue destinationViewController];
+    }
+}
+
 
 #pragma m ~ark - Action Functions
-
-- (IBAction)onAllClick:(id)event {
-	[self changeView:History_All];
-}
-
-- (IBAction)onMissedClick:(id)event {
-	[self changeView:History_Missed];
+- (IBAction)onChangeHistoryView:(id)sender {
+    if (_changeHistorySegment.selectedSegmentIndex == 0) {
+        [self changeView:History_All];
+    } else{
+        [self changeView:History_Missed];
+    }
 }
 
 - (IBAction)onDeleteClick:(id)event {
@@ -105,14 +105,14 @@ static UICompositeViewDescription *compositeDescription = nil;
 		  [self onEditionChangeClick:nil];
 		}
 		onConfirmationClick:^() {
-		  [_tableController removeSelectionUsing:nil];
-		  [_tableController loadData];
+//		  [_tableController removeSelectionUsing:nil];
+//		  [_tableController loadData];
 		  [self onEditionChangeClick:nil];
 		}];
 }
 
 - (IBAction)onEditionChangeClick:(id)sender {
-	_allButton.hidden = _missedButton.hidden = _selectedButtonImage.hidden = self.tableController.isEditing;
+//	_allButton.hidden = _missedButton.hidden = _selectedButtonImage.hidden = self.tableController.isEditing;
 }
 
 @end
