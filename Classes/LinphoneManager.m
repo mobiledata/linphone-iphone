@@ -1873,7 +1873,6 @@ static BOOL libStarted = FALSE;
 	// create linphone core
 	[self createLinphoneCore];
 	[self.providerDelegate config];
-	_iapManager = [[InAppProductsManager alloc] init];
 
 	// - Security fix - remove multi transport migration, because it enables tcp or udp, if by factoring settings only
 	// tls is enabled. 	This is a problem for new installations.
@@ -2035,7 +2034,6 @@ void popup_link_account_cb(LinphoneAccountCreator *creator, LinphoneAccountCreat
 										   selector:@selector(configuringStateChangedNotificationHandler:)
 											   name:kLinphoneConfiguringStateUpdate
 											 object:nil];
-	[NSNotificationCenter.defaultCenter addObserver:self selector:@selector(inappReady:) name:kIAPReady object:nil];
 
 	/*call iterate once immediately in order to initiate background connections with sip server or remote provisioning
 	 * grab, if any */
@@ -2238,7 +2236,7 @@ static int comp_call_state_paused(const LinphoneCall *call, const void *param) {
 									  LOGW(@"It seems that Linphone BG mode was deactivated, just skipping");
 									  return;
 								  }
-								  [_iapManager check];
+								  
 								  if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_9_x_Max) {
 									  // For registration register
 									  [self refreshRegisters];

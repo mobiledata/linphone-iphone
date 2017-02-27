@@ -29,7 +29,6 @@
 #import "IASKSettingsStore.h"
 #import "IASKAppSettingsViewController.h"
 #import "FastAddressBook.h"
-#import "InAppProductsManager.h"
 
 #include "linphone/linphonecore.h"
 #include "bctoolbox/list.h"
@@ -216,7 +215,6 @@ typedef struct _LinphoneManagerSounds {
 @property (copy) void (^silentPushCompletion)(UIBackgroundFetchResult);
 @property (readonly) BOOL wasRemoteProvisioned;
 @property (readonly) LpConfig *configDb;
-@property(readonly) InAppProductsManager *iapManager;
 @property(strong, nonatomic) NSMutableArray *fileTransferDelegates;
 @property BOOL nextCallIsTransfer;
 @property BOOL conf;

@@ -83,7 +83,9 @@ static UICompositeViewDescription *compositeDescription = nil;
 	// directly in viewWillAppear (this would lead to crash in deallocated memory - easily
 	// reproductible on iPad mini).
 	if (!linphone_core_get_current_call(LC)) {
-		[MainTabViewController.instance popCurrentView];
+        // Replace by TUong Nguyen
+        [self dismissViewControllerAnimated:NO completion:nil];
+//		[MainTabViewController.instance popCurrentView];
 	}
 }
 

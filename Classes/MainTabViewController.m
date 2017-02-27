@@ -316,6 +316,8 @@ static RootViewManager *rootViewManagerInstance = nil;
     LinphoneCallState state = [[notif.userInfo objectForKey:@"state"] intValue];
     NSString *message = [notif.userInfo objectForKey:@"message"];
     
+    NSLog(@"===callUpdate: %@", [notif.userInfo objectForKey:@"state"]);
+    
     switch (state) {
         case LinphoneCallIncomingReceived:
         case LinphoneCallIncomingEarlyMedia: {

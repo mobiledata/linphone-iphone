@@ -12,7 +12,6 @@
 //#import "MainTabViewController.h"
 #import "MainTabViewController.h"
 #import "StatusBarView.h"
-#import "ShopView.h"
 #import "LinphoneManager.h"
 
 @implementation SideMenuEntry
@@ -71,15 +70,7 @@
 												[MainTabViewController.instance
 													changeCurrentView:SettingsView.compositeViewDescription];
 											  }]];
-	InAppProductsManager *iapm = LinphoneManager.instance.iapManager;
-	if (iapm.enabled){
-		[_sideMenuEntries
-			addObject:[[SideMenuEntry alloc] initWithTitle:NSLocalizedString(@"Shop", nil)
-												  tapBlock:^() {
-													[MainTabViewController.instance
-														changeCurrentView:ShopView.compositeViewDescription];
-												  }]];
-	}
+
 	[_sideMenuEntries addObject:[[SideMenuEntry alloc] initWithTitle:NSLocalizedString(@"About", nil)
 															tapBlock:^() {
 															  [MainTabViewController.instance

@@ -20,7 +20,6 @@
 #import "MainTabViewController.h"
 #import "ContactsListView.h"
 #import "ContactDetailsView.h"
-#import "ShopView.h"
 #import "linphoneAppDelegate.h"
 #import "AddressBook/ABPerson.h"
 
@@ -131,7 +130,6 @@
 			[self fixRing];
 		}
 	}
-	[LinphoneManager.instance.iapManager check];
 }
 
 #pragma deploymate push "ignored-api-availability"
@@ -321,7 +319,6 @@
 	}];
 
 	[LinphoneManager.instance startLinphoneCore];
-	LinphoneManager.instance.iapManager.notificationCategory = @"expiry_notification";
 	
     // initialize UI
 	[self.window makeKeyAndVisible];
