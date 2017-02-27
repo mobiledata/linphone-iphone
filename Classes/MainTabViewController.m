@@ -334,7 +334,11 @@ static RootViewManager *rootViewManagerInstance = nil;
         case LinphoneCallPausedByRemote:
         case LinphoneCallConnected:
         case LinphoneCallStreamsRunning: {
-            [self changeCurrentView:CallView.compositeViewDescription];
+            
+            [self performSegueWithIdentifier:@"showCallView" sender:nil];
+//            [self changeCurrentView:CallView.compositeViewDescription];
+            
+            
             if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_x_Max && call) {
                 NSString *callId =
                 [NSString stringWithUTF8String:linphone_call_log_get_call_id(linphone_call_get_call_log(call))];
@@ -357,7 +361,8 @@ static RootViewManager *rootViewManagerInstance = nil;
             const LinphoneCallParams *remote = linphone_call_get_remote_params(call);
             
             if (linphone_call_params_video_enabled(current) && !linphone_call_params_video_enabled(remote)) {
-                [self changeCurrentView:CallView.compositeViewDescription];
+                [self performSegueWithIdentifier:@"showCallView" sender:nil];
+//                [self changeCurrentView:CallView.compositeViewDescription];
             }
             break;
         }
@@ -375,7 +380,8 @@ static RootViewManager *rootViewManagerInstance = nil;
                 }
             } else {
                 linphone_core_resume_call(LC, (LinphoneCall *)calls->data);
-                [self changeCurrentView:CallView.compositeViewDescription];
+                [self performSegueWithIdentifier:@"showCallView" sender:nil];
+//                [self changeCurrentView:CallView.compositeViewDescription];
             }
             break;
         }

@@ -38,6 +38,8 @@ const NSInteger SECURE_BUTTON_TAG = 5;
 
 @implementation CallView {
 	BOOL hiddenVolume;
+    CallPausedTableView *conferenceCallsTable;
+    CallPausedTableView *pausedCallsTable;
 }
 
 #pragma mark - Lifecycle Functions
@@ -238,6 +240,17 @@ static UICompositeViewDescription *compositeDescription = nil;
 	[self hideStatusBar:!videoHidden && (_nameLabel.alpha <= 0.f)];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"callPausedSegue"]) {
+    
+        pausedCallsTable = [segue destinationViewController];
+    } else if ([[segue identifier] isEqualToString:@"callConferenceSegue"]) {
+        
+        conferenceCallsTable = [segue destinationViewController];
+    }
+}
+
 #pragma mark - UI modification
 
 - (void)hideSpinnerIndicator:(LinphoneCall *)call {
@@ -306,7 +319,7 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
 		// show controls
 		[UIView beginAnimations:nil context:nil];
 		[UIView setAnimationDuration:0.35];
-		_pausedCallsTable.tableView.alpha = _videoCameraSwitch.alpha = _callPauseButton.alpha = _routesView.alpha =
+		pausedCallsTable.tableView.alpha = _videoCameraSwitch.alpha = _callPauseButton.alpha = _routesView.alpha =
 			_optionsView.alpha = _numpadView.alpha = _bottomBar.alpha = (hidden ? 0 : 1);
 		_nameLabel.alpha = _durationLabel.alpha = (hidden ? 0 : .8f);
 
@@ -401,8 +414,8 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
 		linphone_core_get_current_call(LC) ? linphone_call_get_duration(linphone_core_get_current_call(LC)) : 0;
 	_durationLabel.text = [LinphoneUtils durationToString:duration];
 
-	[_pausedCallsTable update];
-	[_conferenceCallsTable update];
+	[pausedCallsTable update];
+	[conferenceCallsTable update];
 }
 
 - (void)onCurrentCallChange {
@@ -501,8 +514,8 @@ static void hideSpinner(LinphoneCall *call, void *user_data) {
 	}
 
 	// Update tables
-	[_pausedCallsTable update];
-	[_conferenceCallsTable update];
+	[pausedCallsTable update];
+	[conferenceCallsTable update];
 
 	static LinphoneCall *currentCall = NULL;
 	if (!currentCall || linphone_core_get_current_call(LC) != currentCall) {
