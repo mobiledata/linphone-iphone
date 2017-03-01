@@ -1941,7 +1941,9 @@ void popup_link_account_cb(LinphoneAccountCreator *creator, LinphoneAccountCreat
 			defaultAction.accessibilityLabel = @"Later";
 			[errView addAction:defaultAction];
 //			[errView addAction:continueAction];
-			[MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
+            
+            
+//			[MainTabViewController.instance presentViewController:errView animated:YES completion:nil];
 
 			[LinphoneManager.instance
 				lpConfigSetInt:[[NSDate date] dateByAddingTimeInterval:[LinphoneManager.instance

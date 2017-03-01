@@ -1913,7 +1913,7 @@
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No contact found in your address book" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZg-IC-5rP" userLabel="emptyTableLabel">
                                 <rect key="frame" x="0.0" y="110" width="768" height="914"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1980,7 +1980,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9qy-Mo-0Kc">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="867"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uhR-Gm-Y3v">
                                 <rect key="frame" x="0.0" y="28" width="768" height="44"/>
@@ -1996,10 +1996,13 @@
                             <outlet property="delegate" destination="yZL-1o-gZh" id="ac4-0h-WkL"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="J7e-Bp-sM9" kind="push" id="npm-gQ-hBb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tmO-8F-fhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3063" y="-3410"/>
+            <point key="canvasLocation" x="3093" y="-3462"/>
         </scene>
         <!--Contact Details View-->
         <scene sceneID="xPz-8y-K3p">
@@ -2010,11 +2013,11 @@
                         <viewControllerLayoutGuide type="bottom" id="ndj-fn-d7d"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KBy-0c-UBt">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="867"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yT5-Dd-xcC">
-                                <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="867"/>
                                 <subviews>
                                     <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEH-YW-2OF" userLabel="topBar">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="0.0"/>
@@ -2093,13 +2096,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0V-7N-KqU">
-                                        <rect key="frame" x="0.0" y="272.5" width="768" height="731.5"/>
+                                        <rect key="frame" x="0.0" y="272.5" width="768" height="594.5"/>
                                         <connections>
                                             <segue destination="Ee4-XZ-aO8" kind="embed" identifier="showContactDetailsAction" id="v6e-sT-x8N"/>
                                         </connections>
                                     </containerView>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="40" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No contact selected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aP-Ix-nLO" userLabel="emptyLabel">
-                                        <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="867"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2135,6 +2138,7 @@
                             <constraint firstItem="yT5-Dd-xcC" firstAttribute="leading" secondItem="KBy-0c-UBt" secondAttribute="leading" id="pOK-ZC-nls"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="kas-He-GBl"/>
                     <connections>
                         <outlet property="avatarImage" destination="BEi-DD-nPe" id="Ipv-aD-Qkm"/>
                         <outlet property="backButton" destination="bma-Zu-Byz" id="mdE-ki-9mI"/>
@@ -2154,7 +2158,7 @@
             <objects>
                 <tableViewController id="Ee4-XZ-aO8" customClass="ContactDetailsTableView" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CTP-t5-uZx">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="731.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="594.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
