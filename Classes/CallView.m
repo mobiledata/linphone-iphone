@@ -45,12 +45,7 @@ const NSInteger SECURE_BUTTON_TAG = 5;
 #pragma mark - Lifecycle Functions
 
 - (id)init {
-	self = [super initWithNibName:NSStringFromClass(self.class) bundle:[NSBundle mainBundle]];
-	if (self != nil) {
-		singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleControls:)];
-		videoZoomHandler = [[VideoZoomHandler alloc] init];
-		videoHidden = TRUE;
-	}
+	
 	return self;
 }
 
@@ -81,6 +76,13 @@ static UICompositeViewDescription *compositeDescription = nil;
 - (void)viewDidLoad {
 	[super viewDidLoad];
 
+    
+    //init
+        singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleControls:)];
+        videoZoomHandler = [[VideoZoomHandler alloc] init];
+        videoHidden = TRUE;
+    
+    
 	_routesEarpieceButton.enabled = !IPAD;
 
 // TODO: fixme! video preview frame is too big compared to openGL preview

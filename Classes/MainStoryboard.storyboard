@@ -460,7 +460,7 @@
                                 <rect key="frame" x="0.0" y="28" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6eM-7j-PQv" id="6Gh-EQ-ISc">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -488,7 +488,7 @@
                                 <rect key="frame" x="0.0" y="28" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8oi-aJ-ehP" id="USb-9J-ABu">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1592,7 +1592,7 @@
         <!--Call Outgoing View-->
         <scene sceneID="fRf-rP-bCw">
             <objects>
-                <viewController id="iCK-Hb-6R8" customClass="CallOutgoingView" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnGoingCallControllerID" id="iCK-Hb-6R8" customClass="CallOutgoingView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kRN-r4-ZGq"/>
                         <viewControllerLayoutGuide type="bottom" id="ZrI-aX-weR"/>
@@ -1751,7 +1751,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="john.doe@sip.linphone.org" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HN4-DF-ofy" userLabel="addressLabel">
-                                <rect key="frame" x="8" y="337.5" width="751.5" height="55.5"/>
+                                <rect key="frame" x="8" y="337.5" width="751.5" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.98766469960000003" green="0.27512490750000002" blue="0.029739789660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1808,13 +1808,13 @@
                         <segue destination="0zC-yf-Qnh" kind="relationship" relationship="viewControllers" id="rNa-o3-95i"/>
                         <segue destination="pBJ-CS-JQx" kind="relationship" relationship="viewControllers" id="6fK-EM-nV5"/>
                         <segue destination="KuU-Cg-acD" kind="relationship" relationship="viewControllers" id="oL9-tL-430"/>
-                        <segue destination="iCK-Hb-6R8" kind="modal" identifier="showOnGoingCall" id="8jd-hk-0fa"/>
                         <segue destination="wvC-gb-oEb" kind="modal" identifier="showCallView" id="hMM-58-dwM"/>
+                        <segue destination="iCK-Hb-6R8" kind="modal" identifier="showOnGoingCallController" id="LRk-2z-AeR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lhp-Ra-Agv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="192" y="-3032"/>
+            <point key="canvasLocation" x="166" y="-3116"/>
         </scene>
         <!--Settings-->
         <scene sceneID="eKj-kd-G9b">
@@ -1958,7 +1958,7 @@
                                 <rect key="frame" x="0.0" y="28" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Rh-2a-Zdn" id="gqz-Pk-gby">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1986,7 +1986,7 @@
                                 <rect key="frame" x="0.0" y="28" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uhR-Gm-Y3v" id="UNO-EA-ZBm">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>

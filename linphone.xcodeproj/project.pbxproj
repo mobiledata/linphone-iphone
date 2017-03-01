@@ -538,7 +538,6 @@
 		63423C0A1C4501D000D9A050 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 63423C091C4501D000D9A050 /* Contact.m */; };
 		634610061B61330300548952 /* UILabel+Boldify.m in Sources */ = {isa = PBXBuildFile; fileRef = 634610051B61330300548952 /* UILabel+Boldify.m */; };
 		6346100F1B61409800548952 /* CallOutgoingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6346100E1B61409800548952 /* CallOutgoingView.m */; };
-		634610121B6140A500548952 /* CallOutgoingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634610101B6140A500548952 /* CallOutgoingView.xib */; };
 		63510D9E1CB2757300FB5E90 /* CallTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 63510D981CB2752600FB5E90 /* CallTester.m */; };
 		635173F91BA082A40095EB0A /* UIChatBubblePhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 635173F81BA082A40095EB0A /* UIChatBubblePhotoCell.m */; };
 		6352A5751BE0D4B800594C1C /* CallSideMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6352A5731BE0D4B800594C1C /* CallSideMenuView.m */; };
@@ -556,7 +555,6 @@
 		6377AC801BDE4069007F7625 /* UIBackToCallButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377AC7F1BDE4069007F7625 /* UIBackToCallButton.m */; };
 		637835A51CFD971D00599382 /* libbv16.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 637835A41CFD971D00599382 /* libbv16.a */; };
 		6381DA7D1C1AD5EA00DF3BBD /* UIBouncingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6381DA7C1C1AD5EA00DF3BBD /* UIBouncingView.m */; };
-		638F1A881C2167C2004B8E02 /* CallView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638F1A861C2167C2004B8E02 /* CallView~ipad.xib */; };
 		638F1A911C21993D004B8E02 /* UICompositeView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638F1A8F1C21993D004B8E02 /* UICompositeView~ipad.xib */; };
 		639CEAFD1A1DF4D9004DE38F /* StatusBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639CEAFF1A1DF4D9004DE38F /* StatusBarView.xib */; };
 		639CEB001A1DF4E4004DE38F /* UIHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639CEB021A1DF4E4004DE38F /* UIHistoryCell.xib */; };
@@ -724,7 +722,6 @@
 		D38187D115FE346B00C3EDCA /* HistoryListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38187D415FE346B00C3EDCA /* HistoryListView.xib */; };
 		D38187D915FE347700C3EDCA /* CallIncomingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38187DC15FE347700C3EDCA /* CallIncomingView.xib */; };
 		D38187F815FE355D00C3EDCA /* TabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38187FB15FE355D00C3EDCA /* TabBarView.xib */; };
-		D381881915FE3FCA00C3EDCA /* CallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D381881C15FE3FCA00C3EDCA /* CallView.xib */; };
 		D3A55FBC15877E5E003FD403 /* UIContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A55FBB15877E5E003FD403 /* UIContactCell.m */; };
 		D3A8BB7015A6C7D500F96BE5 /* UIChatBubbleTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A8BB6F15A6C7D500F96BE5 /* UIChatBubbleTextCell.m */; };
 		D3C6526715AC1A8F0092A874 /* UIContactDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C6526615AC1A8F0092A874 /* UIContactDetailsCell.m */; };
@@ -1448,7 +1445,6 @@
 		634610051B61330300548952 /* UILabel+Boldify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Boldify.m"; sourceTree = "<group>"; };
 		6346100D1B61409800548952 /* CallOutgoingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallOutgoingView.h; sourceTree = "<group>"; };
 		6346100E1B61409800548952 /* CallOutgoingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallOutgoingView.m; sourceTree = "<group>"; };
-		634610111B6140A500548952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CallOutgoingView.xib; sourceTree = "<group>"; };
 		63510D971CB2752600FB5E90 /* CallTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallTester.h; sourceTree = "<group>"; };
 		63510D981CB2752600FB5E90 /* CallTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallTester.m; sourceTree = "<group>"; };
 		635173F71BA082A40095EB0A /* UIChatBubblePhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIChatBubblePhotoCell.h; sourceTree = "<group>"; };
@@ -1475,7 +1471,6 @@
 		637835A41CFD971D00599382 /* libbv16.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbv16.a; path = "liblinphone-sdk/apple-darwin/lib/libbv16.a"; sourceTree = "<group>"; };
 		6381DA7B1C1AD5EA00DF3BBD /* UIBouncingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBouncingView.h; sourceTree = "<group>"; };
 		6381DA7C1C1AD5EA00DF3BBD /* UIBouncingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBouncingView.m; sourceTree = "<group>"; };
-		638F1A871C2167C2004B8E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/CallView~ipad.xib"; sourceTree = "<group>"; };
 		638F1A901C21993D004B8E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/UICompositeView~ipad.xib"; sourceTree = "<group>"; };
 		639CEAFE1A1DF4D9004DE38F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/StatusBarView.xib; sourceTree = "<group>"; };
 		639CEB011A1DF4E4004DE38F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/UIHistoryCell.xib; sourceTree = "<group>"; };
@@ -1572,9 +1567,6 @@
 		83EB20231E57F8400095C3F2 /* MainTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabViewController.m; sourceTree = "<group>"; };
 		8C1C42E61E43408E00FE9A91 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/AboutView.strings; sourceTree = "<group>"; };
 		8C1C42EA1E43409000FE9A91 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/CallIncomingView.strings; sourceTree = "<group>"; };
-		8C1C42EB1E43409100FE9A91 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/CallOutgoingView.strings; sourceTree = "<group>"; };
-		8C1C42EC1E43409100FE9A91 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/CallView.strings; sourceTree = "<group>"; };
-		8C1C42ED1E43409100FE9A91 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = "fr.lproj/CallView~ipad.strings"; sourceTree = "<group>"; };
 		8C1C42EE1E43409200FE9A91 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ChatConversationCreateView.strings; sourceTree = "<group>"; };
 		8C1C42EF1E43409200FE9A91 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ChatConversationView.strings; sourceTree = "<group>"; };
 		8C1C42F01E43409300FE9A91 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ChatsListView.strings; sourceTree = "<group>"; };
@@ -1751,7 +1743,6 @@
 		F09548201883F15400E8A69B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/HistoryDetailsView.xib; sourceTree = "<group>"; };
 		F09548211883F15400E8A69B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/HistoryListView.xib; sourceTree = "<group>"; };
 		F09548221883F15400E8A69B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ImageView.xib; sourceTree = "<group>"; };
-		F09548231883F15400E8A69B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CallView.xib; sourceTree = "<group>"; };
 		F09548241883F15400E8A69B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CallIncomingView.xib; sourceTree = "<group>"; };
 		F095482C1883F15400E8A69B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TabBarView.xib; sourceTree = "<group>"; };
 		F09548321883F20A00E8A69B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ChatConversationView.strings; sourceTree = "<group>"; };
@@ -1760,7 +1751,6 @@
 		F095483A1883F2CA00E8A69B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ContactsListView.strings; sourceTree = "<group>"; };
 		F09548421883F51B00E8A69B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/HistoryListView.strings; sourceTree = "<group>"; };
 		F09548441883F52900E8A69B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ImageView.strings; sourceTree = "<group>"; };
-		F09548461883F54200E8A69B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/CallView.strings; sourceTree = "<group>"; };
 		F09548481883F55800E8A69B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/CallIncomingView.strings; sourceTree = "<group>"; };
 		F09548561883F61600E8A69B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/TabBarView.strings; sourceTree = "<group>"; };
 		F0AF06F01A24BA760086C9C1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/AboutView.strings; sourceTree = "<group>"; };
@@ -1771,7 +1761,6 @@
 		F0AF06F91A24BA760086C9C1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/HistoryDetailsView.strings; sourceTree = "<group>"; };
 		F0AF06FA1A24BA770086C9C1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/HistoryListView.strings; sourceTree = "<group>"; };
 		F0AF06FB1A24BA770086C9C1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/ImageView.strings; sourceTree = "<group>"; };
-		F0AF06FC1A24BA770086C9C1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/CallView.strings; sourceTree = "<group>"; };
 		F0AF06FD1A24BA770086C9C1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/CallIncomingView.strings; sourceTree = "<group>"; };
 		F0AF07021A24BA770086C9C1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/UIChatCell.strings; sourceTree = "<group>"; };
 		F0AF07041A24BA770086C9C1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/UICompositeView.strings; sourceTree = "<group>"; };
@@ -1964,7 +1953,6 @@
 				D38187DC15FE347700C3EDCA /* CallIncomingView.xib */,
 				6346100D1B61409800548952 /* CallOutgoingView.h */,
 				6346100E1B61409800548952 /* CallOutgoingView.m */,
-				634610101B6140A500548952 /* CallOutgoingView.xib */,
 				D31AAF5C159B3919002C6B02 /* CallPausedTableView.h */,
 				D31AAF5D159B3919002C6B02 /* CallPausedTableView.m */,
 				6352A5721BE0D4B800594C1C /* CallSideMenuView.h */,
@@ -1972,8 +1960,6 @@
 				6352A5741BE0D4B800594C1C /* CallSideMenuView.xib */,
 				D3F83EE91582021700336684 /* CallView.h */,
 				D3F83EEA1582021700336684 /* CallView.m */,
-				D381881C15FE3FCA00C3EDCA /* CallView.xib */,
-				638F1A861C2167C2004B8E02 /* CallView~ipad.xib */,
 				6341807A1BBC103100F71761 /* ChatConversationCreateTableView.h */,
 				6341807B1BBC103100F71761 /* ChatConversationCreateTableView.m */,
 				6336715E1BCBAAD200BFCBDE /* ChatConversationCreateView.h */,
@@ -3286,7 +3272,6 @@
 				633FEDE81D3CD5590014B822 /* call_status_missed~ipad.png in Resources */,
 				63AADBFF1B6A0FF200AA16FD /* assistant_external_sip.rc in Resources */,
 				633FEE9E1D3CD55A0014B822 /* numpad_0_over@2x.png in Resources */,
-				634610121B6140A500548952 /* CallOutgoingView.xib in Resources */,
 				633FEDC21D3CD5590014B822 /* call_hangup_default.png in Resources */,
 				633FEEB41D3CD55A0014B822 /* numpad_3_default@2x.png in Resources */,
 				8C2595E11DEDDC67007A6424 /* callkit_logo.png in Resources */,
@@ -3528,7 +3513,6 @@
 				633FEF171D3CD55A0014B822 /* pause_small_disabled@2x.png in Resources */,
 				633FEDA61D3CD5590014B822 /* back_disabled.png in Resources */,
 				633FEED61D3CD55A0014B822 /* numpad_7_over@2x.png in Resources */,
-				638F1A881C2167C2004B8E02 /* CallView~ipad.xib in Resources */,
 				633FEDA11D3CD5590014B822 /* avatar@2x.png in Resources */,
 				633FED9E1D3CD5590014B822 /* add_field_over.png in Resources */,
 				633FEE0A1D3CD5590014B822 /* chat_attachment_default.png in Resources */,
@@ -3676,7 +3660,6 @@
 				633FEE011D3CD5590014B822 /* camera_switch_over@2x.png in Resources */,
 				633FEEA01D3CD55A0014B822 /* numpad_0_over~ipad@2x.png in Resources */,
 				633FEF3E1D3CD55A0014B822 /* security_pending.png in Resources */,
-				D381881915FE3FCA00C3EDCA /* CallView.xib in Resources */,
 				633FEE7E1D3CD5590014B822 /* history_missed_selected.png in Resources */,
 				633FEE261D3CD5590014B822 /* checkbox_checked.png in Resources */,
 				633FEF531D3CD55A0014B822 /* voicemail@2x.png in Resources */,
@@ -4065,15 +4048,6 @@
 			name = "SideMenuView~ipad.xib";
 			sourceTree = "<group>";
 		};
-		634610101B6140A500548952 /* CallOutgoingView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				634610111B6140A500548952 /* Base */,
-				8C1C42EB1E43409100FE9A91 /* fr */,
-			);
-			name = CallOutgoingView.xib;
-			sourceTree = "<group>";
-		};
 		636316D31A1DEBCB0009B839 /* AboutView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -4092,15 +4066,6 @@
 				8C1C43071E43409B00FE9A91 /* fr */,
 			);
 			name = SettingsView.xib;
-			sourceTree = "<group>";
-		};
-		638F1A861C2167C2004B8E02 /* CallView~ipad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				638F1A871C2167C2004B8E02 /* Base */,
-				8C1C42ED1E43409100FE9A91 /* fr */,
-			);
-			name = "CallView~ipad.xib";
 			sourceTree = "<group>";
 		};
 		638F1A8F1C21993D004B8E02 /* UICompositeView~ipad.xib */ = {
@@ -4356,17 +4321,6 @@
 			);
 			name = TabBarView.xib;
 			path = LinphoneUI;
-			sourceTree = "<group>";
-		};
-		D381881C15FE3FCA00C3EDCA /* CallView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F09548231883F15400E8A69B /* Base */,
-				F09548461883F54200E8A69B /* ru */,
-				F0AF06FC1A24BA770086C9C1 /* ar */,
-				8C1C42EC1E43409100FE9A91 /* fr */,
-			);
-			name = CallView.xib;
 			sourceTree = "<group>";
 		};
 		F088488D19FF8C41007FFCF3 /* UIContactCell.xib */ = {

@@ -32,10 +32,10 @@
 										   selector:@selector(changeViewEvent:)
 											   name:@"LinMainTabViewControllerChange"
 											 object:nil];
-	[NSNotificationCenter.defaultCenter addObserver:self
-										   selector:@selector(callUpdate:)
-											   name:kLinphoneCallUpdate
-											 object:nil];
+//	[NSNotificationCenter.defaultCenter addObserver:self
+//										   selector:@selector(callUpdate:)
+//											   name:kLinphoneCallUpdate
+//											 object:nil];
 	[NSNotificationCenter.defaultCenter addObserver:self
 										   selector:@selector(messageReceived:)
 											   name:kLinphoneMessageReceived
@@ -54,11 +54,11 @@
 
 #pragma mark - Event Functions
 
-- (void)callUpdate:(NSNotification *)notif {
-	// LinphoneCall *call = [[notif.userInfo objectForKey: @"call"] pointerValue];
-	// LinphoneCallState state = [[notif.userInfo objectForKey: @"state"] intValue];
-	[self updateMissedCall:linphone_core_get_missed_calls_count(LC) appear:TRUE];
-}
+//- (void)callUpdate:(NSNotification *)notif {
+//	// LinphoneCall *call = [[notif.userInfo objectForKey: @"call"] pointerValue];
+//	// LinphoneCallState state = [[notif.userInfo objectForKey: @"state"] intValue];
+//	[self updateMissedCall:linphone_core_get_missed_calls_count(LC) appear:TRUE];
+//}
 
 - (void)changeViewEvent:(NSNotification *)notif {
 	UICompositeViewDescription *view = [notif.userInfo objectForKey:@"view"];

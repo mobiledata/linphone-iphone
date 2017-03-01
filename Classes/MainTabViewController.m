@@ -115,41 +115,9 @@ static RootViewManager *rootViewManagerInstance = nil;
 @synthesize statusBarBG;
 @synthesize volumeView;
 
-#pragma mark - Lifecycle Functions
-
-- (void)initMainTabViewController {
-    currentView = nil;
-    _currentRoom = NULL;
-    _currentName = NULL;
-    inhibitedEvents = [[NSMutableArray alloc] init];
-}
-
-- (id)init {
-    self = [super init];
-    if (self) {
-        [self initMainTabViewController];
-    }
-    return self;
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        [self initMainTabViewController];
-    }
-    return self;
-}
-
-- (id)initWithCoder:(NSCoder *)decoder {
-    self = [super initWithCoder:decoder];
-    if (self) {
-        [self initMainTabViewController];
-    }
-    return self;
-}
-
 - (void)dealloc {
     [NSNotificationCenter.defaultCenter removeObserver:self];
+    [[UIDevice currentDevice] setBatteryMonitoringEnabled:NO];
 }
 
 #pragma mark - ViewController Functions
@@ -157,15 +125,10 @@ static RootViewManager *rootViewManagerInstance = nil;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(-100, -100, 16, 16)];
-    volumeView.showsRouteButton = false;
-    volumeView.userInteractionEnabled = false;
-    
-    [self.view addSubview:mainViewController.view];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+    currentView = nil;
+    _currentRoom = NULL;
+    _currentName = NULL;
+    inhibitedEvents = [[NSMutableArray alloc] init];
     
     // Set observers
     [NSNotificationCenter.defaultCenter addObserver:self
@@ -189,12 +152,19 @@ static RootViewManager *rootViewManagerInstance = nil;
                                            selector:@selector(batteryLevelChanged:)
                                                name:UIDeviceBatteryLevelDidChangeNotification
                                              object:nil];
+    
+    
+    volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(-100, -100, 16, 16)];
+    volumeView.showsRouteButton = false;
+    volumeView.userInteractionEnabled = false;
+    
+    [self.view addSubview:mainViewController.view];
 }
+
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [NSNotificationCenter.defaultCenter removeObserver:self];
-    [[UIDevice currentDevice] setBatteryMonitoringEnabled:NO];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -328,7 +298,12 @@ static RootViewManager *rootViewManagerInstance = nil;
             break;
         }
         case LinphoneCallOutgoingInit: {
-            [self performSegueWithIdentifier:@"showOnGoingCall" sender:nil];
+            
+            UIStoryboard *st = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+            UIViewController *vc =  [st instantiateViewControllerWithIdentifier:@"OnGoingCallControllerID"];
+            
+            [self presentViewController:vc animated:NO completion:nil];
+//            [self performSegueWithIdentifier:@"showOnGoingCallController" sender:self];
             
 //            [self changeCurrentView:CallOutgoingView.compositeViewDescription];
             break;
@@ -337,7 +312,10 @@ static RootViewManager *rootViewManagerInstance = nil;
         case LinphoneCallConnected:
         case LinphoneCallStreamsRunning: {
             
-            [self performSegueWithIdentifier:@"showCallView" sender:nil];
+            [self dismissViewControllerAnimated:NO completion:^{
+                    [self performSegueWithIdentifier:@"showCallView" sender:self];
+            }];
+            
 //            [self changeCurrentView:CallView.compositeViewDescription];
             
             
@@ -375,11 +353,14 @@ static RootViewManager *rootViewManagerInstance = nil;
         case LinphoneCallEnd: {
             const MSList *calls = linphone_core_get_calls(LC);
             if (calls == NULL) {
-                while ((currentView == CallView.compositeViewDescription) ||
-                       (currentView == CallIncomingView.compositeViewDescription) ||
-                       (currentView == CallOutgoingView.compositeViewDescription)) {
-                    [self popCurrentView];
-                }
+//                while ((currentView == CallView.compositeViewDescription) ||
+//                       (currentView == CallIncomingView.compositeViewDescription) ||
+//                       (currentView == CallOutgoingView.compositeViewDescription)) {
+//                
+//                     [self popCurrentView];
+//                }
+                
+                [self dismissViewControllerAnimated:NO completion:nil];
             } else {
                 linphone_core_resume_call(LC, (LinphoneCall *)calls->data);
                 [self performSegueWithIdentifier:@"showCallView" sender:nil];
@@ -432,7 +413,10 @@ static RootViewManager *rootViewManagerInstance = nil;
         case LinphoneCallPaused:
         case LinphoneCallPausing:
         case LinphoneCallRefered:
+            break;
         case LinphoneCallReleased:
+            // Add by Tuong Nguyen
+            [self dismissViewControllerAnimated:NO completion:nil];
             break;
         case LinphoneCallResuming: {
             if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_x_Max && call) {
