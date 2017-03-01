@@ -242,22 +242,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Enter your username and password with your SIP domain." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="VG9-ff-g6p" userLabel="subtitleLabel">
-                                <rect key="frame" x="0.0" y="84" width="768" height="16"/>
-                                <accessibility key="accessibilityConfiguration" label="Account setup assistant"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.4266758859" green="0.42666310070000002" blue="0.42667034269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="-1" height="-1"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" tag="120" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USERNAME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6G-SL-FH4" userLabel="usernameLabel">
-                                <rect key="frame" x="20" y="120" width="728" height="16"/>
+                                <rect key="frame" x="20" y="74" width="728" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.4266758859" green="0.42666310070000002" blue="0.42667034269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" adjustsFontSizeToFit="NO" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KDq-lK-Pz9" userLabel="usernameField" customClass="UIAssistantTextField">
-                                <rect key="frame" x="20" y="141" width="728" height="30"/>
+                                <rect key="frame" x="20" y="95" width="728" height="30"/>
                                 <color key="backgroundColor" red="0.85415387149999999" green="0.85412830110000004" blue="0.85414278509999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="Username"/>
                                 <color key="textColor" red="0.20521381499999999" green="0.20520767570000001" blue="0.2052111626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -270,19 +262,19 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" tag="410" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HgP-Ez-RLq" userLabel="usernameErrorLabel">
-                                <rect key="frame" x="20" y="176" width="728" height="11"/>
+                                <rect key="frame" x="20" y="130" width="728" height="11"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <color key="textColor" red="0.9859483242" green="0.0" blue="0.026950567960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASSWORD (OPTIONAL)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93z-5L-9dS" userLabel="passwordLabel">
-                                <rect key="frame" x="20" y="207" width="728" height="16"/>
+                                <rect key="frame" x="20" y="161" width="728" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.4266758859" green="0.42666310070000002" blue="0.42667034269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" adjustsFontSizeToFit="NO" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="77e-aR-Ici" userLabel="passwordField" customClass="UIAssistantTextField">
-                                <rect key="frame" x="20" y="228" width="728" height="30"/>
+                                <rect key="frame" x="20" y="182" width="728" height="30"/>
                                 <color key="backgroundColor" red="0.85415387149999999" green="0.85412830110000004" blue="0.85414278509999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="Password"/>
                                 <color key="textColor" red="0.20521381499999999" green="0.20520767570000001" blue="0.2052111626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -295,19 +287,19 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" tag="410" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="svE-cV-WXV" userLabel="passwordErrorLabel">
-                                <rect key="frame" x="20" y="263" width="728" height="11"/>
+                                <rect key="frame" x="20" y="217" width="728" height="11"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <color key="textColor" red="0.9859483242" green="0.0" blue="0.026950567960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOMAIN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LwS-Bc-7q6" userLabel="domainLabel">
-                                <rect key="frame" x="20" y="294" width="728" height="16"/>
+                                <rect key="frame" x="20" y="248" width="728" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.4266758859" green="0.42666310070000002" blue="0.42667034269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" adjustsFontSizeToFit="NO" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Jqf-BL-G0d" userLabel="domainField" customClass="UIAssistantTextField">
-                                <rect key="frame" x="20" y="315" width="728" height="30"/>
+                                <rect key="frame" x="20" y="269" width="728" height="30"/>
                                 <color key="backgroundColor" red="0.85415387149999999" green="0.85412830110000004" blue="0.85414278509999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="Domain"/>
                                 <color key="textColor" red="0.20521381499999999" green="0.20520767570000001" blue="0.2052111626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -320,19 +312,19 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" tag="410" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid domain" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2qp-Jn-M5e" userLabel="domainErrorLabel">
-                                <rect key="frame" x="20" y="350" width="728" height="11"/>
+                                <rect key="frame" x="20" y="304" width="728" height="11"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <color key="textColor" red="0.9859483242" green="0.0" blue="0.026950567960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISPLAY NAME (OPTIONAL)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CeK-TL-aDQ" userLabel="displayNameLabel">
-                                <rect key="frame" x="20" y="381" width="728" height="16"/>
+                                <rect key="frame" x="20" y="335" width="728" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.4266758859" green="0.42666310070000002" blue="0.42667034269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" tag="106" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" adjustsFontSizeToFit="NO" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0IM-cR-cL2" userLabel="displayNameField" customClass="UIAssistantTextField">
-                                <rect key="frame" x="20" y="402" width="728" height="30"/>
+                                <rect key="frame" x="20" y="356" width="728" height="30"/>
                                 <color key="backgroundColor" red="0.85415387149999999" green="0.85412830110000004" blue="0.85414278509999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="Display name"/>
                                 <color key="textColor" red="0.20521381499999999" green="0.20520767570000001" blue="0.2052111626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -344,19 +336,19 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" tag="410" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid display name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6lW-gC-CKF" userLabel="displayNameErrorLabel">
-                                <rect key="frame" x="20" y="437" width="728" height="11"/>
+                                <rect key="frame" x="20" y="391" width="728" height="11"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <color key="textColor" red="0.9859483242" green="0.0" blue="0.026950567960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRANSPORT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VM4-oT-c9s" userLabel="transportLabel">
-                                <rect key="frame" x="20" y="468" width="728" height="16"/>
+                                <rect key="frame" x="20" y="422" width="728" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.4266758859" green="0.42666310070000002" blue="0.42667034269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" tag="110" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="opp-GD-Z6v" userLabel="transportSegment">
-                                <rect key="frame" x="20" y="489" width="728" height="29"/>
+                                <rect key="frame" x="20" y="443" width="728" height="29"/>
                                 <segments>
                                     <segment title="UDP"/>
                                     <segment title="TCP"/>
@@ -365,7 +357,7 @@
                                 <color key="tintColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
                             <button opaque="NO" tag="130" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDn-lF-JQ9" userLabel="loginButton" customClass="UIRoundBorderedButton">
-                                <rect key="frame" x="20" y="537" width="728" height="32"/>
+                                <rect key="frame" x="20" y="481" width="728" height="32"/>
                                 <accessibility key="accessibilityConfiguration" label="Login">
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
@@ -389,16 +381,13 @@
                             <constraint firstItem="VM4-oT-c9s" firstAttribute="top" secondItem="6lW-gC-CKF" secondAttribute="bottom" constant="20" id="40m-Zt-HpI"/>
                             <constraint firstItem="VM4-oT-c9s" firstAttribute="leading" secondItem="hKC-FZ-btb" secondAttribute="leading" constant="20" id="4hI-CU-coL"/>
                             <constraint firstItem="HgP-Ez-RLq" firstAttribute="top" secondItem="KDq-lK-Pz9" secondAttribute="bottom" constant="5" id="609-3i-S6r"/>
-                            <constraint firstItem="VG9-ff-g6p" firstAttribute="top" secondItem="6e2-13-w8x" secondAttribute="bottom" constant="20" id="7SF-Sb-PwG"/>
                             <constraint firstItem="LwS-Bc-7q6" firstAttribute="top" secondItem="svE-cV-WXV" secondAttribute="bottom" constant="20" id="83k-GX-u1I"/>
-                            <constraint firstItem="VG9-ff-g6p" firstAttribute="leading" secondItem="hKC-FZ-btb" secondAttribute="leading" id="9ON-u1-jaS"/>
                             <constraint firstItem="Jqf-BL-G0d" firstAttribute="top" secondItem="LwS-Bc-7q6" secondAttribute="bottom" constant="5" id="AC6-PC-aMh"/>
                             <constraint firstAttribute="trailing" secondItem="KDq-lK-Pz9" secondAttribute="trailing" constant="20" id="BH0-qt-qjH"/>
                             <constraint firstItem="TDn-lF-JQ9" firstAttribute="leading" secondItem="hKC-FZ-btb" secondAttribute="leading" constant="20" id="BpB-30-9az"/>
-                            <constraint firstItem="TDn-lF-JQ9" firstAttribute="top" secondItem="opp-GD-Z6v" secondAttribute="bottom" constant="20" id="DiY-7n-Fga"/>
+                            <constraint firstItem="TDn-lF-JQ9" firstAttribute="top" secondItem="opp-GD-Z6v" secondAttribute="bottom" constant="10" id="DiY-7n-Fga"/>
                             <constraint firstAttribute="trailing" secondItem="O6G-SL-FH4" secondAttribute="trailing" constant="20" id="ELW-Wh-qq5"/>
                             <constraint firstAttribute="trailing" secondItem="6lW-gC-CKF" secondAttribute="trailing" constant="20" id="IsX-dL-Gbs"/>
-                            <constraint firstItem="O6G-SL-FH4" firstAttribute="top" secondItem="VG9-ff-g6p" secondAttribute="bottom" constant="20" id="Jl5-Bk-p9P"/>
                             <constraint firstItem="0IM-cR-cL2" firstAttribute="top" secondItem="CeK-TL-aDQ" secondAttribute="bottom" constant="5" id="LEf-dg-oPl"/>
                             <constraint firstAttribute="trailing" secondItem="77e-aR-Ici" secondAttribute="trailing" constant="20" id="NKZ-6b-fvp"/>
                             <constraint firstAttribute="trailing" secondItem="CeK-TL-aDQ" secondAttribute="trailing" constant="20" id="OXr-Q2-p0D"/>
@@ -417,10 +406,10 @@
                             <constraint firstItem="KDq-lK-Pz9" firstAttribute="top" secondItem="O6G-SL-FH4" secondAttribute="bottom" constant="5" id="fh9-9o-d8E"/>
                             <constraint firstItem="2qp-Jn-M5e" firstAttribute="leading" secondItem="hKC-FZ-btb" secondAttribute="leading" constant="20" id="gRO-fT-sJv"/>
                             <constraint firstItem="svE-cV-WXV" firstAttribute="top" secondItem="77e-aR-Ici" secondAttribute="bottom" constant="5" id="hAd-Av-3HO"/>
-                            <constraint firstAttribute="trailing" secondItem="VG9-ff-g6p" secondAttribute="trailing" id="iGK-AU-2Gg"/>
                             <constraint firstItem="LwS-Bc-7q6" firstAttribute="leading" secondItem="hKC-FZ-btb" secondAttribute="leading" constant="20" id="jF2-0y-3U8"/>
                             <constraint firstItem="HgP-Ez-RLq" firstAttribute="leading" secondItem="hKC-FZ-btb" secondAttribute="leading" constant="20" id="l5x-UE-889"/>
                             <constraint firstItem="opp-GD-Z6v" firstAttribute="leading" secondItem="hKC-FZ-btb" secondAttribute="leading" constant="20" id="mz7-58-7rf"/>
+                            <constraint firstItem="O6G-SL-FH4" firstAttribute="top" secondItem="6e2-13-w8x" secondAttribute="bottom" constant="10" id="oAz-gu-95V"/>
                             <constraint firstAttribute="trailing" secondItem="HgP-Ez-RLq" secondAttribute="trailing" constant="20" id="pUo-Kd-Lkf"/>
                             <constraint firstAttribute="trailing" secondItem="LwS-Bc-7q6" secondAttribute="trailing" constant="20" id="rZK-EC-BH3"/>
                             <constraint firstItem="6lW-gC-CKF" firstAttribute="top" secondItem="0IM-cR-cL2" secondAttribute="bottom" constant="5" id="rkr-Mf-Jg8"/>
@@ -445,7 +434,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gad-Vp-wro" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3397" y="-2027"/>
+            <point key="canvasLocation" x="3374" y="-2136"/>
         </scene>
         <!--Call Conference Table View-->
         <scene sceneID="AaM-hx-fTA">
