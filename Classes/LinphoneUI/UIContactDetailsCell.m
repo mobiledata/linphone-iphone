@@ -145,11 +145,11 @@
 }
 
 - (IBAction)onDeleteClick:(id)sender {
-	UITableView *tableView = VIEW(ContactDetailsView).tableController.tableView;
-	NSIndexPath *indexPath = [tableView indexPathForCell:self];
-	[tableView.dataSource tableView:tableView
-				 commitEditingStyle:UITableViewCellEditingStyleDelete
-				  forRowAtIndexPath:indexPath];
+//	UITableView *tableView = VIEW(ContactDetailsView).tableController.tableView;
+//	NSIndexPath *indexPath = [tableView indexPathForCell:self];
+//	[tableView.dataSource tableView:tableView
+//				 commitEditingStyle:UITableViewCellEditingStyleDelete
+//				  forRowAtIndexPath:indexPath];
 }
 
 @end

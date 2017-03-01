@@ -41,7 +41,7 @@
                                                 </constraints>
                                             </view>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileBarButton" translatesAutoresizingMaskIntoConstraints="NO" id="ZbF-u7-exA">
-                                                <rect key="frame" x="5" y="-2.5" width="50" height="50"/>
+                                                <rect key="frame" x="5" y="-2" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="jBl-Q9-6YN"/>
                                                     <constraint firstAttribute="width" constant="50" id="mjf-zY-pXc"/>
@@ -86,7 +86,7 @@
                                                 </constraints>
                                             </view>
                                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileBarButton" translatesAutoresizingMaskIntoConstraints="NO" id="eax-OM-gAM">
-                                                <rect key="frame" x="5" y="-2.5" width="50" height="50"/>
+                                                <rect key="frame" x="5" y="-2" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="39c-an-XMy"/>
                                                     <constraint firstAttribute="height" constant="50" id="Kln-8f-zW9"/>
@@ -131,7 +131,7 @@
                                                 </constraints>
                                             </view>
                                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileBarButton" translatesAutoresizingMaskIntoConstraints="NO" id="VhQ-rw-l8B">
-                                                <rect key="frame" x="5" y="-2.5" width="50" height="50"/>
+                                                <rect key="frame" x="5" y="-2" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="A1K-sL-7M3"/>
                                                     <constraint firstAttribute="height" constant="50" id="A8P-bE-YsF"/>
@@ -555,7 +555,7 @@
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dialer_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="lgK-Ow-0yr" userLabel="logoImage">
-                                        <rect key="frame" x="214" y="308.5" width="340" height="294"/>
+                                        <rect key="frame" x="214" y="309" width="340" height="294"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="340" id="S0G-2E-WPJ"/>
                                             <constraint firstAttribute="height" constant="294" id="la4-Qk-vns"/>
@@ -2001,6 +2001,182 @@
             </objects>
             <point key="canvasLocation" x="3063" y="-3410"/>
         </scene>
+        <!--Contact Details View-->
+        <scene sceneID="xPz-8y-K3p">
+            <objects>
+                <viewController storyboardIdentifier="ContactDetailsViewID" id="J7e-Bp-sM9" customClass="ContactDetailsView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="69t-J7-TEt"/>
+                        <viewControllerLayoutGuide type="bottom" id="ndj-fn-d7d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KBy-0c-UBt">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yT5-Dd-xcC">
+                                <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                                <subviews>
+                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEH-YW-2OF" userLabel="topBar">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="0.0"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_F.png" translatesAutoresizingMaskIntoConstraints="NO" id="GFS-bb-dxt" userLabel="backgroundColor">
+                                                <rect key="frame" x="-2" y="-1" width="769.5" height="0.0"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                            </imageView>
+                                            <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Cc-Vz-CvX" userLabel="cancelButton" customClass="UIIconButton">
+                                                <rect key="frame" x="-2" y="-1" width="154.5" height="0.0"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="Delete all"/>
+                                                <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" image="cancel_edit_default.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="disabled" image="cancel_edit_disabled.png"/>
+                                                <state key="highlighted" backgroundImage="color_E.png"/>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bma-Zu-Byz" userLabel="backButton" customClass="UIIconButton">
+                                                <rect key="frame" x="-2" y="-1" width="154.5" height="0.0"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="Back"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" image="back_default.png">
+                                                    <color key="titleColor" red="0.28619974850000002" green="0.3214434981" blue="0.3598001301" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="disabled" image="back_disabled.png"/>
+                                                <state key="highlighted" backgroundImage="color_E.png"/>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKU-r2-P1s" userLabel="deleteButton" customClass="UIToggleButton">
+                                                <rect key="frame" x="460" y="-1" width="152.5" height="0.0"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="Delete"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" image="delete_default.png">
+                                                    <color key="titleColor" red="0.28619974850000002" green="0.3214434981" blue="0.3598001301" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="disabled" image="delete_disabled.png"/>
+                                                <state key="highlighted" backgroundImage="color_E.png"/>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDh-A8-uoW" userLabel="editButton" customClass="UIToggleButton">
+                                                <rect key="frame" x="612.5" y="-1" width="155" height="0.0"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="Edit"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" image="edit_default.png">
+                                                    <color key="titleColor" red="0.28619974850000002" green="0.3214434981" blue="0.3598001301" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="disabled" image="edit_disabled.png"/>
+                                                <state key="selected" image="valid_default.png"/>
+                                                <state key="highlighted" backgroundImage="color_E.png"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="3Oj-6k-5Ph"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="BEi-DD-nPe" userLabel="avatarImage" customClass="UIRoundedImageView">
+                                        <rect key="frame" x="339" y="50" width="90" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="bBd-PM-v3z"/>
+                                            <constraint firstAttribute="height" constant="90" id="jnc-Ry-zvS"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="9" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmK-UK-Wsu" userLabel="nameLabel">
+                                        <rect key="frame" x="0.0" y="190" width="768" height="32.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0V-7N-KqU">
+                                        <rect key="frame" x="0.0" y="272.5" width="768" height="731.5"/>
+                                        <connections>
+                                            <segue destination="Ee4-XZ-aO8" kind="embed" identifier="showContactDetailsAction" id="v6e-sT-x8N"/>
+                                        </connections>
+                                    </containerView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="40" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No contact selected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aP-Ix-nLO" userLabel="emptyLabel">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="2aP-Ix-nLO" secondAttribute="trailing" id="2uf-hE-0rz"/>
+                                    <constraint firstAttribute="bottom" secondItem="Z0V-7N-KqU" secondAttribute="bottom" id="AuN-yz-eIA"/>
+                                    <constraint firstItem="GEH-YW-2OF" firstAttribute="leading" secondItem="yT5-Dd-xcC" secondAttribute="leading" id="B0C-Z7-lB2"/>
+                                    <constraint firstAttribute="trailing" secondItem="GEH-YW-2OF" secondAttribute="trailing" id="GEu-xA-QuH"/>
+                                    <constraint firstItem="gmK-UK-Wsu" firstAttribute="leading" secondItem="yT5-Dd-xcC" secondAttribute="leading" id="LVr-Cf-FuZ"/>
+                                    <constraint firstItem="Z0V-7N-KqU" firstAttribute="top" secondItem="gmK-UK-Wsu" secondAttribute="bottom" constant="50" id="RB3-8P-qGa"/>
+                                    <constraint firstItem="GEH-YW-2OF" firstAttribute="top" secondItem="yT5-Dd-xcC" secondAttribute="top" id="T5x-GU-3m5"/>
+                                    <constraint firstItem="2aP-Ix-nLO" firstAttribute="leading" secondItem="yT5-Dd-xcC" secondAttribute="leading" id="TtW-EV-TcA"/>
+                                    <constraint firstItem="Z0V-7N-KqU" firstAttribute="leading" secondItem="yT5-Dd-xcC" secondAttribute="leading" id="YAx-jl-0sk"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z0V-7N-KqU" secondAttribute="trailing" id="YJY-os-Ajv"/>
+                                    <constraint firstItem="BEi-DD-nPe" firstAttribute="top" secondItem="GEH-YW-2OF" secondAttribute="bottom" constant="50" id="aUT-Nu-5IV"/>
+                                    <constraint firstAttribute="trailing" secondItem="gmK-UK-Wsu" secondAttribute="trailing" id="gRl-aI-S5B"/>
+                                    <constraint firstItem="BEi-DD-nPe" firstAttribute="centerX" secondItem="yT5-Dd-xcC" secondAttribute="centerX" id="h3w-eL-err"/>
+                                    <constraint firstItem="gmK-UK-Wsu" firstAttribute="top" secondItem="BEi-DD-nPe" secondAttribute="bottom" constant="50" id="jhK-yY-bh6"/>
+                                    <constraint firstItem="2aP-Ix-nLO" firstAttribute="top" secondItem="GEH-YW-2OF" secondAttribute="bottom" id="q3j-R6-ak9"/>
+                                    <constraint firstAttribute="bottom" secondItem="2aP-Ix-nLO" secondAttribute="bottom" id="y2A-eG-bBz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yT5-Dd-xcC" firstAttribute="top" secondItem="69t-J7-TEt" secondAttribute="bottom" id="T9Z-gE-Rgg"/>
+                            <constraint firstItem="ndj-fn-d7d" firstAttribute="top" secondItem="yT5-Dd-xcC" secondAttribute="bottom" id="WmI-BM-uwQ"/>
+                            <constraint firstAttribute="trailing" secondItem="yT5-Dd-xcC" secondAttribute="trailing" id="fuG-jq-8zW"/>
+                            <constraint firstItem="yT5-Dd-xcC" firstAttribute="leading" secondItem="KBy-0c-UBt" secondAttribute="leading" id="pOK-ZC-nls"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="avatarImage" destination="BEi-DD-nPe" id="Ipv-aD-Qkm"/>
+                        <outlet property="backButton" destination="bma-Zu-Byz" id="mdE-ki-9mI"/>
+                        <outlet property="cancelButton" destination="2Cc-Vz-CvX" id="Um9-fX-znH"/>
+                        <outlet property="deleteButton" destination="kKU-r2-P1s" id="23z-dl-Gx5"/>
+                        <outlet property="editButton" destination="eDh-A8-uoW" id="WLG-jR-rCq"/>
+                        <outlet property="emptyLabel" destination="2aP-Ix-nLO" id="lFW-aY-XZZ"/>
+                        <outlet property="nameLabel" destination="gmK-UK-Wsu" id="dK2-F8-dwf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zGI-Qi-h8p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4063" y="-3383"/>
+        </scene>
+        <!--Contact Details Table View-->
+        <scene sceneID="CLB-28-3vs">
+            <objects>
+                <tableViewController id="Ee4-XZ-aO8" customClass="ContactDetailsTableView" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CTP-t5-uZx">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="731.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="P0j-eD-kDC">
+                                <rect key="frame" x="0.0" y="28" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P0j-eD-kDC" id="h6F-CV-JbZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ee4-XZ-aO8" id="uun-NT-Jxq"/>
+                            <outlet property="delegate" destination="Ee4-XZ-aO8" id="0h5-74-igF"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tuM-5K-IyL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5090" y="-3491"/>
+        </scene>
         <!--History-->
         <scene sceneID="jzE-jy-HR0">
             <objects>
@@ -2028,6 +2204,8 @@
     </scenes>
     <resources>
         <image name="avatar.png" width="379" height="379"/>
+        <image name="back_default.png" width="24" height="22"/>
+        <image name="back_disabled.png" width="24" height="22"/>
         <image name="backspace_default.png" width="36" height="19"/>
         <image name="backspace_disabled.png" width="36" height="19"/>
         <image name="backspace_over.png" width="36" height="19"/>
@@ -2062,6 +2240,8 @@
         <image name="deselect_all.png" width="27" height="27"/>
         <image name="dialer_alt_back.png" width="26" height="26"/>
         <image name="dialer_background.png" width="414" height="355"/>
+        <image name="edit_default.png" width="29" height="29"/>
+        <image name="edit_disabled.png" width="29" height="29"/>
         <image name="edit_list_default.png" width="30" height="28"/>
         <image name="edit_list_disabled.png" width="30" height="28"/>
         <image name="footer_chat_default.png" width="27" height="27"/>
@@ -2130,6 +2310,7 @@
         <image name="speaker_default.png" width="27" height="26"/>
         <image name="speaker_disabled.png" width="27" height="26"/>
         <image name="speaker_selected.png" width="27" height="26"/>
+        <image name="valid_default.png" width="28" height="19"/>
         <image name="waiting_time.png" width="60" height="72"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

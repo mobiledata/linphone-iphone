@@ -716,7 +716,6 @@
 		D380801315C299D0005BE9BC /* ColorSpaceUtilites.m in Sources */ = {isa = PBXBuildFile; fileRef = D380801215C299D0005BE9BC /* ColorSpaceUtilites.m */; };
 		D38187AD15FE340100C3EDCA /* ChatConversationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38187B015FE340100C3EDCA /* ChatConversationView.xib */; };
 		D38187B115FE340500C3EDCA /* ChatsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38187B415FE340500C3EDCA /* ChatsListView.xib */; };
-		D38187B915FE342200C3EDCA /* ContactDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38187BC15FE342200C3EDCA /* ContactDetailsView.xib */; };
 		D38187BD15FE342800C3EDCA /* ContactsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38187C015FE342800C3EDCA /* ContactsListView.xib */; };
 		D38187CD15FE346700C3EDCA /* HistoryDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38187D015FE346700C3EDCA /* HistoryDetailsView.xib */; };
 		D38187D115FE346B00C3EDCA /* HistoryListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38187D415FE346B00C3EDCA /* HistoryListView.xib */; };
@@ -1570,7 +1569,6 @@
 		8C1C42EE1E43409200FE9A91 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ChatConversationCreateView.strings; sourceTree = "<group>"; };
 		8C1C42EF1E43409200FE9A91 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ChatConversationView.strings; sourceTree = "<group>"; };
 		8C1C42F01E43409300FE9A91 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ChatsListView.strings; sourceTree = "<group>"; };
-		8C1C42F11E43409300FE9A91 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ContactDetailsView.strings; sourceTree = "<group>"; };
 		8C1C42F21E43409300FE9A91 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ContactsListView.strings; sourceTree = "<group>"; };
 		8C1C42F31E43409400FE9A91 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/CountryListView.strings; sourceTree = "<group>"; };
 		8C1C42F61E43409500FE9A91 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/FirstLoginView.strings; sourceTree = "<group>"; };
@@ -1738,7 +1736,6 @@
 		F0938158188E629800A55DFA /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		F09548181883F15300E8A69B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ChatConversationView.xib; sourceTree = "<group>"; };
 		F09548191883F15300E8A69B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ChatsListView.xib; sourceTree = "<group>"; };
-		F095481B1883F15300E8A69B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ContactDetailsView.xib; sourceTree = "<group>"; };
 		F095481C1883F15300E8A69B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ContactsListView.xib; sourceTree = "<group>"; };
 		F09548201883F15400E8A69B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/HistoryDetailsView.xib; sourceTree = "<group>"; };
 		F09548211883F15400E8A69B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/HistoryListView.xib; sourceTree = "<group>"; };
@@ -1747,7 +1744,6 @@
 		F095482C1883F15400E8A69B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TabBarView.xib; sourceTree = "<group>"; };
 		F09548321883F20A00E8A69B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ChatConversationView.strings; sourceTree = "<group>"; };
 		F09548341883F25F00E8A69B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ChatsListView.strings; sourceTree = "<group>"; };
-		F09548381883F29C00E8A69B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ContactDetailsView.strings; sourceTree = "<group>"; };
 		F095483A1883F2CA00E8A69B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ContactsListView.strings; sourceTree = "<group>"; };
 		F09548421883F51B00E8A69B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/HistoryListView.strings; sourceTree = "<group>"; };
 		F09548441883F52900E8A69B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ImageView.strings; sourceTree = "<group>"; };
@@ -1756,7 +1752,6 @@
 		F0AF06F01A24BA760086C9C1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/AboutView.strings; sourceTree = "<group>"; };
 		F0AF06F11A24BA760086C9C1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/ChatConversationView.strings; sourceTree = "<group>"; };
 		F0AF06F21A24BA760086C9C1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/ChatsListView.strings; sourceTree = "<group>"; };
-		F0AF06F41A24BA760086C9C1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/ContactDetailsView.strings; sourceTree = "<group>"; };
 		F0AF06F51A24BA760086C9C1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/ContactsListView.strings; sourceTree = "<group>"; };
 		F0AF06F91A24BA760086C9C1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/HistoryDetailsView.strings; sourceTree = "<group>"; };
 		F0AF06FA1A24BA770086C9C1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/HistoryListView.strings; sourceTree = "<group>"; };
@@ -1979,7 +1974,6 @@
 				D37C639A15AADEF5009D0BAC /* ContactDetailsTableView.m */,
 				D3128FDE15AABC7E00A2147A /* ContactDetailsView.h */,
 				D3128FDF15AABC7E00A2147A /* ContactDetailsView.m */,
-				D38187BC15FE342200C3EDCA /* ContactDetailsView.xib */,
 				D3549814158761CF000081D8 /* ContactsListTableView.h */,
 				D3549815158761D0000081D8 /* ContactsListTableView.m */,
 				D35497FB15875372000081D8 /* ContactsListView.h */,
@@ -3552,7 +3546,6 @@
 				633FEDFF1D3CD5590014B822 /* camera_switch_disabled@2x.png in Resources */,
 				633FEDDF1D3CD5590014B822 /* call_start_body_over@2x.png in Resources */,
 				633FEEFA1D3CD55A0014B822 /* numpad_star~ipad.png in Resources */,
-				D38187B915FE342200C3EDCA /* ContactDetailsView.xib in Resources */,
 				633FEE921D3CD55A0014B822 /* menu.png in Resources */,
 				633FEDE41D3CD5590014B822 /* call_status_incoming~ipad.png in Resources */,
 				633FEF4D1D3CD55A0014B822 /* splashscreen~ipad@2x.png in Resources */,
@@ -4254,17 +4247,6 @@
 				8C1C42F01E43409300FE9A91 /* fr */,
 			);
 			name = ChatsListView.xib;
-			sourceTree = "<group>";
-		};
-		D38187BC15FE342200C3EDCA /* ContactDetailsView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F095481B1883F15300E8A69B /* Base */,
-				F09548381883F29C00E8A69B /* ru */,
-				F0AF06F41A24BA760086C9C1 /* ar */,
-				8C1C42F11E43409300FE9A91 /* fr */,
-			);
-			name = ContactDetailsView.xib;
 			sourceTree = "<group>";
 		};
 		D38187C015FE342800C3EDCA /* ContactsListView.xib */ = {

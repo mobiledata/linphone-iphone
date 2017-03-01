@@ -303,13 +303,13 @@
 }
 
 - (void)onAddClick:(id)sender {
-	NSInteger section = ((UIButton *)sender).tag;
-	UITableView *tableView = VIEW(ContactDetailsView).tableController.tableView;
-	NSInteger count = [self.tableView numberOfRowsInSection:section];
-	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:count inSection:section];
-	[tableView.dataSource tableView:tableView
-				 commitEditingStyle:UITableViewCellEditingStyleInsert
-				  forRowAtIndexPath:indexPath];
+//	NSInteger section = ((UIButton *)sender).tag;
+//	UITableView *tableView = VIEW(ContactDetailsView).tableController.tableView;
+//	NSInteger count = [self.tableView numberOfRowsInSection:section];
+//	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:count inSection:section];
+//	[tableView.dataSource tableView:tableView
+//				 commitEditingStyle:UITableViewCellEditingStyleInsert
+//				  forRowAtIndexPath:indexPath];
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView
