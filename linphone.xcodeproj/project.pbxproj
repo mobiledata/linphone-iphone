@@ -4347,6 +4347,7 @@
 					"$(SRCROOT)/Classes/Utils/XMLRPC/",
 				);
 				INFOPLIST_FILE = "linphone-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
 					"$(SRCROOT)/liblinphone-sdk/apple-darwin/lib",
@@ -4436,6 +4437,7 @@
 					"$(SRCROOT)/Classes/Utils/XMLRPC/",
 				);
 				INFOPLIST_FILE = "linphone-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
 					"$(SRCROOT)/liblinphone-sdk/apple-darwin/lib/mediastreamer/plugins",
@@ -4525,6 +4527,7 @@
 					"$(SRCROOT)/Classes/Utils/XMLRPC/",
 				);
 				INFOPLIST_FILE = "linphone-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
 					"$(SRCROOT)/liblinphone-sdk/apple-darwin/lib/mediastreamer/plugins",
@@ -4614,6 +4617,7 @@
 					"$(SRCROOT)/Classes/Utils/XMLRPC/",
 				);
 				INFOPLIST_FILE = "linphone-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
 					"$(SRCROOT)/liblinphone-sdk/apple-darwin/lib/mediastreamer/plugins",
